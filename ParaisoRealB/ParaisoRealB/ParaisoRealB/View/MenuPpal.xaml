@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
+             x:Class="ParaisoRealB.View.MenuPpal">
+
+    <ContentPage.BindingContext>
+        <vm:MenuPpalVM></vm:MenuPpalVM>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+            <StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutBounds="0,0,1,0.9"
+                         AbsoluteLayout.LayoutFlags="All"
+                         Margin="20">
+                    <StackLayout Padding="30">
+                        <Label Text="Hola!"></Label>
+                        <Label Text="¿Que Desea Ordenar?"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <control:CarouselView ItemsSource="{Binding MyDataSource}" AbsoluteLayout.LayoutBounds="1,1,1,1"
+                                  AbsoluteLayout.LayoutFlags="All" Position="{Binding Position, Mode=TwoWay}">
+                    <control:CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="{Binding Image}" Aspect="AspectFill" Grid.RowSpan="2"></Image>
+                                    <StackLayout>
+                                        <Label TextColor="White" Text="{Binding Titulo}" FontSize="16"  HorizontalOptions="Center" BackgroundColor="#80000000"></Label>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                        </DataTemplate>
+                    </control:CarouselView.ItemTemplate>
+                </control:CarouselView>
+                <vm:MenuPpalVM           IndicatorHeight="12" IndicatorWidth="12" 
+                                     UnselectedIndicator="circle.png" 
+                                     SelectedIndicator="circle2.png" 
+                                     Position="{Binding Position}" 
+                                     ItemsSource="{Binding MyDataSource}"
+			                         AbsoluteLayout.LayoutBounds="0, 0.9, 1, 0.1" 
+                                     AbsoluteLayout.LayoutFlags="All"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
