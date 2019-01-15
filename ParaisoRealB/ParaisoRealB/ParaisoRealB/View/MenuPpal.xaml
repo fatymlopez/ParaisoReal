@@ -10,45 +10,43 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-
         <AbsoluteLayout>
-            <StackLayout>
-                <StackLayout HorizontalOptions="FillAndExpand"
+            <StackLayout HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand"
                          AbsoluteLayout.LayoutBounds="0,0,1,0.9"
-                         AbsoluteLayout.LayoutFlags="All"
-                         Margin="20">
-                    <StackLayout Padding="30">
-                        <Label Text="Hola!"></Label>
-                        <Label Text="¿Que Desea Ordenar?"></Label>
-                    </StackLayout>
+                         AbsoluteLayout.LayoutFlags="All">
+
+                <StackLayout Padding="30">
+                    <Label Text="Hola!"></Label>
+                    <Label Text="¿Que Desea Ordenar?"></Label>
                 </StackLayout>
-                <control:CarouselView ItemsSource="{Binding MyDataSource}" AbsoluteLayout.LayoutBounds="1,1,1,1"
-                                  AbsoluteLayout.LayoutFlags="All" Position="{Binding Position, Mode=TwoWay}">
+
+                <control:CarouselView ItemsSource="{Binding MyDataSource}" AbsoluteLayout.LayoutBounds="50,50,100,100"
+                                      AbsoluteLayout.LayoutFlags="All" Position="{Binding Position, Mode=TwoWay}">
                     <control:CarouselView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"></RowDefinition>
-                                        <RowDefinition Height="Auto"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Image Source="{Binding Image}" Aspect="AspectFill" Grid.RowSpan="2"></Image>
-                                    <StackLayout>
-                                        <Label TextColor="White" Text="{Binding Titulo}" FontSize="16"  HorizontalOptions="Center" BackgroundColor="#80000000"></Label>
-                                    </StackLayout>
-                                </Grid>
-                            </StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding Image}" Aspect="AspectFill" Grid.RowSpan="2"></Image>
+                                <StackLayout  Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+                                    <Label TextColor="White" Text="{Binding Titulo}" FontSize="16"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Label>
+                                </StackLayout>
+                            </Grid>
                         </DataTemplate>
                     </control:CarouselView.ItemTemplate>
                 </control:CarouselView>
-                <vm:MenuPpalVM           IndicatorHeight="12" IndicatorWidth="12" 
-                                     UnselectedIndicator="circle.png" 
-                                     SelectedIndicator="circle2.png" 
-                                     Position="{Binding Position}" 
-                                     ItemsSource="{Binding MyDataSource}"
-			                         AbsoluteLayout.LayoutBounds="0, 0.9, 1, 0.1" 
-                                     AbsoluteLayout.LayoutFlags="All"/>
+
+                <vm:MenuPpalVM  IndicatorHeight="12" IndicatorWidth="12" 
+                                UnselectedIndicator="circle2.png" 
+                                SelectedIndicator="circle.png" 
+                                Position="{Binding Position}" 
+                                ItemsSource="{Binding MyDataSource}"
+                                Margin="20"
+			                    AbsoluteLayout.LayoutBounds="0, 0.9, 1, 0.1" 
+                                AbsoluteLayout.LayoutFlags="All"/>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>
