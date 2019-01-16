@@ -9,45 +9,52 @@
         <vm:MenuPpalVM></vm:MenuPpalVM>
     </ContentPage.BindingContext>
 
-    <ContentPage.Content>
+       <ContentPage.Content>
         <AbsoluteLayout>
-            <StackLayout HorizontalOptions="FillAndExpand"
+            <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
+
+                <StackLayout HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand"
                          AbsoluteLayout.LayoutBounds="0,0,1,0.9"
                          AbsoluteLayout.LayoutFlags="All">
 
-                <StackLayout Padding="30">
-                    <Label Text="Hola!"></Label>
-                    <Label Text="¿Que Desea Ordenar?"></Label>
-                </StackLayout>
+                    <StackLayout Padding="30">
+                        <Label Text="Hola!"></Label>
+                        <Label Text="¿Que Desea Ordenar?"></Label>
+                    </StackLayout>
+                    <AbsoluteLayout>
+                        <control:CarouselView ItemsSource="{Binding MyDataSource}"  AbsoluteLayout.LayoutBounds=".5,0,300,300"
+                        AbsoluteLayout.LayoutFlags="PositionProportional" Position="{Binding Position, Mode=TwoWay}">
+                            <control:CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Image Source="{Binding Imagen}" Aspect="AspectFill" Grid.RowSpan="2"></Image>
+                                        <StackLayout  Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+                                            <Label TextColor="White" Text="{Binding Titulo}" FontSize="16"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Label>
+                                        </StackLayout>
+                                    </Grid>
+                                </DataTemplate>
+                            </control:CarouselView.ItemTemplate>
+                        </control:CarouselView>
+                    </AbsoluteLayout>
 
-                <control:CarouselView ItemsSource="{Binding MyDataSource}" AbsoluteLayout.LayoutBounds="50,50,100,100"
-                                      AbsoluteLayout.LayoutFlags="All" Position="{Binding Position, Mode=TwoWay}">
-                    <control:CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Image Source="{Binding Image}" Aspect="AspectFill" Grid.RowSpan="2"></Image>
-                                <StackLayout  Grid.Row="1" BackgroundColor="#80000000" Padding="12">
-                                    <Label TextColor="White" Text="{Binding Titulo}" FontSize="16"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Label>
-                                </StackLayout>
-                            </Grid>
-                        </DataTemplate>
-                    </control:CarouselView.ItemTemplate>
-                </control:CarouselView>
-
-                <vm:MenuPpalVM  IndicatorHeight="12" IndicatorWidth="12" 
+                    <vm:MenuPpalVM  IndicatorHeight="12" IndicatorWidth="12" 
                                 UnselectedIndicator="circle2.png" 
                                 SelectedIndicator="circle.png" 
                                 Position="{Binding Position}" 
                                 ItemsSource="{Binding MyDataSource}"
                                 Margin="20"
 			                    AbsoluteLayout.LayoutBounds="0, 0.9, 1, 0.1" 
-                                AbsoluteLayout.LayoutFlags="All"/>
-            </StackLayout>
+                                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                    
+                </StackLayout>
+            </ScrollView>
         </AbsoluteLayout>
+            
     </ContentPage.Content>
 </ContentPage>

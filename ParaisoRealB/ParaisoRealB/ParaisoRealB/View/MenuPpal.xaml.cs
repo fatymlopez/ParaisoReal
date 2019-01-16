@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ParaisoRealB.ViewModel;
 
 namespace ParaisoRealB.View
 {
@@ -17,18 +18,24 @@ namespace ParaisoRealB.View
         private int _position;
         public int Position { get { return _position; } set { _position = value; OnPropertyChanged(); } }
 
+        public string Imagen { get; set; }
+
         public MenuPpal ()
 		{
         InitializeComponent ();
 
-            MyDataSource = new List<CarouselModel>() { new CarouselModel() { Image = "Desayuno", Titulo="Desayunos" },
-                                                       new CarouselModel() { Image = "antojitos", Titulo="Almuerzos" },
-                                                       new CarouselModel() { Image = "antojitos", Titulo="Antojitos" }};
+            MyDataSource = new List<CarouselModel>() { new CarouselModel() { Imagen = "Desayuno", Titulo="Desayunos"},
+                                                       new CarouselModel() { Imagen = "antojitos", Titulo="Almuerzos"},
+                                                       new CarouselModel() { Imagen = "antojitos", Titulo="Antojitos"}};
 
             BindingContext = this;
+       
+          
 
         }
-        
 
+       
+
+        
     }
 }

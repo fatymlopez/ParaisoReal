@@ -3,16 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
              x:Class="ParaisoRealB.View.Inicio">
+
     <ContentPage.BindingContext>
         <vm:InicioVM></vm:InicioVM>
     </ContentPage.BindingContext>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Paraiso Real Banquetes"
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Welcome to Paraiso Real Banquetes"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-
-            <Button Text="Inicio" Command="{Binding InicioCommand}"></Button>
-        </StackLayout>
+                <Button Text="Inicio" Command="{Binding InicioCommand}"></Button>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
