@@ -11,31 +11,43 @@ using ParaisoRealB.ViewModel;
 
 namespace ParaisoRealB.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MenuPpal : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MenuPpal : ContentPage
+    {
         public List<CarouselModel> MyDataSource { get; set; }
         private int _position;
         public int Position { get { return _position; } set { _position = value; OnPropertyChanged(); } }
 
         public string Imagen { get; set; }
 
-        public MenuPpal ()
-		{
-        InitializeComponent ();
+        public MenuPpal()
+        {
+            InitializeComponent();
 
             MyDataSource = new List<CarouselModel>() { new CarouselModel() { Imagen = "Desayuno", Titulo="Desayunos"},
                                                        new CarouselModel() { Imagen = "antojitos", Titulo="Almuerzos"},
                                                        new CarouselModel() { Imagen = "antojitos", Titulo="Antojitos"}};
 
             BindingContext = this;
-       
-          
 
         }
 
-       
+        async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            if (Imagen == "Desayuno")
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new UbicacionD());
 
-        
+            }
+            else if (Imagen == "antojitos")
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new UbicacionA());
+            }
+            else
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new UbicacionAn());
+            }
+
+        }
     }
 }

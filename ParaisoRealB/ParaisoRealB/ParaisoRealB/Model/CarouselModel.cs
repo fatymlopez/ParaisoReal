@@ -9,6 +9,7 @@ namespace ParaisoRealB.Model
         
         public string Imagen { get; set; }
         public string Titulo { get; set; }
+        
        
     }
 }

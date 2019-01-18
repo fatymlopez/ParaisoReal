@@ -9,7 +9,7 @@
         <vm:MenuPpalVM></vm:MenuPpalVM>
     </ContentPage.BindingContext>
 
-       <ContentPage.Content>
+    <ContentPage.Content>
         <AbsoluteLayout>
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
                 AbsoluteLayout.LayoutFlags="PositionProportional,SizeProportional">
@@ -23,6 +23,7 @@
                         <Label Text="Hola!"></Label>
                         <Label Text="¿Que Desea Ordenar?"></Label>
                     </StackLayout>
+
                     <AbsoluteLayout>
                         <control:CarouselView ItemsSource="{Binding MyDataSource}"  AbsoluteLayout.LayoutBounds=".5,0,300,300"
                         AbsoluteLayout.LayoutFlags="PositionProportional" Position="{Binding Position, Mode=TwoWay}">
@@ -33,7 +34,13 @@
                                             <RowDefinition Height="*"></RowDefinition>
                                             <RowDefinition Height="Auto"></RowDefinition>
                                         </Grid.RowDefinitions>
-                                        <Image Source="{Binding Imagen}" Aspect="AspectFill" Grid.RowSpan="2"></Image>
+                                        <Image Source="{Binding Imagen}" Aspect="AspectFill" Grid.RowSpan="2">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                          Tapped="TapGestureRecognizer_Tapped"
+                                                          NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
                                         <StackLayout  Grid.Row="1" BackgroundColor="#80000000" Padding="12">
                                             <Label TextColor="White" Text="{Binding Titulo}" FontSize="16"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Label>
                                         </StackLayout>
@@ -43,7 +50,7 @@
                         </control:CarouselView>
                     </AbsoluteLayout>
 
-                    <vm:MenuPpalVM  IndicatorHeight="12" IndicatorWidth="12" 
+                    <vm:MenuPpalVM IndicatorHeight="12" IndicatorWidth="12" 
                                 UnselectedIndicator="circle2.png" 
                                 SelectedIndicator="circle.png" 
                                 Position="{Binding Position}" 
@@ -51,10 +58,9 @@
                                 Margin="20"
 			                    AbsoluteLayout.LayoutBounds="0, 0.9, 1, 0.1" 
                                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                    
+
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>
-            
     </ContentPage.Content>
 </ContentPage>
