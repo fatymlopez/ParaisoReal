@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
+             x:Class="ParaisoRealB.View.Ubicacion">
+
+    <ContentPage.BindingContext>
+        <vm:UbicacionVM></vm:UbicacionVM>
+    </ContentPage.BindingContext>
+
+    <ListView ItemsSource="{Binding ItemsUbicacion}"
+             SelectedItem ="{Binding UbicacionSelect}">
+
+        <ListView.Header>
+            <StackLayout Padding="75">
+                <Label Text="¿Cual es tu Ubicacion?"></Label>
+            </StackLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding Nombre}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+</ContentPage>

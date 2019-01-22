@@ -16,7 +16,7 @@ namespace ParaisoRealB.ViewModel
 
         async void MenuP()
         {
-            await App.Current.MainPage.Navigation.PushAsync(new MenuPpal());
+            await App.Current.MainPage.Navigation.PushAsync(new Ubicacion());
         }
 
         #region Comandos

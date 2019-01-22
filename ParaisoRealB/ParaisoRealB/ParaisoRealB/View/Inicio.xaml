@@ -10,11 +10,15 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Padding="25">
                 <Label Text="Welcome to Paraiso Real Banquetes"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
                 <Button Text="Inicio" Command="{Binding InicioCommand}"></Button>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Siguenos en Facebook: @paraisorealbanquetes" HorizontalOptions="Center"></Label>
+                    <Image Source="facebook.png" HeightRequest="25"></Image>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -36,16 +36,16 @@ namespace ParaisoRealB.View
         {
             if (Imagen == "Desayuno")
             {
-                await App.Current.MainPage.Navigation.PushAsync(new UbicacionD());
+                await App.Current.MainPage.Navigation.PushAsync(new MenuDesayuno());
 
             }
             else if (Imagen == "antojitos")
             {
-                await App.Current.MainPage.Navigation.PushAsync(new UbicacionA());
+                await App.Current.MainPage.Navigation.PushAsync(new MenuAlmuerzo());
             }
             else
             {
-                await App.Current.MainPage.Navigation.PushAsync(new UbicacionAn());
+                await App.Current.MainPage.Navigation.PushAsync(new MenuAntojitos());
             }
 
         }
