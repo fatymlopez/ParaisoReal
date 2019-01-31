@@ -16,19 +16,17 @@ namespace ParaisoRealB.ViewModel
 
             MenuItems = new ObservableCollection<SubMenuModel>
             {
-                new SubMenuModel(){Icono = "", Titulo="Iniciar Sesion o Registrate"},
-                new SubMenuModel(){Icono="", Titulo="Quienes Somos"},
-                new SubMenuModel(){Icono="", Titulo="Nuestros Servicios"},
-                new SubMenuModel(){Icono="", Titulo="Contactanos"}
+                new SubMenuModel(){Icono = "user", Titulo="Iniciar Sesion o Registrate",identificador=1},
+                new SubMenuModel(){Icono="", Titulo="Quienes Somos",identificador=2},
+                new SubMenuModel(){Icono="", Titulo="Nuestros Servicios",identificador=3},
+                new SubMenuModel(){Icono="", Titulo="Contactanos",identificador=4}
 
                 
             };
 
-        }
+        }       
 
-        
-
-        #region propiedades
+       #region propiedades
         public ObservableCollection<SubMenuModel> MenuItems { get; set; }
        
 
@@ -38,29 +36,24 @@ namespace ParaisoRealB.ViewModel
         {
             get { return _selectedMenuItem; }
             set {
+                 _selectedMenuItem = value;
 
-                if (_selectedMenuItem != value)
+                if (_selectedMenuItem != null)
                 {
-                    _selectedMenuItem = value;
-                   
-                    Seleccion();
-           
-                 
-                      
+                    int i = _selectedMenuItem.identificador;
+                    if (i == 1)
+                    {
+                        App.Current.MainPage.Navigation.PushAsync(new Login());
+                    } else if (i ==  2)
+                    {
+                        App.Current.MainPage.Navigation.PushAsync(new MenuPpal());
+                    }
+                  
                 }
                
                 
             }
         }
-
-  
-
-        public async void Seleccion()
-        {
-            
-                await App.Current.MainPage.Navigation.PushAsync(new Login());
-        }
-          
         
         #endregion
     }
