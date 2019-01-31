@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParaisoRealB.View.SubMenu"
+             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
+             xmlns:sweetbehavior="clr-namespace:SweetBehavior;assembly=SweetBehavior"
+             Title="sub"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <vm:SubMenuVM></vm:SubMenuVM>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+
+        <StackLayout Orientation="Vertical">
+            <StackLayout>
+                <Image Source="Logo.png"></Image>
+            </StackLayout>
+            <ListView ItemsSource="{Binding MenuItems}"
+              SelectedItem="{Binding SelectedMenuItem}">
+                
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand"
+                                                 Orientation="Horizontal"
+                                                 Padding="20,10,0,10"
+                                                 Spacing="20">
+
+                                <Image  Source="{Binding Icono}"
+                                                WidthRequest="35"
+                                                HeightRequest="35"
+                                                VerticalOptions="Center">
+                                </Image>
+
+                                <Label Text="{Binding Titulo}"
+                                               FontSize="Medium"
+                                               VerticalOptions="Center"
+                                               TextColor="Black">
+
+
+                                </Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+               
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParaisoRealB.View.Login"
+             xmlns:local="clr-namespace:ParaisoRealB.Controllers">
+
+    <ScrollView>
+        <StackLayout Margin="30">
+
+            <Image Source="login.png" HeightRequest="150" HorizontalOptions="Center" ></Image>
+
+            <local:CtrlImage  
+                               Placeholder="Nombre"
+                               Image="user"
+                               HorizontalOptions="FillAndExpand">
+
+            </local:CtrlImage>
+
+            <StackLayout Grid.Row="2" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <local:CtrlImage
+                               Placeholder="Constraseña"
+                               IsPassword="True"
+                               x:Name="Password"
+                               Grid.ColumnSpan="2"
+                               Grid.Column="0"
+                               Image="key">
+                    </local:CtrlImage>
+
+                    <Image Source="eyes.png" 
+                               HorizontalOptions="End" 
+                               VerticalOptions="Center" 
+                               Grid.Column="1" 
+                               HeightRequest="20">
+
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" 
+                                                      NumberOfTapsRequired="1">
+                            </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+
+                    </Image>
+                </Grid>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Button 
+                     HeightRequest="46"
+                     BorderRadius="23"
+                     BackgroundColor="Navy"
+                     Text="Iniciar Sesion"
+                     TextColor="White"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     Margin="10,0"
+                     Command="{Binding InformacionCommand}"/>
+
+                    <Button 
+                     HeightRequest="46"
+                     BorderRadius="23"
+                     BackgroundColor="Purple"
+                     Text="Registrate"
+                     TextColor="White"
+                     Grid.Row="0"
+                     Margin="10,0"
+                     Grid.Column="1"
+                     Command="{Binding RegistroCommand}"/>
+                </Grid>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

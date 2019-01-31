@@ -33,21 +33,21 @@ namespace ParaisoRealB.View
         }
 
         async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            if (Imagen == "Desayuno")
-            {
-                await App.Current.MainPage.Navigation.PushAsync(new MenuDesayuno());
+         {
+             if (Imagen == "Desayuno")
+             {
+                 await App.Current.MainPage.Navigation.PushAsync(new MenuDesayuno());
 
-            }
-            else if (Imagen == "antojitos")
-            {
-                await App.Current.MainPage.Navigation.PushAsync(new MenuAlmuerzo());
-            }
-            else
-            {
-                await App.Current.MainPage.Navigation.PushAsync(new MenuAntojitos());
-            }
+             }
+             else if (Imagen == "antojitos")
+             {
+                 await App.Current.MainPage.Navigation.PushAsync(new MenuAlmuerzo());
+             }
+             else
+             {
+                 await App.Current.MainPage.Navigation.PushAsync(new MenuAntojitos());
+             }
 
-        }
+         }
     }
 }

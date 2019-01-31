@@ -12,7 +12,7 @@ namespace ParaisoRealB
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Inicio());
+            MainPage = new NavigationPage(new MasterMenu());
         }
 
         protected override void OnStart()

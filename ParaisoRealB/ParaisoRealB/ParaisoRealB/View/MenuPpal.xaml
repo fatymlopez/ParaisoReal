@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
              xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
+             xmlns:local="clr-namespace:ParaisoRealB.Controllers"
              x:Class="ParaisoRealB.View.MenuPpal">
 
     <ContentPage.BindingContext>
@@ -50,7 +51,7 @@
                         </control:CarouselView>
                     </AbsoluteLayout>
 
-                    <vm:MenuPpalVM IndicatorHeight="12" IndicatorWidth="12" 
+                    <local:MenuPpalC IndicatorHeight="12" IndicatorWidth="12" 
                                 UnselectedIndicator="circle2.png" 
                                 SelectedIndicator="circle.png" 
                                 Position="{Binding Position}" 

@@ -43,7 +43,7 @@ namespace ParaisoRealB.ViewModel
         async void HandleSelectedItem()
         {
             //validar ojo!
-            await App.Current.MainPage.Navigation.PushAsync(new MenuPpal());
+            await App.Current.MainPage.Navigation.PushAsync(new Login());
         }
 
         #endregion
