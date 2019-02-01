@@ -12,7 +12,17 @@ namespace ParaisoRealB
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MasterMenu());
+            var navigationPage = new NavigationPage(new Inicio());
+            
+            navigationPage.BarBackgroundColor = Color.Black;
+            
+            navigationPage.BarTextColor = Color.Gray;
+            MainPage = navigationPage;
+
+          
+
+
+          
         }
 
         protected override void OnStart()

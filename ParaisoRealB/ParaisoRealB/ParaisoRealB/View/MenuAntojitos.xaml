@@ -2,7 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParaisoRealB.View.MenuAntojitos">
-  <ListView x:Name="MyListView"
+
+    <ScrollView>
+        <StackLayout>
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Source="antojitos.jpg" Aspect="AspectFill" Grid.RowSpan="2"></Image>
+            <StackLayout  Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+                <Label TextColor="White" Text="Ordena Aqui" FontSize="16"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+
+    <ListView x:Name="MyListView"
             ItemsSource="{Binding Items}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
@@ -30,4 +46,6 @@
     </ListView.ItemTemplate>
     -->
   </ListView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

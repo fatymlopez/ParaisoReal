@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
-             Icon="menu.png" Title="Inicio"
+             NavigationPage.HasNavigationBar="False" 
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="White"
              x:Class="ParaisoRealB.View.Inicio">
 
     <ContentPage.BindingContext>

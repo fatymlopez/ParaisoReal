@@ -2,14 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
-             xmlns:local="clr-namespace:ParaisoRealB.Controllers"
-             Icon="menu.png" Title="Paraiso Real"
+             xmlns:local="clr-namespace:ParaisoRealB.Controllers"           
              x:Class="ParaisoRealB.View.MenuPpal">
 
-    <ContentPage.BindingContext>
-        <vm:MenuPpalVM></vm:MenuPpalVM>
-    </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <AbsoluteLayout>
@@ -39,7 +34,7 @@
                                         <Image Source="{Binding Imagen}" Aspect="AspectFill" Grid.RowSpan="2">
                                             <Image.GestureRecognizers>
                                                 <TapGestureRecognizer
-                                                          Tapped="TapGestureRecognizer_Tapped"
+                                                          Command="{Binding TapCommand}"
                                                           NumberOfTapsRequired="1" />
                                             </Image.GestureRecognizers>
                                         </Image>

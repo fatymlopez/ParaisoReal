@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ParaisoRealB.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MenuAlmuerzo : ContentPage
+    public partial class MenuAlmuerzos : ContentPage
     {
         public ObservableCollection<string> Items { get; set; }
 
-        public MenuAlmuerzo()
+        public MenuAlmuerzos()
         {
             InitializeComponent();
 

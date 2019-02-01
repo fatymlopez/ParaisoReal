@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 
+
 namespace ParaisoRealB.ViewModel
 {
     public class SubMenuVM
@@ -43,7 +44,8 @@ namespace ParaisoRealB.ViewModel
                     int i = _selectedMenuItem.identificador;
                     if (i == 1)
                     {
-                        App.Current.MainPage.Navigation.PushAsync(new Login());
+                       
+                        App.Current.MainPage.Navigation.PushAsync(new Login()) ;
                     } else if (i ==  2)
                     {
                         App.Current.MainPage.Navigation.PushAsync(new MenuPpal());

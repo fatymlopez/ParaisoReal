@@ -15,6 +15,8 @@ namespace ParaisoRealB.View
         public MasterMenu()
         {
             InitializeComponent();
+
+            
         }
     }
 }
