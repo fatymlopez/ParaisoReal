@@ -7,13 +7,17 @@
              BackgroundColor="White"
              x:Class="ParaisoRealB.View.Inicio">
 
+   
+
     <ContentPage.BindingContext>
         <vm:InicioVM></vm:InicioVM>
     </ContentPage.BindingContext>
-
-    <ContentPage.Content>
+    
+    
+ 
         <ScrollView>
-            <StackLayout Padding="25">
+     
+        <StackLayout Padding="25" Margin="30">
                 <Image Source="Logo.png"
                        VerticalOptions="CenterAndExpand" 
                        HorizontalOptions="CenterAndExpand">
@@ -31,5 +35,5 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
-    </ContentPage.Content>
+
 </ContentPage>

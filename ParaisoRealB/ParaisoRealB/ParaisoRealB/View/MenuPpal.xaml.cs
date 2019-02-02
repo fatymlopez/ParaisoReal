@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using ParaisoRealB.Model;
 using System.Collections.ObjectModel;
 using ParaisoRealB.ViewModel;
 
@@ -24,27 +23,14 @@ namespace ParaisoRealB.View
 
            MyDataSource = new ObservableCollection<CarouselModel>()
             {
-                new CarouselModel() { Imagen = "Desayuno", Titulo="Desayunos", ids=1, TapClickEventHandler = OnTapped},
-                new CarouselModel() { Imagen = "antojitos", Titulo="Almuerzos", ids=2, TapClickEventHandler = OnTapped2},
-                new CarouselModel() { Imagen = "antojitos", Titulo="Antojitos", ids = 3, TapClickEventHandler = OnTapped3}};
+                new CarouselModel() { Imagen = "Desayuno", Titulo="Desayunos", TapClickEventHandler = OnTapped},
+                new CarouselModel() { Imagen = "antojitos", Titulo="Almuerzos", TapClickEventHandler = OnTapped2},
+                new CarouselModel() { Imagen = "antojitos", Titulo="Antojitos", TapClickEventHandler = OnTapped3}};
             
             BindingContext = this ;
 
         }
-
-        private void OnTapped3(object sender, EventArgs e)
-        {
-            var img = (CarouselModel)sender;
-
-            App.Current.MainPage.Navigation.PushAsync(new MenuAlmuerzos());
-        }
-
-        private void OnTapped2(object sender, EventArgs e)
-        {
-            var img = (CarouselModel)sender;
-
-            App.Current.MainPage.Navigation.PushAsync(new MenuAntojitos());
-        }
+      
 
         void OnTapped(object sender, EventArgs e)
         {
@@ -55,6 +41,25 @@ namespace ParaisoRealB.View
 
         }
 
+        private void OnTapped2(object sender, EventArgs e)
+        {
+            var img = (CarouselModel)sender;
+
+            App.Current.MainPage.Navigation.PushAsync(new MenuAlmuerzos());
+
+
+        }
+
+        private void OnTapped3(object sender, EventArgs e)
+        {
+            var img = (CarouselModel)sender;
+
+            App.Current.MainPage.Navigation.PushAsync(new MenuAntojitos());
+
+
+
+
+        }
 
 
 

@@ -8,7 +8,7 @@ namespace ParaisoRealB.Model
 {
     public class CarouselModel 
     {
-        public int ids { get; set; }
+        
         public string Imagen { get; set; }
         public string Titulo { get; set; }
         public Command TapCommand { get; set; }

@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace ParaisoRealB.ViewModel
 {
-    public class SubMenuVM
+    public class SubMenuVM : MasterDetailPage
     {
         public SubMenuVM()
         {
@@ -20,7 +20,9 @@ namespace ParaisoRealB.ViewModel
                 new SubMenuModel(){Icono = "user", Titulo="Iniciar Sesion o Registrate",identificador=1},
                 new SubMenuModel(){Icono="", Titulo="Quienes Somos",identificador=2},
                 new SubMenuModel(){Icono="", Titulo="Nuestros Servicios",identificador=3},
-                new SubMenuModel(){Icono="", Titulo="Contactanos",identificador=4}
+                new SubMenuModel(){Icono="", Titulo="Contactanos",identificador=4 },
+                 new SubMenuModel(){Icono="", Titulo="Salir",identificador=5
+                }
 
                 
             };
@@ -44,12 +46,33 @@ namespace ParaisoRealB.ViewModel
                     int i = _selectedMenuItem.identificador;
                     if (i == 1)
                     {
+
+                        App.Current.MainPage.Navigation.PushAsync(new Login());
+                        
                        
-                        App.Current.MainPage.Navigation.PushAsync(new Login()) ;
-                    } else if (i ==  2)
-                    {
-                        App.Current.MainPage.Navigation.PushAsync(new MenuPpal());
+                        
                     }
+                    else if (i == 2)
+
+                    {
+                        App.Current.MainPage.Navigation.PushAsync(new InfEmpresa());
+                    }
+                    else if (i == 3)
+                    {
+                        App.Current.MainPage.Navigation.PushAsync(new InfServicios());
+
+                    }
+                    else if (i == 4)
+                    {
+                        App.Current.MainPage.Navigation.PushAsync(new InfContactos());
+                    }
+                    else if (i == 5)
+                    {
+                        App.Current.MainPage.Navigation.PushAsync(new Inicio());
+
+                    }
+                    
+
                   
                 }
                

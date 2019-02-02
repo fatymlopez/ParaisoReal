@@ -19,7 +19,9 @@
             </StackLayout>
             <ListView ItemsSource="{Binding MenuItems}"
               SelectedItem="{Binding SelectedMenuItem}"
-              BackgroundColor="White">
+                       BackgroundColor="White">
+                     
+             
                 
                 <ListView.ItemTemplate>
                     <DataTemplate>
