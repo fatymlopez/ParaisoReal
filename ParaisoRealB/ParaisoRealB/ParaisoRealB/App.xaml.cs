@@ -2,18 +2,21 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ParaisoRealB.View;
+using System.Threading.Tasks;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ParaisoRealB
 {
     public partial class App : Application
     {
+      
         public App()
         {
             InitializeComponent();
 
-            var navigationPage = new NavigationPage(new Inicio());
-            
+           var navigationPage = new NavigationPage(new Inicio());
+
+           
             navigationPage.BarBackgroundColor = Color.Black;
             
             navigationPage.BarTextColor = Color.Black;

@@ -29,6 +29,8 @@ namespace ParaisoRealB.View
             
             BindingContext = this ;
 
+            
+
         }
       
 

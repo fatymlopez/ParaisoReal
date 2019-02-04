@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ParaisoRealB.View;
+using ParaisoRealB.Model;
 
 namespace ParaisoRealB.View
 {
@@ -15,8 +17,11 @@ namespace ParaisoRealB.View
         public MasterMenu()
         {
             InitializeComponent();
-
-            
+    
+           
         }
+       
+
+
     }
 }
