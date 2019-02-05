@@ -16,12 +16,14 @@
             <Label Text="Login" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30" TextColor="Black"></Label>
             <StackLayout Margin="20">
 
-            <Image Source="login.png" HeightRequest="150" HorizontalOptions="Center" ></Image>
+            <Image Source="login.png" HeightRequest="125" HorizontalOptions="Center" ></Image>
 
             <local:CtrlImage  
-                               Placeholder="Nombre"
+                               Placeholder="Usuario"
                                Image="user"
-                               HorizontalOptions="FillAndExpand">
+                               HorizontalOptions="FillAndExpand"
+                               ImageWidth="15"
+                               ImageHeigth="15">
 
             </local:CtrlImage>
             </StackLayout>
@@ -39,14 +41,16 @@
                                x:Name="Password"
                                Grid.ColumnSpan="2"
                                Grid.Column="0"
-                               Image="key">
+                               Image="key"
+                               ImageHeigth="15"
+                               ImageWidth="15">
                     </local:CtrlImage>
 
-                    <Image Source="eyes.png" 
+                    <Image Source="Password.png" 
                                HorizontalOptions="End" 
                                VerticalOptions="Center" 
                                Grid.Column="1" 
-                               HeightRequest="20">
+                               HeightRequest="30">
 
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" 
@@ -71,9 +75,7 @@
                      Command="{Binding InformacionCommand}"/>
             </StackLayout>
 
-     
-            
-            
+               
          
             <Label Text="No tienes una cuenta" HorizontalOptions="Center" TextColor="Black"></Label>
             

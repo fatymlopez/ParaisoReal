@@ -18,7 +18,7 @@ namespace ParaisoRealB.ViewModel
         {
             await App.Current.MainPage.Navigation.PushAsync(new RegitroUsuario());
         }
-        #region
+        #region Comandos
         public Command RegistroCommand { get; set; }
         #endregion
     }

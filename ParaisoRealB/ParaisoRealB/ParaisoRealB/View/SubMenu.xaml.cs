@@ -18,12 +18,9 @@ namespace ParaisoRealB.View
 		public SubMenu ()
 		{
 			InitializeComponent ();
-
-            
-         
+                     
         }
-
-     
+      
 
         private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
         {

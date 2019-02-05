@@ -7,10 +7,7 @@
              Title="sub"
              BackgroundColor="White">
 
-    
-
     <ScrollView>
-
          <StackLayout Orientation="Vertical">
             <StackLayout>
                 <Image Source="Logo.png"></Image>
@@ -32,8 +29,8 @@
                                                  BackgroundColor="White">
 
                                 <Image  Source="{Binding Icono}"
-                                                WidthRequest="35"
-                                                HeightRequest="35"
+                                                WidthRequest="70"
+                                                HeightRequest="70"
                                                 VerticalOptions="Center">
                                 </Image>
 

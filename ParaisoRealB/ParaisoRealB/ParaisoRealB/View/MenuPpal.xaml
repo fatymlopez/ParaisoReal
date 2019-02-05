@@ -47,7 +47,7 @@
                         </control:CarouselView>
                     </AbsoluteLayout>
 
-                    <local:MenuPpalC IndicatorHeight="12" IndicatorWidth="12" 
+                    <local:MenuPpalC IndicatorHeight="13" IndicatorWidth="13" 
                                 UnselectedIndicator="circle2.png" 
                                 SelectedIndicator="circle.png" 
                                 Position="{Binding Position}" 
