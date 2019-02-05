@@ -23,8 +23,8 @@ namespace ParaisoRealB.ViewModel
            
                 new SubPageVM(typeof(View.Login), "Iniciar Sesion", "users"),
                 new SubPageVM(typeof(View.InfEmpresa), "Quienes Somos", "quien"),
-                new SubPageVM(typeof(View.InfEmpresa), "Nuestros Servicios", "ser"),
-                new SubPageVM(typeof(View.InfEmpresa), "Contactanos", "cell")
+                new SubPageVM(typeof(View.InfServicios), "Nuestros Servicios", "ser"),
+                new SubPageVM(typeof(View.InfContactos), "Contactanos", "cell")
 
 
 
