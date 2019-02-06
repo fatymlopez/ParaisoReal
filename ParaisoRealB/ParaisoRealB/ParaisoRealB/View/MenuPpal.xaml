@@ -17,8 +17,8 @@
                          AbsoluteLayout.LayoutFlags="All">
 
                     <StackLayout Padding="30">
-                        <Label Text="Hola!" TextColor="Black" FontSize="Medium" FontAttributes="Bold"></Label>
-                        <Label Text="¿Que Desea Ordenar?" TextColor="Black" FontSize="Medium" FontAttributes="Bold"></Label>
+                        <Label Text="Hola!"></Label>
+                        <Label Text="¿Que Desea Ordenar?"></Label>
                     </StackLayout>
 
                     <AbsoluteLayout>

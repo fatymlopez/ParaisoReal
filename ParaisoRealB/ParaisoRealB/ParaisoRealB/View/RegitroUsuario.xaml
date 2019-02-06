@@ -6,19 +6,20 @@
              BackgroundColor="White">
 
     <ScrollView>
-        <StackLayout Margin="20">
+        <Frame OutlineColor="#CFB346" CornerRadius="40" Margin="20">
+        <StackLayout Margin="35" BackgroundColor="White">
 
             <Label Text="Registrate Aqui" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold"></Label>
             <Label Text="Ingrese su Nombre" Margin="0,20,0,0"></Label>
-            <locai:CtrlImage Image="users" ImageHeigth="22" ImageWidth="22"></locai:CtrlImage>
+            <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13" ></locai:CtrlImage>
             <Label Text="Ingrese su Apellido"></Label>
-            <locai:CtrlImage Image="users" ImageHeigth="22" ImageWidth="22"></locai:CtrlImage>
+            <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13" ></locai:CtrlImage>
             <Label Text="Ingrese su correo"></Label>
-            <locai:CtrlImage Image="correo" ImageHeigth="22" ImageWidth="22"></locai:CtrlImage>
+            <locai:CtrlImage Image="correo" ImageHeigth="13" ImageWidth="13"></locai:CtrlImage>
             <Label Text="Ingrese un nombre de Usuario"></Label>
-            <locai:CtrlImage Image="users" ImageHeigth="22" ImageWidth="22"></locai:CtrlImage>
+            <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13"></locai:CtrlImage>
             <Label Text="Ingrese una Contraseña"></Label>
-            <locai:CtrlImage Image="contra" ImageHeigth="22" ImageWidth="22"></locai:CtrlImage>
+            <locai:CtrlImage Image="contra" ImageHeigth="13" ImageWidth="13"></locai:CtrlImage>
 
 
             <Button 
@@ -31,5 +32,6 @@
                      Margin="10,20"
                      Command="{Binding RegistroCommand}"/>
         </StackLayout>
+        </Frame>
     </ScrollView>
 </ContentPage>
