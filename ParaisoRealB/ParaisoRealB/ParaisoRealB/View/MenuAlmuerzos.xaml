@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ParaisoRealB.ViewModel"
              x:Class="ParaisoRealB.View.MenuAlmuerzos">
 
 
-    <ScrollView>
+    
     <StackLayout>
             <StackLayout>
                 <Grid>
@@ -18,36 +19,46 @@
                     </StackLayout>
                 </Grid>
             </StackLayout>
+        <ScrollView>
 
-            <ListView x:Name="MyListView"
-                      BackgroundColor="White"
-            ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement">
+            <ListView  ItemsSource="{x:Static local:MenuAVM.All}"
+                ItemSelected="OnListViewItemSelected">
             
-    <!--Built in Cells-->
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <TextCell Text="{Binding .}" />
-        </DataTemplate>
-    </ListView.ItemTemplate>
     
-    <!--Custom View Cells-->
-    <!--
+   
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
+ 
+         <StackLayout VerticalOptions="FillAndExpand"
+                      Orientation="Horizontal"
+                      Padding="10,10,0,10"
+                      Spacing="30"
+                      BackgroundColor="White">
+             
+                      <Label Text="{Binding Titulo}" 
+                      Style="{DynamicResource ListItemTextStyle}" />
+            
+                      <Label Text="{Binding Descripcion}" 
+                      Style="{DynamicResource ListItemDetailTextStyle}"/>
+
+
+                                    <Label Text="Precio: $" HorizontalOptions="End"></Label>
+                                    <Label Text="{Binding Precio}" 
+                      Style="{DynamicResource ListItemDetailTextStyle}"
+                                           HorizontalOptions="End"/>
+
+                  
+
+
+                            </StackLayout>
         </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>
-    -->
-  </ListView>
- </StackLayout>
+  
+    </ListView>
     </ScrollView>
+
+    
+        </StackLayout>
 </ContentPage>

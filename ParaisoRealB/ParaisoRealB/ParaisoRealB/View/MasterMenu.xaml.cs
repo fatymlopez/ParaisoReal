@@ -17,18 +17,23 @@ namespace ParaisoRealB.View
         public MasterMenu()
         {
             InitializeComponent();
+
+
+        }
+
     
-           
-        }
+
         protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            
+         {
+             base.OnAppearing();
 
+            MasterBehavior = MasterBehavior.Popover;
             IsPresented = false;
-            
-        }
 
+         }
+
+
+        
 
 
     }

@@ -12,33 +12,27 @@ namespace ParaisoRealB.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuAlmuerzos : ContentPage
     {
-        public ObservableCollection<string> Items { get; set; }
+       
 
         public MenuAlmuerzos()
         {
             InitializeComponent();
 
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-			
-			MyListView.ItemsSource = Items;
         }
 
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            if (e.Item == null)
-                return;
+            (sender as ListView).SelectedItem = null;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            if (args.SelectedItem != null)
+            {
+                ViewModel.MenuAVM pageData = args.SelectedItem as ViewModel.MenuAVM;
+                Page page = (Page)Activator.CreateInstance(pageData.TypeA);
+                await Navigation.PushAsync(page);
 
-            //Deselect Item
-            ((ListView)sender).SelectedItem = null;
+
+            }
         }
+
     }
 }

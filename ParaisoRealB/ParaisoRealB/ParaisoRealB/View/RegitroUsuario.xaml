@@ -7,9 +7,9 @@
 
     <ScrollView>
         <Frame OutlineColor="#CFB346" CornerRadius="40" Margin="20">
-        <StackLayout Margin="35" BackgroundColor="White">
+        <StackLayout  BackgroundColor="White">
 
-            <Label Text="Registrate Aqui" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold"></Label>
+            <Label Text="Registrate Aqui" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="Medium"></Label>
             <Label Text="Ingrese su Nombre" Margin="0,20,0,0"></Label>
             <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13" ></locai:CtrlImage>
             <Label Text="Ingrese su Apellido"></Label>

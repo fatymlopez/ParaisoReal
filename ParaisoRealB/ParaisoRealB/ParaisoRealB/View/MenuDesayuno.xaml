@@ -20,9 +20,7 @@
     </StackLayout>
     <ListView x:Name="MyListView"
               BackgroundColor="White"
-            ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement">
+            ItemsSource="{Binding Items}">
 
         
     <!--Built in Cells-->

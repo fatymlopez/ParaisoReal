@@ -17,8 +17,8 @@
                          AbsoluteLayout.LayoutFlags="All">
 
                     <StackLayout Padding="30">
-                        <Label Text="Hola!"></Label>
-                        <Label Text="¿Que Desea Ordenar?"></Label>
+                        <Label Text="Hola!" FontSize="Large" TextColor="Black" FontAttributes="Bold"></Label>
+                        <Label Text="¿Que Desea Ordenar?" FontSize="Large" TextColor="Black" FontAttributes="Bold"></Label>
                     </StackLayout>
 
                     <AbsoluteLayout>
@@ -31,7 +31,7 @@
                                             <RowDefinition Height="*"></RowDefinition>
                                             <RowDefinition Height="Auto"></RowDefinition>
                                         </Grid.RowDefinitions>
-                                        <Image Source="{Binding Imagen}" Aspect="AspectFill" Grid.RowSpan="2">
+                                        <Image Source="{Binding Imagen}" Aspect="AspectFill" Grid.RowSpan="2" >
                                             <Image.GestureRecognizers>
                                                 <TapGestureRecognizer
                                                           Command="{Binding TapCommand}"

@@ -1,12 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
              x:Class="ParaisoRealB.View.Ordenar">
-    <ContentPage.Content>
+
+
+    <ContentPage.BindingContext>
+        <vm:OrdenVM></vm:OrdenVM>
+    </ContentPage.BindingContext>
+    <ScrollView>
+    <StackLayout>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="antojitos.jpg" Aspect="AspectFill" Grid.RowSpan="2"></Image>
+                    <StackLayout  Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+                        <Label TextColor="White" Text="Paraiso Real" FontSize="16"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Label>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+                <StackLayout Padding="80">
+                    
+                </StackLayout>
+       
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Cantidad:"></Label>
+                    <Label></Label>
+                </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Precio:"></Label>
+                        <Label></Label>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Button Text="+" BackgroundColor="#CFB346" TextColor="White" ></Button>
+                    <Button Text="-" BackgroundColor="#CFB346" TextColor="White" ></Button>
+                </StackLayout>
+            </StackLayout>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Button 
+                     HeightRequest="46"
+                     BorderRadius="23"
+                     BackgroundColor="#CFB346"
+                     Text="Ordenar"
+                     TextColor="White"                   
+                     Margin="10,20"
+                     Grid.Column="0"
+                     Grid.Row="0"
+                     Command="{Binding OrdenarCommand}">
+                </Button>
+
+                <Button Text="Ver mi Orden"
+                     HeightRequest="46"
+                     BorderRadius="23"
+                     BackgroundColor="#CFB346"
+                     Margin="10,20"
+                     TextColor="White"
+                     Grid.Column="1"
+                     Grid.Row="0"
+                     Command="{Binding VerOrdenCommand}">
+                </Button>
+            </Grid>
+
+
+
         </StackLayout>
-    </ContentPage.Content>
+    </StackLayout>
+    </ScrollView>
 </ContentPage>
