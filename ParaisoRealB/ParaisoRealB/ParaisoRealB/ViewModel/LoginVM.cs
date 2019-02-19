@@ -11,14 +11,21 @@ namespace ParaisoRealB.ViewModel
         public LoginVM()
         {
             RegistroCommand = new Command(FormularioR);
+            MenusCommand = new Command(VerMenus);
 
         }
 
-       public async void FormularioR()
+        public async void VerMenus()
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new Ubicacion());
+        }
+
+        public async void FormularioR()
         {
             await App.Current.MainPage.Navigation.PushAsync(new RegitroUsuario());
         }
         #region Comandos
+        public Command MenusCommand { get; set; }
         public Command RegistroCommand { get; set; }
         #endregion
     }

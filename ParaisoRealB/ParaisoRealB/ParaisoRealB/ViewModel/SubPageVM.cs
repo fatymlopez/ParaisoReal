@@ -19,15 +19,11 @@ namespace ParaisoRealB.ViewModel
         static SubPageVM()
         {
             All = new List<SubPageVM>
-            {
-           
-                new SubPageVM(typeof(View.Login), "Iniciar Sesion", "users"),
+            {               
                 new SubPageVM(typeof(View.InfEmpresa), "Quienes Somos", "quien"),
                 new SubPageVM(typeof(View.InfServicios), "Nuestros Servicios", "ser"),
-                new SubPageVM(typeof(View.InfContactos), "Contactanos", "cell")
-
-
-
+                new SubPageVM(typeof(View.InfContactos), "Contactanos", "cell"),
+                new SubPageVM(typeof(View.Inicio), "Cerrar Sesion", "salir" )
             };
         }
 

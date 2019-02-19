@@ -19,7 +19,7 @@
             <Image Source="login.png" HeightRequest="125" HorizontalOptions="Center" ></Image>
 
             <local:CtrlImage  
-                               Placeholder="Usuario"
+                               Placeholder="Ingrese su Correo Electronico"
                                Image="user"
                                HorizontalOptions="FillAndExpand"
                                ImageWidth="15"
@@ -69,10 +69,9 @@
                      BorderRadius="23"
                      BackgroundColor="#CFB346"
                      Text="Iniciar Sesion"
-                     TextColor="White"
-                    
+                     TextColor="White"                   
                      Margin="10,20"
-                     Command="{Binding InformacionCommand}"/>
+                     Command="{Binding MenusCommand}"/>
             </StackLayout>
 
                

@@ -6,17 +6,12 @@
              NavigationPage.HasBackButton="False"
              BackgroundColor="White"
              x:Class="ParaisoRealB.View.Inicio">
-
-   
-
+ 
     <ContentPage.BindingContext>
         <vm:InicioVM></vm:InicioVM>
     </ContentPage.BindingContext>
-    
-    
- 
-        <ScrollView>
-     
+
+    <ScrollView>
         <StackLayout Padding="25" Margin="30">
                 <Image Source="Logo.png"
                        VerticalOptions="CenterAndExpand" 
@@ -24,8 +19,9 @@
                 </Image>
                 
                 <Button Text="Inicio" Command="{Binding InicioCommand}"
+                      
                         BorderRadius="30"
-                        BackgroundColor="#daa520"
+                        BackgroundColor="#CFB346"
                         TextColor="White"></Button>
                 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
