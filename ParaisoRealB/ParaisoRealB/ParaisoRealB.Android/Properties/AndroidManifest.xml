@@ -2,13 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.ParaisoRealB">
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
    <supports-screens   
-                        android:smallScreens="true"
-                        android:normalScreens="true"
-                        android:largeScreens="true" />
+                    android:smallScreens="true"
+                    android:normalScreens="true"
+                    android:largeScreens="true" />
   
     <application android:label="ParaisoRealB.Android"
-                   android:allowBackup="true"
-                   android:icon="@mipmap/icon"
-                     android:roundIcon="@mipmap/launcher_foreground"
-                   android:supportsRtl="true" android:theme="@style/MainTheme">></application>
+                 android:allowBackup="true"
+                 android:icon="@mipmap/icon"
+                 android:roundIcon="@mipmap/launcher_foreground"
+                 android:supportsRtl="true" android:theme="@style/MainTheme">></application>
 </manifest>

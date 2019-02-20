@@ -31,6 +31,7 @@
                                             <RowDefinition Height="*"></RowDefinition>
                                             <RowDefinition Height="Auto"></RowDefinition>
                                         </Grid.RowDefinitions>
+                                        
                                         <Image Source="{Binding Imagen}" Aspect="AspectFill" Grid.RowSpan="2" >
                                             <Image.GestureRecognizers>
                                                 <TapGestureRecognizer
