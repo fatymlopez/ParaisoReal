@@ -20,6 +20,8 @@
 
             <local:CtrlImage  
                                Placeholder="Ingrese su Correo Electronico"
+                               Text="{Binding correocommand}"
+                
                                Image="user"
                                HorizontalOptions="FillAndExpand"
                                ImageWidth="15"
@@ -37,6 +39,7 @@
 
                     <local:CtrlImage
                                Placeholder="Constraseña"
+                               Text="{Binding contracommanad}"
                                IsPassword="True"
                                x:Name="Password"
                                Grid.ColumnSpan="2"

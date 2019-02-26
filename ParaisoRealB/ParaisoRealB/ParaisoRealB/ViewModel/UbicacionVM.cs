@@ -11,22 +11,22 @@ namespace ParaisoRealB.ViewModel
     {
         public UbicacionVM()
         {
-            ItemsUbicacion = new ObservableCollection<UbicacionModel>
+            ItemsUbicacion = new ObservableCollection<ubicacion>
             {
-                new UbicacionModel(){Nombre = "Ciudad Universitaria UNIVO"},
-                new UbicacionModel(){Nombre="Sede Central UNIVO"},
-                new UbicacionModel(){Nombre="Universidad Modular Abierta UMA"}
+                new ubicacion(){nomubicacion = "Ciudad Universitaria UNIVO"},
+                new ubicacion(){nomubicacion ="Sede Central UNIVO"},
+                new ubicacion(){nomubicacion ="Universidad Modular Abierta UMA"}
 
             };
 
         }
 
         #region propiedades
-        public ObservableCollection<UbicacionModel> ItemsUbicacion { get; set; }
+        public ObservableCollection<ubicacion> ItemsUbicacion { get; set; }
         
-        private UbicacionModel _ubicacionSelect;
+        private ubicacion _ubicacionSelect;
 
-        public UbicacionModel UbicacionSelect
+        public ubicacion UbicacionSelect
         {
             get { return _ubicacionSelect; }
             set {

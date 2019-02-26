@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ParaisoRealB.Model
 {
-    public class UbicacionModel
+    public class ubicacion
     {
-        public string Imag { get; set; }
-        public string Nombre { get; set; }
+        public int id { get; set; }
+        public string nomubicacion { get; set; }
     }
 }

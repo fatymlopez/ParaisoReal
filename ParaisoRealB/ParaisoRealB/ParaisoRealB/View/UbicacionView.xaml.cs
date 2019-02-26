@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -10,15 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ParaisoRealB.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Ubicacion : ContentPage
+    public partial class UbicacionView : ContentPage
     {
-
-        public Ubicacion()
+        public UbicacionView()
         {
             InitializeComponent();
-
-
         }
-            
     }
 }

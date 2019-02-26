@@ -2,22 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParaisoRealB.View.RegitroUsuario"
+             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
              xmlns:locai="clr-namespace:ParaisoRealB.Controllers"
              BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <vm:RegistroUVM></vm:RegistroUVM>
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <Frame OutlineColor="#CFB346" CornerRadius="40" Margin="20">
         <StackLayout  BackgroundColor="White">
 
             <Label Text="Registrate Aqui" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="Medium"></Label>
+            
             <Label Text="Ingrese su Nombre" Margin="0,20,0,0"></Label>
-            <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13" ></locai:CtrlImage>
-            <Label Text="Ingrese su Apellido"></Label>
-            <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13" ></locai:CtrlImage>
+            <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13" Text="{Binding nombreclcommand}" ></locai:CtrlImage>
             <Label Text="Ingrese su correo"></Label>
-                <locai:CtrlImage Image="correo" ImageHeigth="13" ImageWidth="13"></locai:CtrlImage>
-                <Label Text="Ingrese una Contraseña"></Label>
-            <locai:CtrlImage Image="contra" ImageHeigth="13" ImageWidth="13"></locai:CtrlImage>
+            <locai:CtrlImage Image="correo" ImageHeigth="13" ImageWidth="13" Text="{Binding emailclcommand}"></locai:CtrlImage>
+            <Label Text="Ingrese una Contraseña"></Label>
+            <locai:CtrlImage Image="contra" ImageHeigth="13" ImageWidth="13" IsPassword="True" Text="{Binding passclcommand}"></locai:CtrlImage>
 
 
             <Button 

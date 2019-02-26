@@ -17,7 +17,8 @@ namespace ParaisoRealB.ViewModel
 
         public async void VerMenus()
         {
-            await App.Current.MainPage.Navigation.PushAsync(new Ubicacion());
+        
+            await App.Current.MainPage.Navigation.PushAsync(new UbicacionView());
         }
 
         public async void FormularioR()

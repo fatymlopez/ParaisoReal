@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ParaisoRealB.Model
 {
-    public class LoginModeldb
+    public class categorias
     {
-      
-      
+        public int id { get; set; }
+        public string nomcategoria { get; set; }
     }
 }

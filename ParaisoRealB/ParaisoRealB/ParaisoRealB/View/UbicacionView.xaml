@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
-             x:Class="ParaisoRealB.View.Ubicacion">
+             x:Class="ParaisoRealB.View.UbicacionView">
+
 
     <ContentPage.BindingContext>
         <vm:UbicacionVM></vm:UbicacionVM>
@@ -20,7 +20,7 @@
             <DataTemplate>
                 <ViewCell>
                     <StackLayout>
-                        <Label Text="{Binding Nombre}" 
+                        <Label Text="{Binding nomubicacion}" 
                    Style="{DynamicResource ListItemTextStyle}" />
                     </StackLayout>
                 </ViewCell>
@@ -28,4 +28,6 @@
         </ListView.ItemTemplate>
 
     </ListView>
+</ContentPage>
+
 </ContentPage>
