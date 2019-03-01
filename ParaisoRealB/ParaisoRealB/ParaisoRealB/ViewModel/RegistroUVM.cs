@@ -17,14 +17,7 @@ namespace ParaisoRealB.ViewModel
         public  void RegistroUsu()
         {
            {
-                var newcliente = new cliente
-                   {
-                       nombrecl =  nombreclcommand,
-                       emailcl = emailclcommand,
-                       passcl  = passclcommand
-                   };
-                   var proxy = new Repositorio();
-                   newcliente = proxy.Postcliente(newcliente);
+               
 
                 App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
 

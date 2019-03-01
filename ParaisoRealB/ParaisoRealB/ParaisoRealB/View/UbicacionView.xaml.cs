@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace ParaisoRealB.View
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UbicacionView : ContentPage
-    {
-        public UbicacionView()
-        {
-            InitializeComponent();
-        }
-    }
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class UbicacionView : ContentPage
+	{
+		public UbicacionView ()
+		{
+			InitializeComponent ();
+		}
+	}
 }

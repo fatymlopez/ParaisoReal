@@ -22,7 +22,7 @@
                     </StackLayout>
 
                     <AbsoluteLayout>
-                        <control:CarouselView ItemsSource="{Binding MyDataSource}"  AbsoluteLayout.LayoutBounds=".5,0,300,300"
+                        <control:CarouselView ItemsSource="{Binding MyDataSource}"  AbsoluteLayout.LayoutBounds=".5,0,400,400" 
                         AbsoluteLayout.LayoutFlags="PositionProportional" Position="{Binding Position, Mode=TwoWay}">
                             <control:CarouselView.ItemTemplate>
                                 <DataTemplate>

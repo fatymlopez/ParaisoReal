@@ -41,7 +41,7 @@
                       Style="{DynamicResource ListItemDetailTextStyle}"/>
 
 
-                                <Label Text="Precio: $" HorizontalOptions="End"></Label>
+                              
                                 <Label Text="{Binding Precio}" 
                       Style="{DynamicResource ListItemDetailTextStyle}"
                                            HorizontalOptions="End"/>

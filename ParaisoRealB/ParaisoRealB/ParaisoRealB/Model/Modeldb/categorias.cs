@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParaisoRealB.Model
+namespace ParaisoRealB.Model.Modeldb
 {
     public class categorias
     {

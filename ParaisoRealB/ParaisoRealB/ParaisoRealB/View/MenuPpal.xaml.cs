@@ -21,9 +21,9 @@ namespace ParaisoRealB.View
 
            MyDataSource = new ObservableCollection<CarouselModel>()
             {
-                new CarouselModel() { Imagen = "Desayunos", Titulo="Desayunos", TapClickEventHandler = OnTapped},
-                new CarouselModel() { Imagen = "Almuerzos", Titulo="Almuerzos", TapClickEventHandler = OnTapped2},
-                new CarouselModel() { Imagen = "antojiorde", Titulo="Antojitos", TapClickEventHandler = OnTapped3}};
+                new CarouselModel() { Imagen = "desyuno", Titulo="Desayunos", TapClickEventHandler = OnTapped},
+                new CarouselModel() { Imagen = "Aorder", Titulo="Almuerzos", TapClickEventHandler = OnTapped2},
+                new CarouselModel() { Imagen = "Desayunos", Titulo="Antojitos", TapClickEventHandler = OnTapped3}};
             
             BindingContext = this ;
             

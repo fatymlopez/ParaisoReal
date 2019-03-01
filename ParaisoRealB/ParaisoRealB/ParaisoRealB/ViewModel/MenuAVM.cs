@@ -20,8 +20,9 @@ namespace ParaisoRealB.ViewModel
             All = new List<MenuAVM>
             {
 
-                new MenuAVM(typeof(View.Ordenar), "Combo 1", "Carne Azada, Arroz 2 tortillas", 3.00)
-             
+                new MenuAVM(typeof(View.Ordenar), "Combo 1","Carne Azada,Arroz 2 tortillas", 3.00),
+                
+
 
 
             };

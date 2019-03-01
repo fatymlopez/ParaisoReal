@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParaisoRealB.Model
+namespace ParaisoRealB.Model.Modeldb
 {
     public class productos
     {
@@ -12,9 +12,6 @@ namespace ParaisoRealB.Model
         public string descripcion { get; set; }
         public decimal precio { get; set; }
         public int existencia { get; set; }
-       
 
     }
-   
-
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParaisoRealB.Model
+namespace ParaisoRealB.Model.Modeldb
 {
-    public class orden
+    public class reservacion
     {
         public int id { get; set; }
         public int idubicacion { get; set; }
@@ -12,7 +12,5 @@ namespace ParaisoRealB.Model
         public int idproducto { get; set; }
         public int cantidad { get; set; }
         public decimal precio { get; set; }
-        public decimal total { get; set; }
-        public TimeSpan hora { get; set; }
     }
 }

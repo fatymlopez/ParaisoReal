@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ParaisoRealB.View.UbicacionView">
-
+             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
+             x:Class="ParaisoRealB.View.UbicacionView"
+             BackgroundColor="White">
 
     <ContentPage.BindingContext>
         <vm:UbicacionVM></vm:UbicacionVM>
     </ContentPage.BindingContext>
-
+    
     <ListView ItemsSource="{Binding ItemsUbicacion}"
-             SelectedItem ="{Binding UbicacionSelect}">
+              SelectedItem="{Binding UbicacionSelect}"
+              BackgroundColor="White">
 
         <ListView.Header>
             <StackLayout Padding="75">
@@ -26,8 +28,9 @@
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
-
+      
+   
     </ListView>
+ 
 </ContentPage>
-
-</ContentPage>
+    
