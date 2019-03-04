@@ -25,7 +25,8 @@
                                Image="user"
                                HorizontalOptions="FillAndExpand"
                                ImageWidth="15"
-                               ImageHeigth="15">
+                               ImageHeigth="15"
+                               Margin="20">
 
             </local:CtrlImage>
             </StackLayout>

@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
-using ParaisoRealB.Model;
+using ParaisoRealB.Model.Modeldb;
 using ParaisoRealB.View;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Net;
 
 namespace ParaisoRealB.ViewModel
 {
@@ -14,13 +17,27 @@ namespace ParaisoRealB.ViewModel
             RegistroCommand = new Command(RegistroUsu);
         }
 
-        public  void RegistroUsu()
+        public  async void RegistroUsu()
         {
-           {
-               
+           
+            cliente newcliente = new cliente()
+            {
+                nombrecl = nombreclcommand,
+                emailcl = emailclcommand,
+                passcl = passclcommand
 
-                App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
+            };
 
+            var json = JsonConvert.SerializeObject(newcliente);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpClient client = new HttpClient();
+            var result = await client.PostAsync("http://paraisoreal19.somee.com/api/clientes/Postcliente", content);
+
+            if (result.StatusCode == HttpStatusCode.Created)
+            {
+                await App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
+
+              
             }
 
         
