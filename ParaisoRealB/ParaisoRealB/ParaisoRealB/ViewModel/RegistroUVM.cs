@@ -23,6 +23,7 @@ namespace ParaisoRealB.ViewModel
             cliente newcliente = new cliente()
             {
                 nombrecl = nombreclcommand,
+                cellcl = cellclcommand,
                 emailcl = emailclcommand,
                 passcl = passclcommand
 
@@ -45,6 +46,7 @@ namespace ParaisoRealB.ViewModel
 
         #region propiedades
         public string nombreclcommand { get; set; }
+        public string cellclcommand { get; set; }
         public string emailclcommand { get; set; }
         public string passclcommand { get; set; }
         #endregion

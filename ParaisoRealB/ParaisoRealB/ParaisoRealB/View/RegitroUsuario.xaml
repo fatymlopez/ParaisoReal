@@ -16,11 +16,15 @@
 
             <Label Text="Registrate Aqui" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="Medium"></Label>
             
-            <Label Text="Ingrese un Nombre y un Apellido" Margin="0,20,0,0"></Label>
+            <Label Text="Ingrese su nombre completo" Margin="0,20,0,0"></Label>
             <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13" Text="{Binding nombreclcommand}" ></locai:CtrlImage>
-            <Label Text="Ingrese su correo"></Label>
+
+            <Label Text="Ingrese su numero de celular"></Label>
+            <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13" Text="{Binding cellclcommand}" ></locai:CtrlImage>
+
+                <Label Text="Ingrese su correo electronico"></Label>
             <locai:CtrlImage Image="correo" ImageHeigth="13" ImageWidth="13" Text="{Binding emailclcommand}"></locai:CtrlImage>
-            <Label Text="Ingrese una Contraseña"></Label>
+            <Label Text="Ingrese una contraseña"></Label>
             <locai:CtrlImage Image="contra" ImageHeigth="13" ImageWidth="13" IsPassword="True" Text="{Binding passclcommand}"></locai:CtrlImage>
 
 
