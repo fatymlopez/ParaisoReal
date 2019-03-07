@@ -13,6 +13,7 @@
 
     <ScrollView>
         <StackLayout Padding="25" Margin="30">
+           
                 <Image Source="Logo.png"
                        VerticalOptions="CenterAndExpand" 
                        HorizontalOptions="CenterAndExpand">
@@ -21,7 +22,7 @@
                 <Button Text="Inicio" Command="{Binding InicioCommand}"
                       
                         BorderRadius="30"
-                        BackgroundColor="#CFB346"
+                        BackgroundColor="#EBD022"
                         TextColor="White"></Button>
                 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">

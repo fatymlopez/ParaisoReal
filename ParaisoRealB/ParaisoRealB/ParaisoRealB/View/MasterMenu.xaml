@@ -12,7 +12,7 @@
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <NavigationPage
-            BarBackgroundColor="Black">
+            BarBackgroundColor="#EBD022">
             <x:Arguments>
                 <local:MenuPpal></local:MenuPpal>
             </x:Arguments>

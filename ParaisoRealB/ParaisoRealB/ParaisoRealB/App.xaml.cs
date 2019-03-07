@@ -17,9 +17,9 @@ namespace ParaisoRealB
            var navigationPage = new NavigationPage(new Inicio());
 
            
-            navigationPage.BarBackgroundColor = Color.Black;
+            navigationPage.BarBackgroundColor = Color.FromHex("#EBD022");
             
-            navigationPage.BarTextColor = Color.Black;
+            navigationPage.BarTextColor = Color.FromHex("#EBD022");
             MainPage = navigationPage;
 
           
