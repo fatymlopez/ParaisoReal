@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParaisoRealB.ViewModel;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace ParaisoRealB.View
         public MenuDesayuno()
         {
             InitializeComponent();
+            BindingContext = new MenuDVM();
 
         }
 

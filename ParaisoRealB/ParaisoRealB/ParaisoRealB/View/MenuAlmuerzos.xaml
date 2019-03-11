@@ -5,59 +5,84 @@
              x:Class="ParaisoRealB.View.MenuAlmuerzos">
 
 
-    <ScrollView>
-        <StackLayout>
+    <ContentPage.Content>
+        <ScrollView>
             <StackLayout>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Source="Aorder.jpg" Aspect="AspectFill" Grid.RowSpan="2"></Image>
-                    <StackLayout  Grid.Row="1" BackgroundColor="#80000000" Padding="12">
-                        <Label TextColor="White" Text="Ordena Aqui" FontSize="16"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Label>
-                    </StackLayout>
-                </Grid>
+                <StackLayout>
+                    <Image Source="bannerDesayuno" ></Image>
+                </StackLayout>
+                <StackLayout>
+                    <Picker 
+                            Title="Seleccione el tipo de evento"
+                            ItemsSource="{Binding ListCategoria}"
+                            ItemDisplayBinding="{Binding nomcategoria}"
+                            SelectedItem="{Binding SelectedCategory}"
+                            >
+                    </Picker>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Elija el combo que mas le guste!!"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           FontSize="24"
+                           HorizontalOptions="CenterAndExpand">
+                    </Label>
+                </StackLayout>
+                <ListView ItemsSource="{Binding ListMenu}"
+                          HasUnevenRows="True"
+                          SeparatorVisibility="None"
+                          BackgroundColor="White"
+                          >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout Padding="20" BackgroundColor="White">
+                                    <Frame CornerRadius="20" Padding="5">
+                                        <StackLayout Orientation="Horizontal">
+                                            <BoxView BackgroundColor="#FF5722" WidthRequest="4"></BoxView>
+                                            <Grid VerticalOptions="CenterAndExpand">
+                                                <Grid.ColumnDefinitions>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <StackLayout Grid.Row="0" Orientation="Horizontal">
+                                                    <Label
+                                            Text="Combo 1"
+                                            TextColor="#FF5722"
+                                            FontAttributes="Bold"
+                                            FontSize="20"></Label>
+                                                    <Label 
+                                            Text="$2.50"
+                                           HorizontalOptions="EndAndExpand"
+                                           TextColor="#FF5722"
+                                            FontAttributes="Bold"
+                                            FontSize="20"></Label>
+                                                </StackLayout>
+                                                <StackLayout Grid.Row="1">
+                                                    <Label Text="Frijoles, Platano, Café, Pan frances"></Label>
+                                                </StackLayout>
+                                                <StackLayout  Grid.Row="2">
+                                                    <Button BackgroundColor="#FF5722" 
+                                                            TextColor="White"
+                                                            HorizontalOptions="EndAndExpand"
+                                                            BorderRadius="20"
+                                                            BorderColor="Transparent"
+                                                            Text="Ordernar"
+                                                            ></Button>
+                                                </StackLayout>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
-
-            <Picker Title="Seleccione una Opcion" Margin="20"></Picker>
-            <ListView  ItemsSource="{x:Static local:MenuAVM.All}"
-                ItemSelected="OnListViewItemSelected">
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-
-                            <StackLayout VerticalOptions="FillAndExpand"
-                      Orientation="Horizontal"
-                      Padding="10,10,0,10"
-                      Spacing="30"
-                      BackgroundColor="White">
-
-                                <Label Text="{Binding Titulo}" 
-                      Style="{DynamicResource ListItemTextStyle}" />
-
-                                <Label Text="{Binding Descripcion}" 
-                      Style="{DynamicResource ListItemDetailTextStyle}"/>
-
-
-                              
-                                <Label Text="{Binding Precio}" 
-                      Style="{DynamicResource ListItemDetailTextStyle}"
-                                           HorizontalOptions="End"/>
-
-
-
-
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-
-            </ListView>
-
-
-
-        </StackLayout>
-    </ScrollView>
+        </ScrollView>
+    </ContentPage.Content>
+   
 </ContentPage>

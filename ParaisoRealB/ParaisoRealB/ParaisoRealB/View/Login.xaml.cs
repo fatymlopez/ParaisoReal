@@ -18,13 +18,8 @@ namespace ParaisoRealB.View
 		}
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-           
-        
+        {       
             Password.IsPassword = Password.IsPassword ? false : true;
-
-        
-
         }
     }
 }

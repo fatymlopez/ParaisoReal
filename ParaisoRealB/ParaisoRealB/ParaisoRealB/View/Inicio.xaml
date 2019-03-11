@@ -6,31 +6,31 @@
              NavigationPage.HasBackButton="False"
              BackgroundColor="White"
              x:Class="ParaisoRealB.View.Inicio">
- 
+
     <ContentPage.BindingContext>
         <vm:InicioVM></vm:InicioVM>
     </ContentPage.BindingContext>
 
     <ScrollView>
-        <StackLayout Padding="25" Margin="30">
-           
-                <Image Source="Logo.png"
+        <StackLayout Margin="25">
+
+            <Image Source="Logo.png"
                        VerticalOptions="CenterAndExpand" 
                        HorizontalOptions="CenterAndExpand">
-                </Image>
-                
-                <Button Text="Inicio" Command="{Binding InicioCommand}"
+            </Image>
+
+            <Button Text="Inicio" Command="{Binding InicioCommand}"
                       
                         BorderRadius="30"
-                        BackgroundColor="#EBD022"
-                        TextColor="White"></Button>
-                
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Image Source="facebook.png" HeightRequest="25"></Image>
-                    <Label Text="Paraiso Real Banquetes"></Label>
+                        BackgroundColor="#CDDC39"
+                        TextColor="White" FontAttributes="Bold"></Button>
 
-                </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Image Source="facebook.png" HeightRequest="25"></Image>
+                <Label Text="Paraiso Real Banquetes"></Label>
+
             </StackLayout>
-        </ScrollView>
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>

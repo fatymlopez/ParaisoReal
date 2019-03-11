@@ -10,6 +10,14 @@
         <vm:RegistroUVM></vm:RegistroUVM>
     </ContentPage.BindingContext>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem>
+            <ToolbarItem.Icon>
+                <FileImageSource File="Logo"></FileImageSource>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <Frame OutlineColor="#CFB346" CornerRadius="40" Margin="20">
         <StackLayout  BackgroundColor="White">
@@ -31,7 +39,7 @@
             <Button 
                      HeightRequest="46"
                      BorderRadius="23"
-                     BackgroundColor="#CFB346"
+                     BackgroundColor="#CDDC39"
                      Text="Registrate"
                      TextColor="White"
                     

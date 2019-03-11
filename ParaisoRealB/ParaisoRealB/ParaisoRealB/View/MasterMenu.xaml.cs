@@ -20,9 +20,6 @@ namespace ParaisoRealB.View
 
 
         }
-
-    
-
         protected override void OnAppearing()
          {
              base.OnAppearing();

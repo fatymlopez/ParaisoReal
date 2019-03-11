@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParaisoRealB.View.SubMenu"
-             xmlns:local="clr-namespace:ParaisoRealB.ViewModel"
-            
+             xmlns:local="clr-namespace:ParaisoRealB.ViewModel"           
              Title="sub"
              BackgroundColor="White">
 
@@ -16,7 +15,6 @@
                 ItemsSource="{x:Static local:SubPageVM.All}"
                 ItemSelected="OnListViewItemSelected"
                 BackgroundColor="White">
-                            
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -42,7 +40,6 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-               
             </ListView>
         </StackLayout>
     </ScrollView>
