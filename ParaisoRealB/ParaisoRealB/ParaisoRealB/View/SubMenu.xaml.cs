@@ -20,8 +20,7 @@ namespace ParaisoRealB.View
 			InitializeComponent ();
                      
         }
-      
-
+     
         private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             (sender as ListView).SelectedItem = null;

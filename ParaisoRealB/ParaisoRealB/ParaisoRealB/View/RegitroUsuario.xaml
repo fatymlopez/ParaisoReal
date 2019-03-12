@@ -19,7 +19,7 @@
     </ContentPage.ToolbarItems>
 
     <ScrollView>
-        <Frame OutlineColor="#CFB346" CornerRadius="40" Margin="20">
+        <Frame OutlineColor="#8BC34A" CornerRadius="40" Margin="20">
         <StackLayout  BackgroundColor="White">
 
             <Label Text="Registrate Aqui" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="Medium"></Label>
@@ -33,13 +33,46 @@
                 <Label Text="Ingrese su correo electronico"></Label>
             <locai:CtrlImage Image="correo" ImageHeigth="13" ImageWidth="13" Text="{Binding emailclcommand}"></locai:CtrlImage>
             <Label Text="Ingrese una contraseña"></Label>
-            <locai:CtrlImage Image="contra" ImageHeigth="13" ImageWidth="13" IsPassword="True" Text="{Binding passclcommand}"></locai:CtrlImage>
 
 
-            <Button 
+               
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                    <locai:CtrlImage Image="contra" 
+                                     ImageHeigth="13" 
+                                     ImageWidth="13"  
+                                     IsPassword="True" 
+                                     Text="{Binding passclcommand}"   
+                                     x:Name="Password"
+                                     Grid.ColumnSpan="2"
+                                     Grid.Column="0">
+                        
+                    </locai:CtrlImage>
+                <Image Source="Password.png" 
+                               HorizontalOptions="End" 
+                               VerticalOptions="Center" 
+                               Grid.Column="1" 
+                               HeightRequest="30"
+
+                             >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped1" 
+                                                      NumberOfTapsRequired="1">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                    </Grid>
+              
+
+
+                <Button 
                      HeightRequest="46"
                      BorderRadius="23"
-                     BackgroundColor="#CDDC39"
+                     BackgroundColor="#8BC34A"
                      Text="Registrate"
                      TextColor="White"
                     

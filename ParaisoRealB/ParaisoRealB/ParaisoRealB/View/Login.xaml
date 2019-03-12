@@ -50,6 +50,10 @@
                                Image="key"
                                ImageHeigth="15"
                                ImageWidth="15">
+                            
+                            
+                            
+
                         </local:CtrlImage>
                         <Image Source="Password.png" 
                                HorizontalOptions="End" 
@@ -68,7 +72,7 @@
                     <Button 
                      HeightRequest="46"
                      BorderRadius="23"
-                     BackgroundColor="#CDDC39"
+                     BackgroundColor="#8BC34A"
                      Text="Iniciar Sesion"
                      TextColor="White"                   
                      Margin="10,20"

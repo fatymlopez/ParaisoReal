@@ -22,10 +22,12 @@
             <Button Text="Inicio" Command="{Binding InicioCommand}"
                       
                         BorderRadius="30"
-                        BackgroundColor="#CDDC39"
+                        BackgroundColor="#8BC34A"
                         TextColor="White" FontAttributes="Bold"></Button>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Buen Sabor en todos tus eventos"></Label>
+                <Label Text="Contactanos al Tel: 2661-6837"></Label>
                 <Image Source="facebook.png" HeightRequest="25"></Image>
                 <Label Text="Paraiso Real Banquetes"></Label>
 

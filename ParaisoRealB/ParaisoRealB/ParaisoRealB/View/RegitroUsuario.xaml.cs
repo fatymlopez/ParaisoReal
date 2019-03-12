@@ -16,5 +16,12 @@ namespace ParaisoRealB.View
 		{
 			InitializeComponent ();
 		}
-	}
+
+        
+
+        public void TapGestureRecognizer_Tapped1(object sender, EventArgs e)
+        {
+            Password.IsPassword = Password.IsPassword ? false : true;
+        }
+    }
 }
