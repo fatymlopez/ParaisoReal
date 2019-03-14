@@ -12,60 +12,44 @@
     <ScrollView>
         <StackLayout>
             <StackLayout>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Source="antojitos.jpg" Aspect="AspectFill" Grid.RowSpan="2"></Image>
-                    <StackLayout  Grid.Row="1" BackgroundColor="#80000000" Padding="12">
-                        <Label TextColor="White" Text="Paraiso Real" FontSize="16"  HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Label>
-                    </StackLayout>
-                </Grid>
+                <Image Source="bannerDesayuno"></Image>
             </StackLayout>
 
-            <Button Text="+ Agregar algo mas a la orden"        
+            <StackLayout Margin="20">
+                <Label Text="Total a Pagar"></Label>
+                <Label Text="">
                     
-                     BorderRadius="23"
-                     BackgroundColor="White"                   
-                     TextColor="Black"                   
-                     Margin="10,20"
-                    Grid.Column="0"
-                    Command="{Binding AgregarCommand }">
-            </Button>
-            
+                </Label>
 
-            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center">
-
-                <Label Text="Total a Pagar:" Grid.Column="0" Grid.Row="0"></Label>
-                <Label Grid.Column="1" Grid.Row="0" Text="3"></Label>
-            </StackLayout>
-            <StackLayout  HorizontalOptions="Center">
+                <Label Text="Seleccione su Ubicacion"></Label>
+                <Picker></Picker>
 
 
-               
 
                 <Button Text="Cancelar Orden"        
                      HeightRequest="46"
                      BorderRadius="23"                
-                     BackgroundColor="White"                   
+                     BackgroundColor="Transparent"                   
                      TextColor="Black"                   
                      Margin="10,0"
                     Grid.Column="1">
                 </Button>
 
-             
-            </StackLayout>
-            <Button Text="Reservar Orden" 
-                        FontSize="Small"
-                        
-                     HeightRequest="46"
-                     BorderRadius="23"                
-                     BackgroundColor="#CFB346"                   
-                     TextColor="White"                   
-                     Margin="10,0"
+         
+
+                <Button Text="Reservar Orden" 
+                    FontSize="Small"   
+                    HeightRequest="46"
+                    BorderRadius="23"                
+                    BackgroundColor="#FF5722"                   
+                    TextColor="White"                   
+                    Margin="10,0"
+                    HorizontalOptions="CenterAndExpand"
                     Command="{Binding DecisionCommand}">
-            </Button>
+                </Button>
+            </StackLayout>
+
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>

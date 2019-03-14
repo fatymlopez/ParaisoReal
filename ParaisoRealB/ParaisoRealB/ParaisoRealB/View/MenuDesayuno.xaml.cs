@@ -18,7 +18,7 @@ namespace ParaisoRealB.View
         public MenuDesayuno()
         {
             InitializeComponent();
-            BindingContext = new MenuDVM();
+           // BindingContext = new MenuDVM();
 
         }
 

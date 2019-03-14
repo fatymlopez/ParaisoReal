@@ -30,7 +30,7 @@ namespace ParaisoRealB.ViewModel
             //ojo hacer una validacion
 
 
-            App.Current.MainPage.Navigation.PushAsync(new Login());
+            
         }
 
      

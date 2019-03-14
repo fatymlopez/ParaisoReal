@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
              x:Class="ParaisoRealB.View.MenuDesayuno">
 
+    <ContentPage.BindingContext>
+        <vm:MenuDVM></vm:MenuDVM>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -60,7 +64,7 @@
                                                             HorizontalOptions="EndAndExpand"
                                                             BorderRadius="20"
                                                             BorderColor="Transparent"
-                                                            Command="{Binding Ordenar}"
+                                                            Command="{Binding Ordenarhoy}"
                                                             Text="Ordernar"
                                                             ></Button>
                                                 </StackLayout>

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using ParaisoRealB.Model.Modeldb;
+using ParaisoRealB.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,6 +9,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Xamarin.Forms;
 
 namespace ParaisoRealB.ViewModel
 {
@@ -54,6 +56,8 @@ namespace ParaisoRealB.ViewModel
                 nomproducto = "Combo 1",
                 //precio = 2.5,
                 descripcion = "Frijoles, Platano, Café, Pan frances"
+               
+
             });
             ListMenu.Add(new productos
             {
@@ -61,9 +65,21 @@ namespace ParaisoRealB.ViewModel
                 nomproducto = "Combo 2",
                // precio = 2.5,
                 descripcion = "Frijoles, Platano, Café, Pan frances, pan dulce"
+                
             });
             getCategoria();
 
+            Ordenarhoy = new Command(PantallaOrder);
+
+        }
+
+        #region comandos
+        public Command Ordenarhoy { get; set; }
+        #endregion
+
+        public async void PantallaOrder(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new VerOrden());
         }
 
         public async void getCategoria()
@@ -90,6 +106,8 @@ namespace ParaisoRealB.ViewModel
                 }
             }
         }
+
+       
 
     }
 }
