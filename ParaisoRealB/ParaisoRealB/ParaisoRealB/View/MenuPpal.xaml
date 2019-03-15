@@ -8,14 +8,14 @@
         <vm:MenuPpalVM></vm:MenuPpalVM>
     </ContentPage.BindingContext>
 
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem>
             <ToolbarItem.Icon>
-                <FileImageSource File="Logo"></FileImageSource>
+                <FileImageSource File="Logor"></FileImageSource>
             </ToolbarItem.Icon>
         </ToolbarItem>
-    </ContentPage.ToolbarItems>
-    
+    </ContentPage.ToolbarItems>-->
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="White">

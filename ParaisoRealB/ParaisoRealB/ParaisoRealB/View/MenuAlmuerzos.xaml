@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:ParaisoRealB.ViewModel"
              x:Class="ParaisoRealB.View.MenuAlmuerzos">
 
-
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>

@@ -10,17 +10,9 @@
         <vm:LoginVM></vm:LoginVM>
     </ContentPage.BindingContext>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem>
-            <ToolbarItem.Icon>
-                <FileImageSource File="Logo"></FileImageSource>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
-
     <ScrollView>
         <StackLayout>
-            <Label Text="Login" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30" TextColor="Black"></Label>
+            <Label Text="Login" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30" TextColor="Black" Margin="20"></Label>
             <Image Source="login.png" HeightRequest="125" HorizontalOptions="Center" ></Image>
             <StackLayout BackgroundColor="White" Margin="20">
                 <StackLayout Margin="20">

@@ -15,12 +15,12 @@
         <StackLayout Margin="25">
 
             <Image Source="Logo.png"
-                       VerticalOptions="CenterAndExpand" 
-                       HorizontalOptions="CenterAndExpand">
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="20">
             </Image>
 
             <Button Text="Inicio" Command="{Binding InicioCommand}"
-                      
                         BorderRadius="30"
                         BackgroundColor="#8BC34A"
                         TextColor="White" FontAttributes="Bold"></Button>
@@ -28,7 +28,16 @@
             <StackLayout Orientation="Vertical" HorizontalOptions="Center">
                 <Label Text="Buen Sabor En Todos Tus Eventos" HorizontalOptions="Center"  FontAttributes="Bold"></Label>
                 <Label Text="Contactanos al Tel: 2661-6837" HorizontalOptions="Center" FontAttributes="Bold"></Label>
-                
+                <Label Text="Siguenos en Facebook" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+
+                <Image Source="facebook.png" HeightRequest="{OnIdiom Default=30, Phone=30, Tablet=40}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_Tapped"
+                                NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="@paraisorealbanquetes" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
             </StackLayout>
         </StackLayout>
     </ScrollView>

@@ -10,14 +10,7 @@
         <vm:RegistroUVM></vm:RegistroUVM>
     </ContentPage.BindingContext>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem>
-            <ToolbarItem.Icon>
-                <FileImageSource File="Logo"></FileImageSource>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
-
+  
     <ScrollView>
         <Frame OutlineColor="#8BC34A" CornerRadius="40" Margin="20">
         <StackLayout  BackgroundColor="White">

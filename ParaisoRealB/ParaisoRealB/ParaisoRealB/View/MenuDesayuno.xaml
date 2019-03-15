@@ -2,16 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
-             x:Class="ParaisoRealB.View.MenuDesayuno">
+             x:Class="ParaisoRealB.View.MenuDesayuno"
+             BackgroundColor="White">
 
     <ContentPage.BindingContext>
         <vm:MenuDVM></vm:MenuDVM>
     </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <StackLayout>
-                    <Image Source="bannerDesayuno"></Image>
+                    <Image Source="bannerDesayuno" Aspect="AspectFill"></Image>
                 </StackLayout>
                 
                 <StackLayout>
@@ -64,7 +66,8 @@
                                                             HorizontalOptions="EndAndExpand"
                                                             BorderRadius="20"
                                                             BorderColor="Transparent"
-                                                            Command="{Binding Ordenarhoy}"
+                                                            Command="{Binding  Ordenarhoy }"
+                                                            
                                                             Text="Ordernar"
                                                             ></Button>
                                                 </StackLayout>

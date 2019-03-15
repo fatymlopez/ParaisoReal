@@ -56,7 +56,7 @@ namespace ParaisoRealB.ViewModel
                 nomproducto = "Combo 1",
                 //precio = 2.5,
                 descripcion = "Frijoles, Platano, Café, Pan frances"
-               
+                
 
             });
             ListMenu.Add(new productos
@@ -77,7 +77,7 @@ namespace ParaisoRealB.ViewModel
         public Command Ordenarhoy { get; set; }
         #endregion
 
-        public async void PantallaOrder(object obj)
+        public async void PantallaOrder()
         {
             await Application.Current.MainPage.Navigation.PushAsync(new VerOrden());
         }

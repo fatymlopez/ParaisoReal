@@ -16,5 +16,10 @@ namespace ParaisoRealB.View
 		{
 			InitializeComponent ();
 		}
-	}
+
+        public  void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Device.OpenUri(new Uri("https://www.facebook.com/paraisorealbanquetes/"));
+        }
+    }
 }
