@@ -49,7 +49,7 @@ namespace ParaisoRealB.ViewModel
 
         public MenuDVM()
         {
-            ListMenu = new ObservableCollection<productos>();
+            /*ListMenu = new ObservableCollection<productos>();
             ListMenu.Add(new productos
             {
                 id = 1,
@@ -69,14 +69,11 @@ namespace ParaisoRealB.ViewModel
             });
             getCategoria();
 
-            Ordenarhoy = new Command(PantallaOrder);
+            Ordenarhoy = new Command(PantallaOrder);*/
 
         }
 
-        #region comandos
-        public Command Ordenarhoy { get; set; }
-        #endregion
-
+      
         public async void PantallaOrder()
         {
             await Application.Current.MainPage.Navigation.PushAsync(new VerOrden());
@@ -86,13 +83,8 @@ namespace ParaisoRealB.ViewModel
         {
             var cliente = new HttpClient();
             string URL = string.Format("http://paraisoreal19.somee.com/api/categoriass/Getcategorias");
-            // var resp = await cliente.GetAsync(URL);
             var miArreglo = await cliente.GetStringAsync(URL);
-            //var result = resp.Content.ReadAsStringAsync().Result;
-            //JObject values = JObject.Parse(result);
             ListCategoria = JsonConvert.DeserializeObject<List<categorias>>(miArreglo);
-            //int lon = values.Count;
-            //Debug.WriteLine(lon);
             Debug.WriteLine(ListCategoria);
 
         }

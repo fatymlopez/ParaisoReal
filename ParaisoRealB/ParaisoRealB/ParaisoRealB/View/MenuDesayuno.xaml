@@ -46,19 +46,19 @@
                                                 </Grid.RowDefinitions>
                                                 <StackLayout Grid.Row="0" Orientation="Horizontal">
                                                     <Label
-                                            Text="Combo 1"
+                                            Text="{Binding nomproducto}"
                                             TextColor="#FF5722"
                                             FontAttributes="Bold"
                                             FontSize="20"></Label>
                                                     <Label 
-                                            Text="$2.50"
+                                            Text="{Binding precio}"
                                            HorizontalOptions="EndAndExpand"
                                            TextColor="#FF5722"
                                             FontAttributes="Bold"
                                             FontSize="20"></Label>
                                                 </StackLayout>
                                                 <StackLayout Grid.Row="1">
-                                                    <Label Text="Frijoles, Platano, Café, Pan frances"></Label>
+                                                    <Label Text="{Binding descripcion }"></Label>
                                                 </StackLayout>
                                                 <StackLayout  Grid.Row="2">
                                                     <Button BackgroundColor="#FF5722" 
@@ -66,8 +66,8 @@
                                                             HorizontalOptions="EndAndExpand"
                                                             BorderRadius="20"
                                                             BorderColor="Transparent"
-                                                            Command="{Binding  Ordenarhoy }"
-                                                            
+                                                            x:Name="btndesayuno"
+                                                            Clicked="Btndesayuno_Clicked"
                                                             Text="Ordernar"
                                                             ></Button>
                                                 </StackLayout>

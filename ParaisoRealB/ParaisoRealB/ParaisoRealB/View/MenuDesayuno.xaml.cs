@@ -22,6 +22,9 @@ namespace ParaisoRealB.View
 
         }
 
-       
+        public async void Btndesayuno_Clicked(object sender, EventArgs e)
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new Ordenar()); 
+        }
     }
 }
