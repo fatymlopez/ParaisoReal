@@ -28,10 +28,7 @@ namespace ParaisoRealB.View
         public async void getdesayuno()
         {
          
-            
            
-
-
 
             var client = new HttpClient();
             string URL = string.Format("http://paraisoreal19.somee.com/api/productoss/Getproductos");
