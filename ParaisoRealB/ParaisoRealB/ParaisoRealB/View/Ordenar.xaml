@@ -19,8 +19,6 @@
             <StackLayout Margin="20">
                 <Label Text="Cantidad a Ordenar"></Label>
                 <Entry></Entry>
-                <Label Text="Si Desea Agregar Bebida Seleccione una Opcion"></Label>
-                <Picker></Picker>
                 <Button BackgroundColor="#FF5722" 
                     TextColor="White"
                     HorizontalOptions="CenterAndExpand"

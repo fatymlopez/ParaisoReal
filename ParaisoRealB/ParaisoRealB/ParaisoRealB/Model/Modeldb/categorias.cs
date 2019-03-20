@@ -8,5 +8,6 @@ namespace ParaisoRealB.Model.Modeldb
     {
         public int id { get; set; }
         public string nomcategoria { get; set; }
+       
     }
 }
