@@ -20,19 +20,7 @@ namespace ParaisoRealB.View
 
         }
 
-        private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            (sender as ListView).SelectedItem = null;
-
-            if (args.SelectedItem != null)
-            {
-                ViewModel.MenuAVM pageData = args.SelectedItem as ViewModel.MenuAVM;
-                Page page = (Page)Activator.CreateInstance(pageData.TypeA);
-                await Navigation.PushAsync(page);
-
-
-            }
-        }
+        
 
     }
 }
