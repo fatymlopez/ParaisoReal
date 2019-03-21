@@ -23,7 +23,7 @@ namespace ParaisoRealB.ViewModel
 
         public void VerOrdenC()
         {
-           // App.Current.MainPage.Navigation.PushAsync(new VerOrden());
+           //App.Current.MainPage.Navigation.PushAsync(new VerOrden());
         }
 
         #region comandos

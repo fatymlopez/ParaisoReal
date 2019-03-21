@@ -8,28 +8,19 @@
         <vm:MenuPpalVM></vm:MenuPpalVM>
     </ContentPage.BindingContext>
 
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem>
-            <ToolbarItem.Icon>
-                <FileImageSource File="Logor"></FileImageSource>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>-->
 
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="White">
                 <!-- Place new controls here -->
 
-                <StackLayout Padding="20">
+                <StackLayout Margin="20,20,10,10">
                     <Label Text="Hola!"
                    FontAttributes="Bold"
-                   FontSize="Large"
-                   HorizontalOptions="CenterAndExpand"></Label>
+                   FontSize="Large"></Label>
                     <Label Text="¿Que de deseas ordenar?"
                    FontAttributes="Bold"
-                   FontSize="Large"
-                   HorizontalOptions="CenterAndExpand">
+                   FontSize="Large">
                     </Label>
                 </StackLayout>
                 <StackLayout Padding="20">
@@ -39,7 +30,7 @@
                 CornerRadius="20">
                         
                         <StackLayout>
-                            <Image Source="desayuno.png"
+                            <Image Source="desatipico.png"
                                    HeightRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"
                                    WidthRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"></Image>
                             <Label 
@@ -62,7 +53,8 @@
                 BackgroundColor="#F44336" 
                 CornerRadius="20">
                         <StackLayout>
-                            <Image Source="almuerzo.png"
+                            <Image Source="Almuerzo.png"
+                                   
                                    HeightRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"
                                    WidthRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"></Image>
                             <Label 
@@ -83,7 +75,7 @@
                 BackgroundColor="#FFC107" 
                 CornerRadius="20">
                         <StackLayout>
-                            <Image Source="antojitos.png"
+                            <Image Source="Antojos.png"
                                     HeightRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"
                                     WidthRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"></Image>
                             <Label 
