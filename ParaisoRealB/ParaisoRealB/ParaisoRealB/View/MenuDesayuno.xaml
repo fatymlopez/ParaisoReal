@@ -16,11 +16,12 @@
                 </StackLayout>
 
                 <StackLayout>
-                    <Label Text="Arma tu propio desayuno"
+                    <Label Text="{Binding categorias.nomcategoria}"
                            TextColor="Black"
                            FontAttributes="Bold"
                            FontSize="24"
-                           HorizontalOptions="CenterAndExpand">
+                           HorizontalOptions="CenterAndExpand"
+                           x:Name="id">
                     </Label>
                 </StackLayout>
                 <ListView x:Name="ListDesayuno"
