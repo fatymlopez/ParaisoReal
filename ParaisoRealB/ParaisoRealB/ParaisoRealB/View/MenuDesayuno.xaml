@@ -16,13 +16,15 @@
                 </StackLayout>
 
                 <StackLayout>
-                    <Label Text="Arma tu propio desayuno"
-                           TextColor="Black"
+                    <Label Text="{Binding categorias.nomcategoria}"
+                        TextColor="Black"
                            FontAttributes="Bold"
                            FontSize="24"
-                           HorizontalOptions="CenterAndExpand">
+                           HorizontalOptions="CenterAndExpand"
+                           x:Name="idcat">
                     </Label>
                 </StackLayout>
+                <ActivityIndicator></ActivityIndicator>
                 <ListView x:Name="ListDesayuno"
                           ItemSelected="ListDesayuno_ItemSelected"
                            HasUnevenRows="True"

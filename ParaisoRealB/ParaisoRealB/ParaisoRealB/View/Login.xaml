@@ -16,13 +16,21 @@
             <Image Source="login.png" HeightRequest="125" HorizontalOptions="Center" ></Image>
             <StackLayout BackgroundColor="White" Margin="20">
                 <StackLayout Margin="20">
+                    <!--Text="{Binding correocommand}"-->
+                    <ActivityIndicator
+                        x:Name="indicator"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center">
+                        
+                    </ActivityIndicator>
                     <local:CtrlImage  
                                Placeholder="Correo electronico"
-                               Text="{Binding correocommand}"               
+                               Text="{Binding emailcl}"           
                                Image="user"
                                HorizontalOptions="FillAndExpand"
                                ImageWidth="15"
-                               ImageHeigth="15">
+                               ImageHeigth="15"
+                               x:Name="correousu">
                     </local:CtrlImage>
                 </StackLayout>
                 <StackLayout Grid.Row="2" Grid.Column="1" Margin="20,10,20,10">
@@ -32,9 +40,10 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
+                        <!--Text="{Binding contracommanad}"-->
                         <local:CtrlImage
                                Placeholder="Contraseña"
-                               Text="{Binding contracommanad}"
+                               Text="{Binding passcl}"
                                IsPassword="True"
                                x:Name="Password"
                                Grid.ColumnSpan="2"
@@ -68,7 +77,8 @@
                      Text="Iniciar Sesion"
                      TextColor="White"                   
                      Margin="10,20"
-                     Command="{Binding MenusCommand}"/>
+                     x:Name="IniciarS"
+                        Clicked="IniciarS_Clicked"/>
                 </StackLayout>
             </StackLayout>
           
