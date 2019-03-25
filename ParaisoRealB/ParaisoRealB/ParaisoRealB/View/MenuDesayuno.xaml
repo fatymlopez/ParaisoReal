@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            
-         
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"       
              x:Class="ParaisoRealB.View.MenuDesayuno"
              BackgroundColor="White">
 
@@ -16,8 +14,8 @@
                 </StackLayout>
 
                 <StackLayout>
-                    <Label Text="{Binding categorias.nomcategoria}"
-                        TextColor="Black"
+                    <Label Text="Ordena tu Desayuno Aqui"
+                           TextColor="Black"
                            FontAttributes="Bold"
                            FontSize="24"
                            HorizontalOptions="CenterAndExpand"
@@ -28,6 +26,7 @@
                 <ListView x:Name="ListDesayuno"
                           ItemSelected="ListDesayuno_ItemSelected"
                            HasUnevenRows="True"
+                          SeparatorVisibility="None"
                           BackgroundColor="White">
                     <ListView.ItemTemplate>
                         <DataTemplate>
