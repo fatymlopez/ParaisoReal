@@ -2,9 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ParaisoRealB.ViewModel"
-             x:Class="ParaisoRealB.View.MenuAlmuerzos">
+             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
+             x:Class="ParaisoRealB.View.MenuAlmuerzos"
+             BackgroundColor="White">
 
-    <ContentPage.Content>
+    <ContentPage.BindingContext
+        BindingContext="{x:Reference MenuAVM}" IsVisible="{Binding Path=ordenaraqui}">
+            <vm:MenuAVM></vm:MenuAVM>
+    </ContentPage.BindingContext>
+
+   
+
+        <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <StackLayout>
@@ -20,7 +29,7 @@
                     </Picker>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Elija el combo que mas le guste!!"
+                    <Label Text="Ordena lo que tu quieras!!"
                            TextColor="Black"
                            FontAttributes="Bold"
                            FontSize="24"
@@ -69,6 +78,7 @@
                                                             HorizontalOptions="EndAndExpand"
                                                             BorderRadius="20"
                                                             BorderColor="Transparent"
+                                                            Command="{Binding Source={x:Reference MenuAlmuerzos}, Path=BindingContext.ordenaraqui}"
                                                             Text="Ordernar"
                                                             ></Button>
                                                 </StackLayout>
