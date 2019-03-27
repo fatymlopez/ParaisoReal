@@ -53,6 +53,5 @@ namespace ParaisoRealB.View
             }
         }
 
-       
     }
 }
