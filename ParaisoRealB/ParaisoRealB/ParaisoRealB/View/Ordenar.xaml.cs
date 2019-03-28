@@ -1,7 +1,10 @@
-﻿using ParaisoRealB.Model.Modeldb;
+﻿using Newtonsoft.Json;
+using ParaisoRealB.Model.Modeldb;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,27 +19,53 @@ namespace ParaisoRealB.View
 		public Ordenar ()
 		{
 			InitializeComponent ();
+
+            
 		}
 
-        public void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        
+        //public void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+
+
+
+        //    double value = e.NewValue;
+        //    cant.Text = string.Format("{0}", value);
+
+           
+
+
+        //}
+
+        public async void BtnOrdenar_Clicked(object sender, EventArgs e)
         {
-            
-
-            double value = e.NewValue;
-            //price.Text = string.Format("Total {0}" , value);
-            cant.Text = string.Format("Cantidad {0}", value);
-
-          //decimal  p1 = Convert.ToDecimal(price.Text.ToString());
-          //double  p2 = Convert.ToDouble(cant.Text.ToString());
-          //  double total = Convert.ToDouble(ttal.Text.ToString());
-          //  total = p1 * p2;
+            // double p1 = Convert.ToDouble(price.Text.ToString());
+            //double p2 = Convert.ToDouble(cant.Text.ToString());
+            //double total = Convert.ToDouble(ttal.Text.ToString());
+            //total = p1 * p2;
 
 
-        }
 
-        public void BtnOrdenar_Clicked(object sender, EventArgs e)
-        {
+            reservacion newreserva = new reservacion()
+            {
+                cantidad = Convert.ToInt32(cant.Text.ToString())
 
+            };
+
+            var json = JsonConvert.SerializeObject(newreserva);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpClient client = new HttpClient();
+            var result = await client.PostAsync("http://paraisoreal19.somee.com/api/reservacions/Postreservacion", content);
+
+            if (result.StatusCode == HttpStatusCode.Created)
+            {
+                await App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
+
+
+
+
+
+            }
         }
     }
 }

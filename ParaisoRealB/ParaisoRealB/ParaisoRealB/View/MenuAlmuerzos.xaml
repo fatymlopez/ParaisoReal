@@ -110,6 +110,8 @@
                                                        
                                                     </Label>
                                             </StackLayout>
+
+                                           
                                                 <!--<Label Text="(uninitialized)"
                                                        x:Name="cant"
                                                        Grid.Column="0"

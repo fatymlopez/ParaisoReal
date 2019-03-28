@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParaisoRealB.View.RegitroUsuario"
              xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
+             xmlns:behavior="clr-namespace:ParaisoRealB.Controllers"
              xmlns:locai="clr-namespace:ParaisoRealB.Controllers"
              BackgroundColor="White">
 
@@ -15,25 +16,44 @@
         <Frame OutlineColor="#8BC34A" CornerRadius="40" Margin="20">
         <StackLayout  BackgroundColor="White">
 
-            <Label Text="Registrate Aqui" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="Medium"></Label>
-            
-            <Label Text="Ingrese su nombre completo" Margin="0,20,0,0"></Label>
-            <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13" Text="{Binding nombreclcommand}" ></locai:CtrlImage>
+                <Label Text="Registrate Aqui" 
+                   HorizontalOptions="Center" 
+                   TextColor="Black" 
+                   FontAttributes="Bold" 
+                   FontSize="Medium">
+                </Label>
+
+                <Label Text="Ingrese su nombre completo" 
+                   Margin="0,20,0,0">
+                </Label>
+                <locai:CtrlImage Image="users" 
+                             ImageHeigth="13" 
+                             ImageWidth="13" 
+                             Text="{Binding nombreclcommand}">
+                </locai:CtrlImage>
 
             <Label Text="Ingrese su numero de celular"></Label>
-            <locai:CtrlImage Image="users" ImageHeigth="13" ImageWidth="13" Text="{Binding cellclcommand}" ></locai:CtrlImage>
+                <locai:CtrlImage Image="users" 
+                             ImageHeigth="13" 
+                             ImageWidth="13" 
+                             Text="{Binding cellclcommand}">
+                    <!--<locai:CtrlImage.Behaviors>
+                        <behavior:MaskedBehavior Mask="0000-0000"></behavior:MaskedBehavior>
+                    </locai:CtrlImage.Behaviors>-->
+                </locai:CtrlImage>
 
                 <Label Text="Ingrese su correo electronico"></Label>
-            <locai:CtrlImage Image="correo" ImageHeigth="13" ImageWidth="13" Text="{Binding emailclcommand}"></locai:CtrlImage>
-            <Label Text="Ingrese una contraseña"></Label>
-
-
-               
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
+                <locai:CtrlImage Image="correo" 
+                             ImageHeigth="13" 
+                             ImageWidth="13" 
+                             Text="{Binding emailclcommand}">
+                </locai:CtrlImage>
+                <Label Text="Ingrese una contraseña"></Label>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
                     <locai:CtrlImage Image="contra" 
                                      ImageHeigth="13" 
@@ -43,32 +63,25 @@
                                      x:Name="Password"
                                      Grid.ColumnSpan="2"
                                      Grid.Column="0">
-                        
                     </locai:CtrlImage>
-                <Image Source="Password.png" 
-                               HorizontalOptions="End" 
-                               VerticalOptions="Center" 
-                               Grid.Column="1" 
-                               HeightRequest="30"
-
-                             >
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped1" 
-                                                      NumberOfTapsRequired="1">
-                        </TapGestureRecognizer>
-                    </Image.GestureRecognizers>
-                </Image>
-                    </Grid>
-              
-
-
+                    <Image Source="Password.png" 
+                       HorizontalOptions="End" 
+                       VerticalOptions="Center" 
+                       Grid.Column="1" 
+                       HeightRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped1" 
+                                              NumberOfTapsRequired="1">
+                            </TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
                 <Button 
                      HeightRequest="46"
                      BorderRadius="23"
                      BackgroundColor="#8BC34A"
                      Text="Registrate"
                      TextColor="White"
-                    
                      Margin="10,20"
                      Command="{Binding RegistroCommand}"/>
         </StackLayout>
