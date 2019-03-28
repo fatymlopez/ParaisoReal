@@ -59,6 +59,7 @@ namespace ParaisoRealB.View
                 {
                     Constantes.usuario = item.emailcl;
                     Constantes.contraseña = item.passcl;
+                    Constantes.nombre = item.nombrecl;
                     Constantes.idusuario = item.id;
                     break;
                 }
@@ -76,6 +77,7 @@ namespace ParaisoRealB.View
             }
             else
             {
+                await App.Current.MainPage.DisplayAlert("Mensaje", "Bienvenido" + Constantes.nombre, "ok");
                 await Application.Current.MainPage.Navigation.PushAsync(new MenuPpal());
                 
             }

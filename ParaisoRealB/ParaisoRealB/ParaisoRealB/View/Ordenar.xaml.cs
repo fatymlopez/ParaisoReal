@@ -2,6 +2,7 @@
 using ParaisoRealB.Model.Modeldb;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -14,23 +15,43 @@ using Xamarin.Forms.Xaml;
 namespace ParaisoRealB.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Ordenar : ContentPage
+	public partial class Ordenar : ContentPage, INotifyPropertyChanged
 	{
-		public Ordenar ()
+        Model.Modeldb.productos product;
+
+        public Ordenar ()
 		{
 			InitializeComponent ();
 
-            
+            product = BindingContext as Model.Modeldb.productos;
 		}
+        private decimal precio_BF;
 
+        public decimal precio
+        {
+            get { return precio_BF; }
+            set {
+                precio_BF = Convert.ToDecimal(NumPlatos) * product.precio;
+                OnPropertyChanged();
+            }
+        }
+
+        private double NumPlatos_BF;
+
+        public double NumPlatos
+        {
+            get { return NumPlatos_BF; }
+            set { NumPlatos_BF = value; }
+        }
 
         public void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
 
             double value = e.NewValue;
+            
             cant.Text = string.Format("{0}", value);
 
-
+            
 
 
         }

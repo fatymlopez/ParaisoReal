@@ -14,8 +14,12 @@ namespace ParaisoRealB.View
         public MenuPpal()
         {
             InitializeComponent();
+
+           
                     
         }
+
+        
      
     }
 }

@@ -9,6 +9,7 @@ namespace ParaisoRealB
         public static int idusuario { get; set; }
         public static string usuario { get; set; }
         public static string contraseña { get; set; }
+        public static string nombre { get; set; }
 
     }
 }

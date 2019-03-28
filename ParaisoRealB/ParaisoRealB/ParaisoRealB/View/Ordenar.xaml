@@ -23,6 +23,7 @@
                 </Label>
                 <Stepper Increment="1"
                          Minimum="0"
+                         Value="{Binding NumPlatos}"
                          ValueChanged ="Stepper_ValueChanged"
                          Grid.Column="1"
                          Grid.Row="2">

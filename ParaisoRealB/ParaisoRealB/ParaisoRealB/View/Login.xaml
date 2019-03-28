@@ -16,7 +16,7 @@
             <Image Source="login.png" HeightRequest="125" HorizontalOptions="Center" ></Image>
             <StackLayout BackgroundColor="White" Margin="20">
                 <StackLayout Margin="20">
-                    <!--Text="{Binding correocommand}"-->
+                   
                     <ActivityIndicator
                         x:Name="indicator"
                         HorizontalOptions="Center"
@@ -40,7 +40,7 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <!--Text="{Binding contracommanad}"-->
+                       
                         <local:CtrlImage
                                Placeholder="Contraseña"
                                Text="{Binding passcl}"
