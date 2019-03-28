@@ -12,7 +12,7 @@ namespace ParaisoRealB.ViewModel
         public LoginVM()
         {
             RegistroCommand = new Command(FormularioR);
-           // MenusCommand = new Command(VerMenus);
+           //MenusCommand = new Command(VerMenus);
         }
         /*public async void VerMenus()
         {
@@ -29,6 +29,8 @@ namespace ParaisoRealB.ViewModel
         {
             await App.Current.MainPage.Navigation.PushAsync(new RegitroUsuario());
         }
+
+       
 
         #region propiedades   
         //public string correocommand { get; set; }

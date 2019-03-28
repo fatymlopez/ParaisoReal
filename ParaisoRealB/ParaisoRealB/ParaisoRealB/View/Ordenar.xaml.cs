@@ -23,19 +23,17 @@ namespace ParaisoRealB.View
             
 		}
 
-        
-        //public void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
-        //{
+
+        public void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
+            double value = e.NewValue;
+            cant.Text = string.Format("{0}", value);
 
 
 
-        //    double value = e.NewValue;
-        //    cant.Text = string.Format("{0}", value);
 
-           
-
-
-        //}
+        }
 
         public async void BtnOrdenar_Clicked(object sender, EventArgs e)
         {

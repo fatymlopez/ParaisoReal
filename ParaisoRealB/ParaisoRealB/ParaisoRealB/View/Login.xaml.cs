@@ -25,6 +25,8 @@ namespace ParaisoRealB.View
             Password.IsPassword = Password.IsPassword ? false : true;
         }
 
+        //validacion campos
+
         public async void IniciarS_Clicked(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(correousu.Text))
@@ -42,27 +44,41 @@ namespace ParaisoRealB.View
                 return;
             }
 
+            //obtener campos...
+
             indicator.IsRunning = true;
             IniciarS.IsEnabled = false;
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://paraisoreal19.somee.com");
-            string url = string.Format("http://paraisoreal19.somee.com/api/clientes/Getcliente/{0}/{1}", correousu.Text, Password.Text);
-            var response = await client.GetAsync(url);
-            var result = response.Content.ReadAsStreamAsync().Result;
+            var client = new HttpClient();
+            string URL = string.Format("http://paraisoreal19.somee.com/api/clientes/Getcliente");
+            var miArreglo = await client.GetStringAsync(URL);
+   
+            var vercliente = JsonConvert.DeserializeObject<List<cliente>>(miArreglo);
+            foreach (var item in vercliente)
+            {
+                if (item.emailcl == correousu.Text && item.passcl==Password.Text)
+                {
+                    Constantes.usuario = item.emailcl;
+                    Constantes.contraseña = item.passcl;
+                    Constantes.idusuario = item.id;
+                    break;
+                }
+            }
+
             indicator.IsRunning = false;
             IniciarS.IsEnabled = true;
-          
-            if (string.IsNullOrEmpty (result.ToString()) || result.ToString() == "null")
+            
+            if (Constantes.idusuario==0)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Error", "Datos no validos", "Ok");
                 Password.Text = string.Empty;
                 Password.Focus(); 
                 return;
             }
-
-            await App.Current.MainPage.Navigation.PushAsync(new MenuPpal());
-         
-
+            else
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(new MenuPpal());
+                
+            }
 
         }
     }

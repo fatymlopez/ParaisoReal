@@ -52,9 +52,6 @@
                                ImageHeigth="15"
                                ImageWidth="15">
                             
-                            
-                            
-
                         </local:CtrlImage>
                         <Image Source="Password.png" 
                                HorizontalOptions="End" 
@@ -78,7 +75,7 @@
                      TextColor="White"                   
                      Margin="10,20"
                      x:Name="IniciarS"
-                        Clicked="IniciarS_Clicked"/>
+                     Clicked="IniciarS_Clicked"/>
                 </StackLayout>
             </StackLayout>
           

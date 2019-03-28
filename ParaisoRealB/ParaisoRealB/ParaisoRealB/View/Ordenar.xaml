@@ -15,24 +15,24 @@
 
 
             <StackLayout Margin="20">
-                <Entry Text="0"
+                <Label Text="0"
                        x:Name="cant"
                        Grid.Column="0"
                        Grid.Row="2">
 
-                </Entry>
-                <!--<Stepper Increment="1"
+                </Label>
+                <Stepper Increment="1"
                          Minimum="0"
                          ValueChanged ="Stepper_ValueChanged"
                          Grid.Column="1"
                          Grid.Row="2">
-                </Stepper>-->
+                </Stepper>
 
-                <Entry                
+                <Label               
                     x:Name="price"
                     Text="{Binding precio}">
                     
-                </Entry>
+                </Label>
 
                 <Label
                     x:Name="ttal"
@@ -40,11 +40,7 @@
 
                 </Label>
 
-                <Label
-                    x:Name="ttales"
-                    Text="Total">
-
-                </Label>
+                
                 <Button
                     x:Name="btnOrdenar"
                     BackgroundColor="#FF5722" 

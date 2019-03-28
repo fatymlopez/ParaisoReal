@@ -37,10 +37,7 @@ namespace ParaisoRealB.ViewModel
             if (result.StatusCode == HttpStatusCode.Created)
             {
                 await App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
-                
-
-
-
+               
               
             }
 
