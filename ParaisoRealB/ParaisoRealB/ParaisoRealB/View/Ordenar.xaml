@@ -1,19 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-        
+             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
              x:Class="ParaisoRealB.View.Ordenar">
 
-
-
+    <ContentPage.BindingContext>
+        <vm:OrdenarVM></vm:OrdenarVM>
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <StackLayout>
             <StackLayout>
                 <Image Source="bannerDesayuno"></Image>
             </StackLayout>
-
-
             <StackLayout Margin="20">
                 <Label Text="0"
                        x:Name="cant"
@@ -31,17 +30,14 @@
 
                 <Label               
                     x:Name="price"
-                    Text="{Binding precio}">
-                    
+                    Text="{Binding precioproperty}">
                 </Label>
 
                 <Label
                     x:Name="ttal"
                     Text="Total">
-
                 </Label>
-
-                
+               
                 <Button
                     x:Name="btnOrdenar"
                     BackgroundColor="#FF5722" 
@@ -49,7 +45,7 @@
                     HorizontalOptions="CenterAndExpand"
                     BorderRadius="20"
                     BorderColor="Transparent"
-                    Clicked="BtnOrdenar_Clicked"
+                    Command="{Binding btnOrdenar}"
                     Text="Ordernar">
                 </Button>
             </StackLayout>

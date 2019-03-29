@@ -15,76 +15,76 @@ using Xamarin.Forms.Xaml;
 namespace ParaisoRealB.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Ordenar : ContentPage, INotifyPropertyChanged
+	public partial class Ordenar : ContentPage
 	{
-        Model.Modeldb.productos product;
+        //Model.Modeldb.productos product;
 
         public Ordenar ()
 		{
 			InitializeComponent ();
 
-            product = BindingContext as Model.Modeldb.productos;
+            //product = BindingContext as Model.Modeldb.productos;
 		}
-        private decimal precio_BF;
+        //private decimal precio_BF;
 
-        public decimal precio
-        {
-            get { return precio_BF; }
-            set {
-                precio_BF = Convert.ToDecimal(NumPlatos) * product.precio;
-                OnPropertyChanged();
-            }
-        }
+        //public decimal precio
+        //{
+        //    get { return precio_BF; }
+        //    set {
+        //        precio_BF = Convert.ToDecimal(NumPlatos) * product.precio;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
-        private double NumPlatos_BF;
+        //private double NumPlatos_BF;
 
-        public double NumPlatos
-        {
-            get { return NumPlatos_BF; }
-            set { NumPlatos_BF = value; }
-        }
+        //public double NumPlatos
+        //{
+        //    get { return NumPlatos_BF; }
+        //    set { NumPlatos_BF = value; }
+        //}
 
-        public void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
-        {
+        //public void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        //{
 
-            double value = e.NewValue;
+        //    double value = e.NewValue;
             
-            cant.Text = string.Format("{0}", value);
+        //    cant.Text = string.Format("{0}", value);
 
             
 
 
-        }
+        //}
 
-        public async void BtnOrdenar_Clicked(object sender, EventArgs e)
-        {
-            // double p1 = Convert.ToDouble(price.Text.ToString());
-            //double p2 = Convert.ToDouble(cant.Text.ToString());
-            //double total = Convert.ToDouble(ttal.Text.ToString());
-            //total = p1 * p2;
-
-
-
-            reservacion newreserva = new reservacion()
-            {
-                cantidad = Convert.ToInt32(cant.Text.ToString())
-
-            };
-
-            var json = JsonConvert.SerializeObject(newreserva);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpClient client = new HttpClient();
-            var result = await client.PostAsync("http://paraisoreal19.somee.com/api/reservacions/Postreservacion", content);
-
-            if (result.StatusCode == HttpStatusCode.Created)
-            {
-                await App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
+        //public async void BtnOrdenar_Clicked(object sender, EventArgs e)
+        //{
+        //    //// double p1 = Convert.ToDouble(price.Text.ToString());
+            ////double p2 = Convert.ToDouble(cant.Text.ToString());
+            ////double total = Convert.ToDouble(ttal.Text.ToString());
+            ////total = p1 * p2;
 
 
 
+            //reservacion newreserva = new reservacion()
+            //{
+            //    cantidad = Convert.ToInt32(cant.Text.ToString())
+
+            //};
+
+            //var json = JsonConvert.SerializeObject(newreserva);
+            //var content = new StringContent(json, Encoding.UTF8, "application/json");
+            //HttpClient client = new HttpClient();
+            //var result = await client.PostAsync("http://paraisoreal19.somee.com/api/reservacions/Postreservacion", content);
+
+            //if (result.StatusCode == HttpStatusCode.Created)
+            //{
+            //    await App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
 
 
-            }
-        }
+
+
+
+            //}
+        //}
     }
 }
