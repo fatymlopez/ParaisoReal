@@ -38,22 +38,34 @@ namespace ParaisoRealB.View
             cantidadtxt.Text = "Cantidad a ordenar:" + p2;
             Total.Text = "Su Total es de:" + p3;
 
-            reservacion newreservacion = new reservacion()
-            {
-               
-
-                
-
-            };
+          
 
         }
 
         public async void BtnOrdenar_Clicked(object sender, EventArgs e)
         {
-           
 
+            reservacion newreservacion = new reservacion()
+            {
+                cantidad = Convert.ToInt32(cantidadtxt.ToString()),
+                idcliente = Constantes.idusuario,
+                idproducto = Convert.ToInt32(nomproduct.Text.ToString()),
+            };
 
+            var json = JsonConvert.SerializeObject(newreservacion);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpClient client = new HttpClient();
+            var result = await client.PostAsync("http://paraisoreal19.somee.com/api/reservacions/Postreservacion", content);
+
+            if (result.StatusCode == HttpStatusCode.Created)
+            {
+                await App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
+
+            }
         }
+
+
+    }
 
 
         //private decimal precio_BF;
