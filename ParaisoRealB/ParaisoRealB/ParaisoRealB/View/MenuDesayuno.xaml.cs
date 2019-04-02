@@ -8,6 +8,7 @@ using System.Linq;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System;
 
 namespace ParaisoRealB.View
 {
@@ -39,29 +40,9 @@ namespace ParaisoRealB.View
             (sender as ListView).SelectedItem = null;
             if (e.SelectedItem != null)
             {
+                ViewModel.MenuDVM menuDVM = e.SelectedItem as ViewModel.MenuDVM;
                 await App.Current.MainPage.Navigation.PushAsync(new Ordenar { BindingContext = e.SelectedItem });
             }
         }
-
-        public void Btnsumar_Clicked(object sender, System.EventArgs e)
-        {
-       
-            var nueva = new List<productos>();
-            var Lista = nueva.Sum(b => b.precio = 0);
-            foreach (var productos in nueva)
-            {
-                Lista++;
-
-            }
-            txtTotal.Text = Lista.ToString();
-
-
-
-
-
-        }
-
-
-
     }
 }

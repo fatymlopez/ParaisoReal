@@ -32,7 +32,7 @@ namespace ParaisoRealB.View
             if (string.IsNullOrEmpty(correousu.Text))
             {
                 await App.Current.MainPage.DisplayAlert("Error", "Debe Ingresar un usuario", "Ok");
- 
+
                 correousu.Focus();
                 return;
             }
@@ -51,11 +51,11 @@ namespace ParaisoRealB.View
             var client = new HttpClient();
             string URL = string.Format("http://paraisoreal19.somee.com/api/clientes/Getcliente");
             var miArreglo = await client.GetStringAsync(URL);
-   
+
             var vercliente = JsonConvert.DeserializeObject<List<cliente>>(miArreglo);
             foreach (var item in vercliente)
             {
-                if (item.emailcl == correousu.Text && item.passcl==Password.Text)
+                if (item.emailcl == correousu.Text && item.passcl == Password.Text)
                 {
                     Constantes.usuario = item.emailcl;
                     Constantes.contraseña = item.passcl;
@@ -67,19 +67,19 @@ namespace ParaisoRealB.View
 
             indicator.IsRunning = false;
             IniciarS.IsEnabled = true;
-            
-            if (Constantes.idusuario==0)
+
+            if (Constantes.idusuario == 0)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Datos no validos", "Ok");
                 Password.Text = string.Empty;
-                Password.Focus(); 
+                Password.Focus();
                 return;
             }
             else
             {
                 await App.Current.MainPage.DisplayAlert("Mensaje", "Bienvenido" + Constantes.nombre, "ok");
                 await Application.Current.MainPage.Navigation.PushAsync(new MenuPpal());
-                
+
             }
 
         }

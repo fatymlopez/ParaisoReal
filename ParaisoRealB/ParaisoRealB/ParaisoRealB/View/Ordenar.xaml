@@ -14,30 +14,75 @@
                 <Image Source="bannerDesayuno"></Image>
             </StackLayout>
             <StackLayout Margin="20">
-                <Label Text="0"
+                <!--<Label Text="{Binding Source={x:Reference _stepper}, Path=Value, StringFormat='The Stepper value is {0:F0}'}"
                        x:Name="cant"
                        Grid.Column="0"
                        Grid.Row="2">
 
-                </Label>
-                <Stepper Increment="1"
-                         Minimum="0"
-                         Value="{Binding NumPlatos}"
-                         ValueChanged ="Stepper_ValueChanged"
-                         Grid.Column="1"
-                         Grid.Row="2">
-                </Stepper>
+                </Label>-->
 
-                <Label               
-                    x:Name="price"
-                    Text="{Binding precioproperty}">
-                </Label>
+                <!--Value="{Binding NumPlatos}"
+                ValueChanged ="Stepper_ValueChanged"-->
+                <!--<Stepper x:Name ="_stepper"
+                         Increment="1"
+                         Minimum="0">
+                </Stepper>-->
+
+                <!--<Label
+                    Text="{Binding Source={x:Reference _stepper}, StringFormat='Total {0:F2}'}">
+                </Label>-->
+
+              
+                    <Label Text="{Binding nomproducto}"
+                       FontSize="20"
+                       TextColor="#FF5722"
+                           x:Name="nomproduct"></Label>
+                
+                
+
+                    <Label Text="{Binding precio}"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="Gray"
+                       x:Name="price"></Label>
+             
+
+
+                <Label Text="{Binding descripcion}"
+                       FontSize="20"
+                       TextColor="Gray"></Label>
+             
+                   
+                    <Entry
+                    x:Name="cantidad"
+                    AnchorY="50"></Entry>
 
                 <Label
-                    x:Name="ttal"
+                    x:Name="cantidadtxt"></Label>
+
+
+                <Button
+                    x:Name="btnvertotal"
+                    BackgroundColor="#FF5722" 
+                    TextColor="White"
+                    HorizontalOptions="CenterAndExpand"
+                    BorderRadius="20"
+                    BorderColor="Transparent"
+                    Clicked="Btnvertotal_Clicked"
                     Text="Total">
+                   <!--Command="{Binding btnOrdenar}"-->
+                    </Button>
+
+
+                <Label
+                    Text="Total"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    TextColor="#FF5722"
+                    x:Name="Total">
                 </Label>
-               
+
+
                 <Button
                     x:Name="btnOrdenar"
                     BackgroundColor="#FF5722" 
@@ -45,9 +90,13 @@
                     HorizontalOptions="CenterAndExpand"
                     BorderRadius="20"
                     BorderColor="Transparent"
-                    Command="{Binding btnOrdenar}"
+                    Clicked="BtnOrdenar_Clicked"
                     Text="Ordernar">
-                </Button>
+                    </Button>
+
+              
+              
+                            
             </StackLayout>
         </StackLayout>
     </ScrollView>

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using ParaisoRealB.Model.Modeldb;
+using ParaisoRealB.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,6 +20,7 @@ namespace ParaisoRealB.View
         public MenuAlmuerzos()
         {
             InitializeComponent();
+         
 
         }
 
@@ -51,8 +53,10 @@ namespace ParaisoRealB.View
             {
                 await App.Current.MainPage.Navigation.PushAsync(new Ordenar { BindingContext = e.SelectedItem });
             }
+
+
         }
 
-       
+
     }
 }
