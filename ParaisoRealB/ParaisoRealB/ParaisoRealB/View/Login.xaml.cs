@@ -45,29 +45,41 @@ namespace ParaisoRealB.View
             }
 
             //obtener campos...
-
             indicator.IsRunning = true;
-            IniciarS.IsEnabled = false;
-            var client = new HttpClient();
-            string URL = string.Format("http://paraisoreal19.somee.com/api/clientes/Getcliente");
-            var miArreglo = await client.GetStringAsync(URL);
-
-            var vercliente = JsonConvert.DeserializeObject<List<cliente>>(miArreglo);
-            foreach (var item in vercliente)
+            try
             {
-                if (item.emailcl == correousu.Text && item.passcl == Password.Text)
+
+                IniciarS.IsEnabled = false;
+                var client = new HttpClient();
+                string URL = string.Format("http://paraisoreal19.somee.com/api/clientes/Getcliente");
+                var miArreglo = await client.GetStringAsync(URL);
+
+                var vercliente = JsonConvert.DeserializeObject<List<cliente>>(miArreglo);
+                foreach (var item in vercliente)
                 {
-                    Constantes.usuario = item.emailcl;
-                    Constantes.contraseña = item.passcl;
-                    Constantes.nombre = item.nombrecl;
-                    Constantes.idusuario = item.id;
-                    break;
+                    if (item.emailcl == correousu.Text && item.passcl == Password.Text)
+                    {
+                        Constantes.usuario = item.emailcl;
+                        Constantes.contraseña = item.passcl;
+                        Constantes.nombre = item.nombrecl;
+                        Constantes.idusuario = item.id;
+                        break;
+                    }
                 }
+
+                IniciarS.IsEnabled = true;
+            }
+            catch (Exception)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "No hay conexion a internet", "Ok");
+                IniciarS.IsEnabled = true;
+                indicator.IsRunning = false;
+                return;
+
             }
 
             indicator.IsRunning = false;
-            IniciarS.IsEnabled = true;
-
+           
             if (Constantes.idusuario == 0)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Datos no validos", "Ok");
@@ -77,8 +89,9 @@ namespace ParaisoRealB.View
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert("Mensaje", "Bienvenido" + Constantes.nombre, "ok");
-                await Application.Current.MainPage.Navigation.PushAsync(new MenuPpal());
+                //await App.Current.MainPage.DisplayAlert("Mensaje", "Bienvenido" + Constantes.nombre, "ok");
+                await Application.Current.MainPage.Navigation.PushAsync(new MasterMenu());
+                
 
             }
 

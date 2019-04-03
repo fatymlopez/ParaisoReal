@@ -8,36 +8,36 @@ namespace ParaisoRealB.ViewModel
 {
     public class VerOrdenVM
     {
-        public VerOrdenVM()
-        {
-            DecisionCommand = new Command(Redireccion);
-            AgregarCommand = new Command(AgregarOtraOrden);
-        }
+        //public VerOrdenVM()
+        //{
+        //    DecisionCommand = new Command(Redireccion);
+        //    AgregarCommand = new Command(AgregarOtraOrden);
+        //}
 
-        public void AgregarOtraOrden()
-        {
+        //public void AgregarOtraOrden()
+        //{
          
             
-                App.Current.MainPage.Navigation.PushAsync(new MenuAlmuerzos());
+        //        App.Current.MainPage.Navigation.PushAsync(new MenuAlmuerzos());
             
 
            
-        }
+        //}
 
-        public void Redireccion()
-        {
+        //public void Redireccion()
+        //{
            
-            //ojo hacer una validacion
+        //    //ojo hacer una validacion
 
 
             
-        }
+        //}
 
      
 
-        #region Comandos
-        public Command DecisionCommand { get; set; }
-        public Command AgregarCommand { get; set; }
-        #endregion
+        //#region Comandos
+        //public Command DecisionCommand { get; set; }
+        //public Command AgregarCommand { get; set; }
+        //#endregion
     }
 }

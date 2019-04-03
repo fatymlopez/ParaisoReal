@@ -32,6 +32,9 @@
                     Text="{Binding Source={x:Reference _stepper}, StringFormat='Total {0:F2}'}">
                 </Label>-->
 
+                <Label Text="{Binding id}"
+                       x:Name="idd"></Label>
+
               
                     <Label Text="{Binding nomproducto}"
                        FontSize="20"
@@ -61,7 +64,7 @@
                     x:Name="cantidadtxt"></Label>
 
 
-                <Button
+                <!--<Button
                     x:Name="btnvertotal"
                     BackgroundColor="#FF5722" 
                     TextColor="White"
@@ -70,8 +73,8 @@
                     BorderColor="Transparent"
                     Clicked="Btnvertotal_Clicked"
                     Text="Total">
-                   <!--Command="{Binding btnOrdenar}"-->
-                    </Button>
+                   --><!--Command="{Binding btnOrdenar}"--><!--
+                    </Button>-->
 
 
                 <Label
@@ -84,7 +87,7 @@
 
 
                 <Button
-                    x:Name="btnOrdenar"
+                    x:Name="btnordenar"
                     BackgroundColor="#FF5722" 
                     TextColor="White"
                     HorizontalOptions="CenterAndExpand"
@@ -92,11 +95,7 @@
                     BorderColor="Transparent"
                     Clicked="BtnOrdenar_Clicked"
                     Text="Ordernar">
-                    </Button>
-
-              
-              
-                            
+                </Button>
             </StackLayout>
         </StackLayout>
     </ScrollView>

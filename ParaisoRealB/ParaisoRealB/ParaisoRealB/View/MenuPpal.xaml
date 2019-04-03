@@ -15,7 +15,9 @@
                 <!-- Place new controls here -->
 
                 <StackLayout Margin="20,20,10,10">
-                    <Label Text="Hola!"
+                    <Label
+                        x:Name="msje"
+                       
                    FontAttributes="Bold"
                    FontSize="Large">
                     </Label>

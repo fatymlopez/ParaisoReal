@@ -22,8 +22,25 @@
                 </Label>
 
                 <Label Text="Seleccione su Ubicacion"></Label>
-                <Picker></Picker>
+                <Picker x:Name="category" Title="Seleccione una Ubicacion"
+                        FontAttributes="Bold"
+                        ItemDisplayBinding="{Binding nomubicacion}"
+                        SelectedItem="{Binding selectcategory}"
+                        ItemsSource="{Binding Itemcategory}"></Picker>
 
+
+
+
+                <Button Text="Agregar Algo mas"        
+                     HeightRequest="46"
+                     BorderRadius="23"                
+                     BackgroundColor="Transparent"                   
+                     TextColor="Black"                   
+                     Margin="10,0"
+                    Grid.Column="1"
+                     x:Name="Agregar"
+                        Clicked="Agregar_Clicked">
+                </Button>
 
 
                 <Button Text="Cancelar Orden"        
@@ -32,7 +49,9 @@
                      BackgroundColor="Transparent"                   
                      TextColor="Black"                   
                      Margin="10,0"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                        x:Name="cancelar"
+                        Clicked="Cancelar_Clicked">
                 </Button>
 
          
@@ -45,7 +64,10 @@
                     TextColor="White"                   
                     Margin="10,0"
                     HorizontalOptions="CenterAndExpand"
-                    Command="{Binding DecisionCommand}">
+                    x:Name="Ordenar"
+                        Clicked="Ordenar_Clicked">
+
+                    <!--Command="{Binding DecisionCommand}"-->
                 </Button>
             </StackLayout>
 

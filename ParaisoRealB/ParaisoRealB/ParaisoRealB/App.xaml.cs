@@ -14,11 +14,13 @@ namespace ParaisoRealB
         {
             InitializeComponent();
 
-           var navigationPage = new NavigationPage(new SplashScreenR());
+            var navigationPage = new NavigationPage(new SplashScreenR());
 
-           
-           // navigationPage.BarBackgroundColor = Color.FromHex("#00BCD4");
-            
+            //var navigationPage = new NavigationPage(new VerOrden());
+
+
+            // navigationPage.BarBackgroundColor = Color.FromHex("#00BCD4");
+
             //navigationPage.BarTextColor = Color.FromHex("#00BCD4")
             MainPage = navigationPage;
 
