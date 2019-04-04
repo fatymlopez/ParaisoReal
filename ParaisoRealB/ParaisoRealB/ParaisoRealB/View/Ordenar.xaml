@@ -4,75 +4,42 @@
              
              x:Class="ParaisoRealB.View.Ordenar">
 
-    
+
     <ScrollView>
         <StackLayout>
             <StackLayout>
                 <Image Source="bannerDesayuno"></Image>
             </StackLayout>
             <StackLayout Margin="20">
-                <!--<Label Text="{Binding Source={x:Reference _stepper}, Path=Value, StringFormat='The Stepper value is {0:F0}'}"
-                       x:Name="cant"
-                       Grid.Column="0"
-                       Grid.Row="2">
-
-                </Label>-->
-
-                <!--Value="{Binding NumPlatos}"
-                ValueChanged ="Stepper_ValueChanged"-->
-                <!--<Stepper x:Name ="_stepper"
-                         Increment="1"
-                         Minimum="0">
-                </Stepper>-->
-
-                <!--<Label
-                    Text="{Binding Source={x:Reference _stepper}, StringFormat='Total {0:F2}'}">
-                </Label>-->
+               
 
                 <Label Text="{Binding id}"
                        x:Name="idd"></Label>
 
-              
-                    <Label Text="{Binding nomproducto}"
+
+                <Label Text="{Binding nomproducto}"
                        FontSize="20"
                        TextColor="#FF5722"
                            x:Name="nomproduct"></Label>
-                
-                
 
-                    <Label Text="{Binding precio}"
+
+
+                <Label Text="{Binding precio}"
                        FontAttributes="Bold"
                        FontSize="20"
                        TextColor="Gray"
                        x:Name="price"></Label>
-             
+
 
 
                 <Label Text="{Binding descripcion}"
                        FontSize="20"
                        TextColor="Gray"></Label>
-             
-                   
-                    <Entry
+
+
+                <Entry
                     x:Name="cantidad"
-                    AnchorY="50"></Entry>
-
-                <Label
-                    x:Name="cantidadtxt"></Label>
-
-
-                <!--<Button
-                    x:Name="btnvertotal"
-                    BackgroundColor="#FF5722" 
-                    TextColor="White"
-                    HorizontalOptions="CenterAndExpand"
-                    BorderRadius="20"
-                    BorderColor="Transparent"
-                    Clicked="Btnvertotal_Clicked"
-                    Text="Total">
-                   --><!--Command="{Binding btnOrdenar}"--><!--
-                    </Button>-->
-
+                    AnchorY="50" Keyboard="Numeric"></Entry>
 
                 <Label
                     Text="Total"
@@ -81,7 +48,6 @@
                     TextColor="#FF5722"
                     x:Name="Total">
                 </Label>
-
 
                 <Button
                     x:Name="btnordenar"
@@ -94,7 +60,7 @@
                     Text="Ordernar">
 
                     <!--BorderRadius="20"-->
-                   
+
                 </Button>
 
                 <Button
@@ -105,7 +71,7 @@
                     
                     BorderColor="Transparent"
                     Clicked="BtnverOrden_Clicked"
-                    Text="Ordernar">
+                    Text="ver Orden">
                 </Button>
             </StackLayout>
         </StackLayout>

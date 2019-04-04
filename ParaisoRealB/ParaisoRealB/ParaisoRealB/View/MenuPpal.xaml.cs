@@ -18,9 +18,10 @@ namespace ParaisoRealB.View
         public MenuPpal()
         {
             InitializeComponent();
-             
+            Proceso_Generico();
         }
-        protected async override void OnAppearing()
+
+        private async void Proceso_Generico()
         {
             var client = new HttpClient();
             string URL = string.Format("http://paraisoreal19.somee.com/api/reservacions/Getreservacion");
@@ -28,27 +29,26 @@ namespace ParaisoRealB.View
             var JSON_cliente = JsonConvert.DeserializeObject<List<Model.Modeldb.reservacion>>(miArreglo);
             foreach (var item in JSON_cliente)
             {
-                 //&& item.estado == 1
+                //&& item.estado == 1
                 if (item.idcliente == Constantes.idusuario)
                 {
                     Constantes.idreservacion = item.id;
                 }
             }
-            if (Constantes.idreservacion!=0)
+            if (Constantes.idreservacion != 0)
             {
-                msje.Text = "Hola!" + Constantes.nombre + " - " +Constantes.idreservacion;
+                msje.Text = "Hola " + Constantes.nombre + " - " + Constantes.idreservacion;
             }
             else
             {
-                var nuevareservacion = new Model.Modeldb.reservacion() {
+                var nuevareservacion = new Model.Modeldb.reservacion()
+                {
+                    id = 0,
                     idcliente = Constantes.idusuario,
-                    //total = 0,
-                    //idubicacion = 1,
-                    //idproducto = 0,
-                    //cantidad = 0,
-                    
+                    total = 0,
+                    estado = 1
                 };
-                
+
                 var json = JsonConvert.SerializeObject(nuevareservacion);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 client = new HttpClient();
@@ -56,12 +56,15 @@ namespace ParaisoRealB.View
 
                 if (result.StatusCode == HttpStatusCode.Created)
                 {
-                    await App.Current.MainPage.DisplayAlert("Respuesta", " Inicio de reservacion exitosa", "Ok");
+                    await Application.Current.MainPage.DisplayAlert("Respuesta", " Inicio de reservacion exitosa", "Ok");
                 }
             }
-            base.OnAppearing();
-            
         }
 
+        private void R_Total_Clicked(object sender, EventArgs e)
+        {
+            var resultado = new procesos.operaciones(Constantes.idusuario, Constantes.idreservacion);
+            Application.Current.MainPage.DisplayAlert("Mensaje", $"El total actual es: {resultado.totalglobal}", "Ok");
+        }
     }
 }
