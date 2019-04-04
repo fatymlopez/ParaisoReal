@@ -1,13 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
+             
              x:Class="ParaisoRealB.View.Ordenar">
 
-    <ContentPage.BindingContext>
-        <vm:OrdenarVM></vm:OrdenarVM>
-    </ContentPage.BindingContext>
-
+    
     <ScrollView>
         <StackLayout>
             <StackLayout>
@@ -91,9 +88,23 @@
                     BackgroundColor="#FF5722" 
                     TextColor="White"
                     HorizontalOptions="CenterAndExpand"
-                    BorderRadius="20"
+                    
                     BorderColor="Transparent"
                     Clicked="BtnOrdenar_Clicked"
+                    Text="Ordernar">
+
+                    <!--BorderRadius="20"-->
+                   
+                </Button>
+
+                <Button
+                    x:Name="btnverOrden"
+                    BackgroundColor="#FF5722" 
+                    TextColor="White"
+                    HorizontalOptions="CenterAndExpand"
+                    
+                    BorderColor="Transparent"
+                    Clicked="BtnverOrden_Clicked"
                     Text="Ordernar">
                 </Button>
             </StackLayout>

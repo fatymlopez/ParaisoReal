@@ -21,17 +21,7 @@ namespace ParaisoRealB.View
         {
             InitializeComponent();
 
-            //decimal p1 = Convert.ToDecimal(price.Text.ToString());
-            //int p2 = Convert.ToInt32(cantidad.Text.ToString());
-
-            //decimal p3;
-
-            //p3 = p1 * p2;
-            //cantidadtxt.Text = "Cantidad a ordenar:" + p2;
-            //Total.Text = "Su Total es de:" + p3;
-
         }
-
 
         public async void BtnOrdenar_Clicked(object sender, EventArgs e)
         {
@@ -42,16 +32,7 @@ namespace ParaisoRealB.View
                 cantidad = Convert.ToInt32(cantidad.Text)
             };
            
-
-            //reservacion newreserva = new reservacion
-            //{
-            //    id = Constantes.idreservacion,
-            //    idcliente = Constantes.idusuario,
-            //    total = Convert.ToInt32(Total.Text),
-            //    detallereservacions = newreservacion
-            //}; 
-
-
+            
             var json = JsonConvert.SerializeObject(newreservacion);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpClient client = new HttpClient();
@@ -62,16 +43,17 @@ namespace ParaisoRealB.View
             if (result.StatusCode == HttpStatusCode.Created)
             {
                 await App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
-                await App.Current.MainPage.Navigation.PushAsync(new VerOrden());
-
+               // await App.Current.MainPage.Navigation.PushAsync(new VerOrden());
 
             }
 
-
-
         }
 
-        
+        public async void BtnverOrden_Clicked(object sender, EventArgs e)
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new VerOrden());
+
+        }
     }
 
      

@@ -46,6 +46,10 @@ namespace ParaisoRealB.procesos
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             client = new HttpClient();
             var result = await client.PutAsync(string.Format("http://paraisoreal19.somee.com/api/reservacions/Putreservacion/"+ idreservacion), content);
+            if (result.IsSuccessStatusCode)
+            {
+                
+            }
 
            
             

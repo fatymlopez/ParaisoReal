@@ -15,11 +15,47 @@
                 <Image Source="bannerDesayuno"></Image>
             </StackLayout>
 
+            <ListView x:Name="ListDetalle">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                </Grid>
+                                <StackLayout>
+                                    <Label Text="{Binding productos.nomproducto}"
+                                           Grid.Row="0"
+                                           Grid.Column="0">
+                                    </Label>
+                                    <Label Text="{Binding cantidad}"
+                                           Grid.Row="0"
+                                           Grid.Column="1">
+                                    </Label>
+
+                                    <Label 
+                                           x:Name="subtotal"
+                                           Grid.Column="2"
+                                           Grid.Row="0"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
             <StackLayout Margin="20">
-                <Label Text="Total a Pagar"></Label>
-                <Label Text="">
-                    
-                </Label>
+                <Label x:Name="totalg"></Label>
+
+            </StackLayout>
+            <StackLayout>
 
                 <Label Text="Seleccione su Ubicacion"></Label>
                 <Picker x:Name="category" Title="Seleccione una Ubicacion"
