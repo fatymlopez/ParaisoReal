@@ -24,7 +24,7 @@ namespace ParaisoRealB.View
         private async void Proceso_Generico()
         {
             var client = new HttpClient();
-            string URL = string.Format("http://paraisoreal19.somee.com/api/reservacions/Getreservacion");
+            string URL = string.Format(Constantes.Base +"/api/reservacions/Getreservacion");
             var miArreglo = await client.GetStringAsync(URL);
             var JSON_cliente = JsonConvert.DeserializeObject<List<Model.Modeldb.reservacion>>(miArreglo);
             foreach (var item in JSON_cliente)
@@ -52,7 +52,7 @@ namespace ParaisoRealB.View
                 var json = JsonConvert.SerializeObject(nuevareservacion);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 client = new HttpClient();
-                var result = await client.PostAsync("http://paraisoreal19.somee.com/api/reservacions/Postreservacion", content);
+                var result = await client.PostAsync(Constantes.Base +"/api/reservacions/Postreservacion", content);
 
                 if (result.StatusCode == HttpStatusCode.Created)
                 {

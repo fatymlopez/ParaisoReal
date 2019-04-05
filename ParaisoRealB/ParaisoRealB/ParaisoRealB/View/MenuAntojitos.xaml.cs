@@ -29,7 +29,7 @@ namespace ParaisoRealB.View
         public async void getAntojitos()
         {
             var client = new HttpClient();
-            string URL = string.Format("http://paraisoreal19.somee.com/api/productoss/Getproductos");
+            string URL = string.Format(Constantes.Base +"/api/productoss/Getproductos");
             var miArreglo = await client.GetStringAsync(URL);
             var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
             var nuevalista = verproductos.Where(a => a.idcategoria == 4 && a.existencia > 0);

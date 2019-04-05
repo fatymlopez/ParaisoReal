@@ -27,6 +27,11 @@ namespace ParaisoRealB.ViewModel
 
         public async void Mdesayuno(object obj)
         {
+            if (true)
+            {
+
+            }
+            
            await App.Current.MainPage.Navigation.PushAsync(new MenuDesayuno());
 
         }

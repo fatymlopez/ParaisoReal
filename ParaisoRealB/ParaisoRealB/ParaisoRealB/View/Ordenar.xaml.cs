@@ -39,7 +39,7 @@ namespace ParaisoRealB.View
             var json = JsonConvert.SerializeObject(newreservacion);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpClient client = new HttpClient();
-            var result = await client.PostAsync("http://paraisoreal19.somee.com/api/detallereservacions/Postdetallereservacion", content);
+            var result = await client.PostAsync(Constantes.Base +"/api/detallereservacions/Postdetallereservacion", content);
 
             procesos.operaciones instanceprocesos = new procesos.operaciones(Constantes.idusuario, Constantes.idreservacion);
              

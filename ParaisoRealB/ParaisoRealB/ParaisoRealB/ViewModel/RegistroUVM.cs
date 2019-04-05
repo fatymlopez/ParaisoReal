@@ -32,7 +32,7 @@ namespace ParaisoRealB.ViewModel
             var json = JsonConvert.SerializeObject(newcliente);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpClient client = new HttpClient();
-            var result = await client.PostAsync("http://paraisoreal19.somee.com/api/clientes/Postcliente", content);
+            var result = await client.PostAsync(Constantes.Base +"/api/clientes/Postcliente", content);
 
             if (result.StatusCode == HttpStatusCode.Created)
             {

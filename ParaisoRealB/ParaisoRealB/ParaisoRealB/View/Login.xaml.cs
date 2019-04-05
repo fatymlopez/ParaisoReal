@@ -15,7 +15,8 @@ namespace ParaisoRealB.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Login : ContentPage
 	{
-		public Login ()
+       
+        public Login ()
 		{
 			InitializeComponent ();
 		}
@@ -26,6 +27,8 @@ namespace ParaisoRealB.View
         }
 
         //validacion campos
+
+      
 
         public async void IniciarS_Clicked(object sender, EventArgs e)
         {
@@ -51,7 +54,8 @@ namespace ParaisoRealB.View
 
                 IniciarS.IsEnabled = false;
                 var client = new HttpClient();
-                string URL = string.Format("http://paraisoreal19.somee.com/api/clientes/Getcliente");
+               
+                string URL = string.Format(Constantes.Base +"/api/clientes/Getcliente");
                 var miArreglo = await client.GetStringAsync(URL);
 
                 var vercliente = JsonConvert.DeserializeObject<List<cliente>>(miArreglo);
