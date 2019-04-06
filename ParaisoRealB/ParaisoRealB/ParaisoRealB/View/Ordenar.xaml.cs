@@ -32,6 +32,9 @@ namespace ParaisoRealB.View
                 idproducto = Convert.ToInt32(idd.Text),
                 cantidad = Convert.ToInt32(cantidad.Text),
                 subtotal = Convert.ToDecimal(price.Text) * Convert.ToDecimal(cantidad.Text)
+
+
+
             };
 
             Total.Text = (newreservacion.subtotal).ToString();
@@ -42,13 +45,15 @@ namespace ParaisoRealB.View
             var result = await client.PostAsync(Constantes.Base +"/api/detallereservacions/Postdetallereservacion", content);
 
             procesos.operaciones instanceprocesos = new procesos.operaciones(Constantes.idusuario, Constantes.idreservacion);
-             
-            if (result.StatusCode == HttpStatusCode.Created)
-            {
-                await Application.Current.MainPage.DisplayAlert("Mensaje", $"Realizado, total actual: {instanceprocesos.totalglobal}", "Ok");
-                await Application.Current.MainPage.Navigation.PopAsync();
 
-            }
+              if (result.StatusCode == HttpStatusCode.Created)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Mensaje", $"Realizado, total actual: {instanceprocesos.totalglobal}", "Ok");
+                    await Application.Current.MainPage.Navigation.PopAsync();
+
+                }
+
+             
 
         }
 

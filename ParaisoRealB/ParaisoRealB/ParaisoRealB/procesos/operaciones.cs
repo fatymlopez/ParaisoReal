@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using ParaisoRealB.Model.Modeldb;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -23,7 +24,7 @@ namespace ParaisoRealB.procesos
         {
 
             client = new HttpClient();
-            string URL = string.Format("http://paraisoreal19.somee.com/api/detallereservacions/Getdetallereservacion");
+            string URL = string.Format( Constantes.Base +"/api/detallereservacions/Getdetallereservacion");
             var miArreglo = await client.GetStringAsync(URL);
             var JSON_DRESERVACION = JsonConvert.DeserializeObject<List<Model.Modeldb.detallereservacion>>(miArreglo);
 
@@ -33,8 +34,22 @@ namespace ParaisoRealB.procesos
                 {
                     totalglobal += Convert.ToDecimal(item.subtotal);
                 }
-               
+
             }
+
+            //ESTO ES PRUEBA!
+           
+            //decimal totalglobal = 0;
+            //decimal conteo = 0;
+            //conteo = JSON_DRESERVACION.Count;
+            //for (decimal i = 0; i < conteo; i++)
+            //{
+            //    if (idreservacion == Constantes.idreservacion)
+            //    {
+            //        totalglobal += conteo;
+            //    }
+
+            //}
 
             //hacerput a la tabla reservacion
 
@@ -47,15 +62,33 @@ namespace ParaisoRealB.procesos
             };
 
 
-            var json = JsonConvert.SerializeObject(actualizarreservacion);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            client = new HttpClient();
-            var result = await client.PutAsync(string.Format("http://paraisoreal19.somee.com/api/reservacions/Putreservacion/"+ idreservacion), content);
+            //ESTE EL LO QUE TENIA ANTERIORMENTE
+
+            //var json = JsonConvert.SerializeObject(actualizarreservacion);
+            //var content = new StringContent(json, Encoding.UTF8, "application/json");
+            //client = new HttpClient();
+            //var result = await client.PutAsync(string.Format(Constantes.Base + "/api/reservacions/Putreservacion/"+ idreservacion), content);
             //if (result.IsSuccessStatusCode)
             //{
-                
+
             //}
-            return result;
+           
+            
+            
+            //eSTO AGREGUE !! PERO NO FUNCIONA XD :C
+
+
+            var uri = new Uri(string.Format(Constantes.Base + "/api/reservacions/Getreservacion/" + idreservacion));
+  
+            var response = await client.GetAsync(uri);
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                 var json = JsonConvert.DeserializeObject<List<reservacion>>(content);
+            }
+  
+           
+            return response;
         }
     }
 }
