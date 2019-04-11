@@ -24,6 +24,32 @@
                            x:Name="idcat">
                     </Label>
                 </StackLayout>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Arma tu Desayuno"
+                                x:Name="btnarmaD"
+                                Clicked="BtnarmaD_Clicked"
+                            BackgroundColor="#FF5722" 
+                            TextColor="White"
+                            BorderColor="Transparent"
+                            BorderRadius="23" 
+                            Grid.Column="0">
+                    </Button>
+                    <Button Text="Bebidas Calientes"
+                            BackgroundColor="#FF5722" 
+                            TextColor="White"
+                            x:Name="btnbebidasc"
+                            Clicked="Btnbebidasc_Clicked"
+                            BorderRadius="23" 
+                            BorderColor="Transparent"
+                            Grid.Column="1">
+
+                    </Button>
+                </Grid>
                 <ActivityIndicator></ActivityIndicator>
                 <!--
                 ItemsSource="{Binding ListDesayunos}"

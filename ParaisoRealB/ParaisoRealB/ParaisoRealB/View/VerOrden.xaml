@@ -12,7 +12,7 @@
     <ScrollView>
         <StackLayout>
             <StackLayout>
-                <Image Source="bannerDesayuno"></Image>
+                <Image Source="collageor.png"></Image>
             </StackLayout>
 
             <ListView x:Name="ListDetalle">

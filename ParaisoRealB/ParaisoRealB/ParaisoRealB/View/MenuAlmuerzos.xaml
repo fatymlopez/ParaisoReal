@@ -8,7 +8,8 @@
         <ScrollView>
         <StackLayout>
             <StackLayout>
-                <Image Source="bannerDesayuno" ></Image>
+                <Image Source="Aorder.jpg" 
+                       Aspect="AspectFill"></Image>
             </StackLayout>
             <StackLayout>
                 <Label Text="Ordena lo que tu quieras!!"

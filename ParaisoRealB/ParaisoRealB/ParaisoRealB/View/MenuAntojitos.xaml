@@ -5,55 +5,55 @@
              BackgroundColor="White">
 
     <ContentPage.Content>
-        <ScrollView>
+        <StackLayout>
+            
             <StackLayout>
-                <StackLayout>
-                    <Image Source="bannerDesayuno" Aspect="AspectFill"></Image>
-                </StackLayout>
+                <Image Source="Desayunos.jpg" Aspect="AspectFill"></Image>
+            </StackLayout>
 
-                <StackLayout>
-                    <Label Text="Ordena tu Desayuno Aqui"
+            <StackLayout>
+                <Label Text="Ordena tu Antojito Aqui"
                            TextColor="Black"
                            FontAttributes="Bold"
                            FontSize="24"
                            HorizontalOptions="CenterAndExpand"
                            x:Name="idcat">
-                    </Label>
-                </StackLayout>
-                <ActivityIndicator></ActivityIndicator>
-                <ListView x:Name="ListAntojitos"
+                </Label>
+            </StackLayout>
+            <ActivityIndicator></ActivityIndicator>
+            <ListView x:Name="ListAntojitos"
                            HasUnevenRows="True"
                           SeparatorVisibility="None"
                           BackgroundColor="White">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell >
-                                <StackLayout Padding="20" BackgroundColor="White">
-                                    <Frame CornerRadius="20" Padding="5">
-                                        <StackLayout Orientation="Horizontal">
-                                            <BoxView BackgroundColor="#FF5722" WidthRequest="4"></BoxView>
-                                            <Grid VerticalOptions="CenterAndExpand">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout Padding="20" BackgroundColor="White">
+                                <Frame CornerRadius="20" Padding="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <BoxView BackgroundColor="#FF5722" WidthRequest="4"></BoxView>
+                                        <Grid VerticalOptions="CenterAndExpand">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
 
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="*"></RowDefinition>
-                                                    <RowDefinition Height="*"></RowDefinition>
-                                                    <RowDefinition Height="*"></RowDefinition>
-                                                </Grid.RowDefinitions>
-                                                <StackLayout Grid.Row="0"  Grid.ColumnSpan="1" Orientation="Horizontal">
-                                                    <Label
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <StackLayout Grid.Row="0"  Grid.ColumnSpan="1" Orientation="Horizontal">
+                                                <Label
                                             Text="{Binding nomproducto}"
                                             TextColor="#FF5722"
                                             FontAttributes="Bold"
                                             FontSize="20"></Label>
-                                                </StackLayout>
-                                                <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
 
-                                                    <Label 
+                                                <Label 
                                             Text="Precio"
                                            HorizontalOptions="End"
                                             HorizontalTextAlignment="End"
@@ -63,7 +63,7 @@
 
 
 
-                                                    <Label 
+                                                <Label 
                                             Text="$"
                                            HorizontalOptions="End"
                                            HorizontalTextAlignment="End"
@@ -71,23 +71,23 @@
                                             FontAttributes="Bold"
                                             FontSize="20">
 
-                                                    </Label>
-                                                    <Label Text="{Binding precio}"
+                                                </Label>
+                                                <Label Text="{Binding precio}"
                                                          HorizontalOptions="End"
                                                            HorizontalTextAlignment="End"
                                            TextColor="#FF5722"
                                             FontAttributes="Bold"
                                             FontSize="20" 
                  >
-                                                    </Label>
-                                                </StackLayout>
-                                                <StackLayout Grid.Row="1" Grid.ColumnSpan="3">
-                                                    <Label Text="{Binding descripcion}"
+                                                </Label>
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="1" Grid.ColumnSpan="3">
+                                                <Label Text="{Binding descripcion}"
                                                            TextColor="Gray"
                                                            FontSize="20"></Label>
 
-                                                </StackLayout>
-                                                <!--<Button BackgroundColor="#FF5722" 
+                                            </StackLayout>
+                                            <!--<Button BackgroundColor="#FF5722" 
                                                             TextColor="White"
                                                             HorizontalOptions="EndAndExpand"
                                                             BorderRadius="20"
@@ -96,22 +96,21 @@
                                                             Grid.Column="1"
                                                             Grid.Row="2">
                                                 </Button>-->
-                                            </Grid>
-                                        </StackLayout>
-                                    </Frame>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <StackLayout>
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout>
 
-                    <Label Text="Total"
+                <Label Text="Total"
                            x:Name="txtTotal"></Label>
 
-                </StackLayout>
             </StackLayout>
-        </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
 

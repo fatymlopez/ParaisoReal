@@ -44,5 +44,15 @@ namespace ParaisoRealB.View
                 await App.Current.MainPage.Navigation.PushAsync(new Ordenar { BindingContext = e.SelectedItem });
             }
         }
+
+        private void BtnarmaD_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btnbebidasc_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
