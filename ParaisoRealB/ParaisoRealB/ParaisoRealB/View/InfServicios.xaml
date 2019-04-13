@@ -1,10 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ParaisoRealB.View.InfServicios">
+             x:Class="ParaisoRealB.View.InfServicios"
+             BackgroundColor="White">
     <ScrollView>
-        <StackLayout>
-            <Image Source="servicios.png" Aspect="Fill"></Image>
+        <StackLayout Margin="20">
+            <Image Source="Logo.png"
+                   HorizontalOptions="Center"
+                   WidthRequest="100"
+                   HeightRequest="100"></Image>
+
+            <StackLayout>
+                <Label Text="Servicio de Banquetes para todo tipo de eventos"
+                       HorizontalTextAlignment="Center"
+                       FontSize="18">
+                </Label>
+                <Image Resources="almu.png"
+                       HorizontalOptions="Center"></Image>
+                
+                <Label Text="Antojitos, Deliciosas Pupusas Enchiladas y Tacos"
+                       HorizontalTextAlignment="Center"
+                       FontSize="18">
+                </Label>
+                <Image Resources="Desayunos.png"
+                       HorizontalOptions="Center"
+                       HeightRequest="80"
+                       WidthRequest="80"></Image>
+
+                <Label Text="Coffe Break para seminarios"
+                       HorizontalTextAlignment="Center"
+                       FontSize="18">
+                </Label>
+                <Image Resources="banquete.png"
+                       HorizontalOptions="Center"></Image>
+            </StackLayout>
         </StackLayout>
     </ScrollView>
  

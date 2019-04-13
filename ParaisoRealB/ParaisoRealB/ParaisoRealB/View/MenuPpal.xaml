@@ -21,7 +21,6 @@
                    FontAttributes="Bold"
                    FontSize="Large">
                     </Label>
-                    <!--<Button x:Name="R_Total" Clicked="R_Total_Clicked" Text="Refresh" />-->
                     <Label Text="¿Que de deseas ordenar?"
                    FontAttributes="Bold"
                    FontSize="Large">

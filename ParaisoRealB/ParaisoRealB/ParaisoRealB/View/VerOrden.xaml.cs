@@ -27,24 +27,24 @@ namespace ParaisoRealB.View
 
             getpicker();
 
-            getorder();
+            //getorder();
 		}
 
-        public async void getorder()
-        {
-            var client = new HttpClient();
-            string URL = string.Format("http://paraisoreal19.somee.com/api/detallereservacions/Getdetallereservacion");
-            var miArreglo = await client.GetStringAsync(URL);
-            var JSON_cliente = JsonConvert.DeserializeObject<List<Model.Modeldb.detallereservacion>>(miArreglo);
+        //public async void getorder()
+        //{
+        //    var client = new HttpClient();
+        //    string URL = string.Format("http://paraisoreal19.somee.com/api/detallereservacions/Getdetallereservacion");
+        //    var miArreglo = await client.GetStringAsync(URL);
+        //    var JSON_cliente = JsonConvert.DeserializeObject<List<Model.Modeldb.detallereservacion>>(miArreglo);
 
-            ListDetalle.ItemsSource = JSON_cliente;
-            var instanceprocesos = new procesos.operaciones(Constantes.idusuario, Constantes.idreservacion);
+        //    ListDetalle.ItemsSource = JSON_cliente;
+        //    var instanceprocesos = new procesos.operaciones(Constantes.idusuario, Constantes.idreservacion);
 
             
 
 
 
-        }
+        //}
 
         public async void getpicker()
         {
@@ -55,10 +55,6 @@ namespace ParaisoRealB.View
             Debug.WriteLine(Itemcategory);
         }
 
-        private void Agregar_Clicked(object sender, EventArgs e)
-        {
-
-        }
 
         private void Cancelar_Clicked(object sender, EventArgs e)
         {

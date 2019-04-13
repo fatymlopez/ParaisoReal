@@ -8,6 +8,7 @@ namespace ParaisoRealB.Model.Modeldb
     {
         public int idreservacion { get; set; }
         public int idproducto { get; set; }
+        public decimal? precio { get; set; }
         public int cantidad { get; set; }
         public decimal? subtotal { get; set; }
         public productos productos { get; set; }

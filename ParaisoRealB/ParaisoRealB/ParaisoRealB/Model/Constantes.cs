@@ -13,7 +13,7 @@ namespace ParaisoRealB
         public static int idreservacion { get; set; }
 
         //URL 
-        public static string Base = "http://gnstecnology-001-site3.etempurl.com/";
+        public static string Base = "http://gnstecnology-001-site3.etempurl.com";
 
 
 

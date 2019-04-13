@@ -60,11 +60,6 @@ namespace ParaisoRealB.View
                 }
             }
         }
-        //EL BOTON QUE HABIAS AGREGADO!!!
-        //private void R_Total_Clicked(object sender, EventArgs e)
-        //{
-        //    var resultado = new procesos.operaciones(Constantes.idusuario, Constantes.idreservacion);
-        //    Application.Current.MainPage.DisplayAlert("Mensaje", $"El total actual es: {resultado.totalglobal}", "Ok");
-        //}
+       
     }
 }

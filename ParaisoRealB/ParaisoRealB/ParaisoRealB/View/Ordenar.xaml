@@ -15,13 +15,15 @@
                
 
                 <Label Text="{Binding id}"
-                       x:Name="idd"></Label>
+                       x:Name="idd"
+                       TextColor="White"></Label>
 
 
                 <Label Text="{Binding nomproducto}"
                        FontSize="20"
                        TextColor="#FF5722"
-                           x:Name="nomproduct"></Label>
+                           x:Name="nomproduct"
+                       FontAttributes="Bold"></Label>
 
 
 
@@ -35,12 +37,14 @@
 
                 <Label Text="{Binding descripcion}"
                        FontSize="20"
-                       TextColor="Gray"></Label>
+                       TextColor="Gray"
+                       FontAttributes="Bold"></Label>
 
 
                 <Entry
                     x:Name="cantidad"
-                    AnchorY="50" Keyboard="Numeric"></Entry>
+                    AnchorY="50" Keyboard="Numeric"
+                    Placeholder="Ingrese la cantidad que desea ordenar"></Entry>
 
                 <Label
                     Text="Total"
@@ -49,31 +53,48 @@
                     TextColor="#FF5722"
                     x:Name="Total">
                 </Label>
-
-                <Button
+                <StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button
                     x:Name="btnordenar"
                     BackgroundColor="#FF5722" 
                     TextColor="White"
-                    HorizontalOptions="CenterAndExpand"
                     
                     BorderColor="Transparent"
                     Clicked="BtnOrdenar_Clicked"
-                    Text="Ordernar">
+                    Text="Ordernar"
+                            BorderRadius="23" 
+                            Grid.Column="0"
+                            Grid.Row="0">
 
-                    <!--BorderRadius="20"-->
+                            <!--BorderRadius="20"-->
 
-                </Button>
+                        </Button>
 
-                <Button
+                        <Button
                     x:Name="btnverOrden"
                     BackgroundColor="#FF5722" 
                     TextColor="White"
-                    HorizontalOptions="CenterAndExpand"
+                    
                     
                     BorderColor="Transparent"
                     Clicked="BtnverOrden_Clicked"
-                    Text="ver Orden">
-                </Button>
+                    Text="ver Orden"
+                            BorderRadius="23" 
+                            Grid.Column="1"
+                            Grid.Row="0">
+                        </Button>
+                    </Grid>
+                </StackLayout>
+               
+               
             </StackLayout>
         </StackLayout>
     </ScrollView>

@@ -46,6 +46,16 @@ namespace ParaisoRealB.View
 
         }
 
+        public async void Btnbebidaf_Clicked(object sender, EventArgs e)
+        {
+            var client = new HttpClient();
+            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+            var miArreglo = await client.GetStringAsync(URL);
+            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+            var nuevalista = verproductos.Where(a => a.idcategoria == 5 && a.existencia > 0);
+            ListAlmuerzo.ItemsSource = nuevalista;
+        }
+
         public async void ListAlmuerzo_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             (sender as ListView).SelectedItem = null;
@@ -57,6 +67,6 @@ namespace ParaisoRealB.View
 
         }
 
-
+       
     }
 }

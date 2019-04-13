@@ -4,7 +4,7 @@
              x:Class="ParaisoRealB.View.MenuAntojitos"
              BackgroundColor="White">
 
-    <ContentPage.Content>
+ 
         <StackLayout>
             
             <StackLayout>
@@ -20,11 +20,59 @@
                            x:Name="idcat">
                 </Label>
             </StackLayout>
+      
             <ActivityIndicator></ActivityIndicator>
             <ListView x:Name="ListAntojitos"
                            HasUnevenRows="True"
                           SeparatorVisibility="None"
-                          BackgroundColor="White">
+                          BackgroundColor="White"
+                          ItemSelected="ListAntojitos_ItemSelected">
+            <ListView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+
+                    <Button Text="Ver Antojitos"
+                                x:Name="btnAntojitos"
+                               Clicked="BtnAntojitos_Clicked"
+                            BackgroundColor="#FF5722" 
+                            TextColor="White"
+                            BorderColor="Transparent"
+                            BorderRadius="23" 
+                            Grid.Column="0"
+                            Grid.Row="0">
+                    </Button>
+                    <Button Text="Bebidas Frias"
+                            BackgroundColor="#FF5722" 
+                            TextColor="White"
+                            x:Name="btnbebidasf"
+                            Clicked="Btnbebidasf_Clicked"
+                            BorderRadius="23" 
+                            BorderColor="Transparent"
+                            Grid.Column="1"
+                            Grid.Row="0">
+                    </Button>
+
+                    <Button Text="Bebidas Calientes"
+                            BackgroundColor="#FF5722" 
+                            TextColor="White"
+                            x:Name="btnbebidac"
+                            Clicked="Btnbebidac_Clicked"
+                            BorderRadius="23" 
+                            BorderColor="Transparent"
+                            Grid.Column="2"
+                            Grid.Row="0">
+                    </Button>
+                </Grid>
+            </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >
@@ -87,15 +135,7 @@
                                                            FontSize="20"></Label>
 
                                             </StackLayout>
-                                            <!--<Button BackgroundColor="#FF5722" 
-                                                            TextColor="White"
-                                                            HorizontalOptions="EndAndExpand"
-                                                            BorderRadius="20"
-                                                            BorderColor="Transparent"
-                                                            Text="Ordernar"
-                                                            Grid.Column="1"
-                                                            Grid.Row="2">
-                                                </Button>-->
+                                       
                                         </Grid>
                                     </StackLayout>
                                 </Frame>
@@ -111,7 +151,7 @@
 
             </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+
 </ContentPage>
 
 
