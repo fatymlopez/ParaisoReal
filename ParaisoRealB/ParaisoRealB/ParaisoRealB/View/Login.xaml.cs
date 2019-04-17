@@ -28,8 +28,6 @@ namespace ParaisoRealB.View
 
         //validacion campos
 
-      
-
         public async void IniciarS_Clicked(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(correousu.Text))

@@ -51,7 +51,7 @@
                     FontSize="20"
                     FontAttributes="Bold"
                     TextColor="#FF5722"
-                    x:Name="Total">
+                    x:Name="TotalGlobal">
                 </Label>
                 <StackLayout>
                     <Grid>

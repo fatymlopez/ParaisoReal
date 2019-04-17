@@ -24,7 +24,6 @@ namespace ParaisoRealB.View
 			InitializeComponent ();
 
             BindingContext = this;
-
             getpicker();
 
             //getorder();
@@ -40,16 +39,12 @@ namespace ParaisoRealB.View
         //    ListDetalle.ItemsSource = JSON_cliente;
         //    var instanceprocesos = new procesos.operaciones(Constantes.idusuario, Constantes.idreservacion);
 
-            
-
-
-
         //}
 
         public async void getpicker()
         {
             var client = new HttpClient();
-            string URL = string.Format("http://paraisoreal19.somee.com/api/ubicacions/Getubicacion");
+            string URL = string.Format(Constantes.Base +"/api/ubicacions/Getubicacion");
             var miArreglo = await client.GetStringAsync(URL);
             Itemcategory = JsonConvert.DeserializeObject<List<ubicacion>>(miArreglo);
             Debug.WriteLine(Itemcategory);
@@ -71,18 +66,15 @@ namespace ParaisoRealB.View
 
         public List<ubicacion> Itemcategory
         { get { return _itemcategory; }
-            set { _itemcategory = value; OnPropertyChanged(); }
+          set { _itemcategory = value; OnPropertyChanged(); }
         }
 
         private int _idss;
-
         public int idss
         {
             get { return _idss; }
             set { _idss = value; OnPropertyChanged(); }
         }
-
-       
 
         private ubicacion _selectcategory;
 

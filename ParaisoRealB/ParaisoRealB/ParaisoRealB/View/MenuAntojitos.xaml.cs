@@ -16,24 +16,11 @@ namespace ParaisoRealB.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuAntojitos : ContentPage
     {
-
-
         public MenuAntojitos()
         {
             InitializeComponent();
         }
 
-        
-
-        public async void ListAntojitos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            (sender as ListView).SelectedItem = null;
-            if (e.SelectedItem != null)
-            {
-                await App.Current.MainPage.Navigation.PushAsync(new Ordenar { BindingContext = e.SelectedItem });
-            }
-
-        }
 
         public async void BtnAntojitos_Clicked(object sender, EventArgs e)
         {
@@ -63,6 +50,17 @@ namespace ParaisoRealB.View
             var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
             var nuevalista = verproductos.Where(a => a.idcategoria == 6 && a.existencia > 0);
             ListAntojitos.ItemsSource = nuevalista;
+        }
+
+
+        public async void ListAntojitos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            (sender as ListView).SelectedItem = null;
+            if (e.SelectedItem != null)
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new Ordenar { BindingContext = e.SelectedItem });
+            }
+
         }
     }
 }

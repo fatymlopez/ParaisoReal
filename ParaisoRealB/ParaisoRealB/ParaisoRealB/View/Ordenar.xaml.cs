@@ -30,39 +30,75 @@ namespace ParaisoRealB.View
             {
                 idreservacion = Constantes.idreservacion,
                 idproducto = Convert.ToInt32(idd.Text),
+                precio = Convert.ToDecimal(price.Text),
                 cantidad = Convert.ToInt32(cantidad.Text),
                 subtotal = Convert.ToDecimal(price.Text) * Convert.ToDecimal(cantidad.Text)
-
-
-
             };
 
-            Total.Text = (newreservacion.subtotal).ToString();
-            
+            TotalGlobal.Text = (newreservacion.subtotal).ToString();
+
             var json = JsonConvert.SerializeObject(newreservacion);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpClient client = new HttpClient();
-            var result = await client.PostAsync(Constantes.Base +"/api/detallereservacions/Postdetallereservacion", content);
+            var result = await client.PostAsync(Constantes.Base + "/api/detallereservacions/Postdetallereservacion", content);
 
-            procesos.operaciones instanceprocesos = new procesos.operaciones(Constantes.idusuario, Constantes.idreservacion);
+            //procesos.operaciones instanceprocesos = new procesos.operaciones(Constantes.idusuario, Constantes.idreservacion);
 
-              if (result.StatusCode == HttpStatusCode.Created)
+            if (result.StatusCode == HttpStatusCode.Created)
+            {
+                await Application.Current.MainPage.DisplayAlert("Mensaje", "SubTotal" + TotalGlobal, "Ok");
+                //await Application.Current.MainPage.DisplayAlert("Mensaje", $"Realizado, total actual: {instanceprocesos.totalglobal}", "Ok");
+                //await Application.Current.MainPage.Navigation.PopAsync();
+
+            }
+
+            HttpClient client2 = new HttpClient();
+            string URL = string.Format(Constantes.Base + "/api/detallereservacions/Getdetallereservacion");
+            var miArreglo = await client2.GetStringAsync(URL);
+            var JSON_DRESERVACION = JsonConvert.DeserializeObject<List<Model.Modeldb.detallereservacion>>(miArreglo);
+            decimal totalglobal = 0;
+            await DisplayAlert("mensaje", "total" + totalglobal, "ok");
+            foreach (var item in JSON_DRESERVACION)
+            {
+                if (item.idreservacion == Constantes.idreservacion)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Mensaje", $"Realizado, total actual: {instanceprocesos.totalglobal}", "Ok");
-                    await Application.Current.MainPage.Navigation.PopAsync();
+                    
+                    totalglobal += Convert.ToDecimal(item.subtotal);
 
+                    await DisplayAlert("mensaje", "total" + totalglobal, "ok");
                 }
 
-             
+            }
+            //aqui ya no se toca
+            await DisplayAlert("mensaje","total fuera de for "+totalglobal,"ok");
+            //put
+
+            var actualizarreservacion = new Model.Modeldb.reservacion
+            {
+                id = Constantes.idreservacion,
+                idcliente = Constantes.idusuario,
+                total = totalglobal,
+                estado = 1
+            };
+
+            await DisplayAlert("mensaje", "dato" + actualizarreservacion, "ok");
+            var jsona = JsonConvert.SerializeObject(actualizarreservacion);
+            var contenta = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpClient client3 = new HttpClient();
+            var resulta = await client3.PutAsync(string.Format(Constantes.Base + "/api/reservacions/Putreservacion/" + Constantes.idreservacion), content);
+            if (result.IsSuccessStatusCode)
+            {
+
+
+            }
 
         }
 
         public async void BtnverOrden_Clicked(object sender, EventArgs e)
         {
             await App.Current.MainPage.Navigation.PushAsync(new VerOrden());
-
         }
     }
 
-     
-    }
+
+}

@@ -83,29 +83,19 @@
                     <Label Text="$1.50" Grid.Column="3" Grid.Row="3"></Label>
                     <Label Text="Total a pagar" Grid.Column="2" Grid.Row="4"></Label>
                     <Label Text="$8.00" Grid.Column="3" Grid.Row="4"></Label>
-
-
-
-
-
                 </Grid>
-               
             </StackLayout>
 
             <StackLayout Margin="20">
                 <Label x:Name="totalg"></Label>
-
             </StackLayout>
             <StackLayout>
-
                 <Label Text="Seleccione su Ubicacion"></Label>
                 <Picker x:Name="category" Title="Seleccione una Ubicacion"
                         FontAttributes="Bold"
                         ItemDisplayBinding="{Binding nomubicacion}"
                         SelectedItem="{Binding selectcategory}"
                         ItemsSource="{Binding Itemcategory}"></Picker>
-
-
 
                 <Button Text="Cancelar Orden"        
                      HeightRequest="46"
@@ -114,11 +104,9 @@
                      TextColor="Black"                   
                      Margin="10,0"
                     Grid.Column="1"
-                        x:Name="cancelar"
-                        Clicked="Cancelar_Clicked">
+                     x:Name="cancelar"
+                     Clicked="Cancelar_Clicked">
                 </Button>
-
-         
 
                 <Button Text="Reservar Orden" 
                     FontSize="Small"   
@@ -129,13 +117,10 @@
                     Margin="10,0"
                     HorizontalOptions="CenterAndExpand"
                     x:Name="Ordenar"
-                        Clicked="Ordenar_Clicked">
-
+                    Clicked="Ordenar_Clicked">
                     <!--Command="{Binding DecisionCommand}"-->
                 </Button>
             </StackLayout>
-
-            
         </StackLayout>
     </ScrollView>
 </ContentPage>

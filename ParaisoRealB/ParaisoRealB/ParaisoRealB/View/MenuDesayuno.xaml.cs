@@ -16,21 +16,10 @@ namespace ParaisoRealB.View
     public partial class MenuDesayuno : ContentPage
     {
 
-
         public MenuDesayuno()
         {
             InitializeComponent();
            
-        }
-
-        public async void ListDesayuno_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            (sender as ListView).SelectedItem = null;
-            if (e.SelectedItem != null)
-            {
-              
-                await App.Current.MainPage.Navigation.PushAsync(new Ordenar { BindingContext = e.SelectedItem });
-            }
         }
 
         public async void BtnarmaD_Clicked(object sender, EventArgs e)
@@ -51,6 +40,16 @@ namespace ParaisoRealB.View
             var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
             var nuevalista = verproductos.Where(a => a.idcategoria == 6 && a.existencia > 0);
             ListDesayuno.ItemsSource = nuevalista;
+        }
+
+        public async void ListDesayuno_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            (sender as ListView).SelectedItem = null;
+            if (e.SelectedItem != null)
+            {
+
+                await App.Current.MainPage.Navigation.PushAsync(new Ordenar { BindingContext = e.SelectedItem });
+            }
         }
     }
 }

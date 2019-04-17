@@ -37,17 +37,12 @@ namespace ParaisoRealB.ViewModel
             if (result.StatusCode == HttpStatusCode.Created)
             {
                 await App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
-                await App.Current.MainPage.Navigation.PushAsync(new Login());
+                await App.Current.MainPage.Navigation.PushAsync(new NavigationPage( new Login()));
 
 
             }
-            
-            
-
-        
+                 
         }
-
-    
 
         #region propiedades
         public string nombreclcommand { get; set; }
@@ -55,8 +50,6 @@ namespace ParaisoRealB.ViewModel
         public string emailclcommand { get; set; }
         public string passclcommand { get; set; }
         #endregion
-
-
 
         #region Comandos
         public Command RegistroCommand { get; set; }

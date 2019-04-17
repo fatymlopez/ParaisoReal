@@ -18,18 +18,22 @@ namespace ParaisoRealB.View
         public MenuPpal()
         {
             InitializeComponent();
-            Proceso_Generico();
+            //Proceso_Generico();
         }
 
-        private async void Proceso_Generico()
+        protected override async void OnAppearing()
         {
+            base.OnAppearing();
+
+
+           // private async void Proceso_Generico()
+        //{
             var client = new HttpClient();
             string URL = string.Format(Constantes.Base +"/api/reservacions/Getreservacion");
             var miArreglo = await client.GetStringAsync(URL);
             var JSON_cliente = JsonConvert.DeserializeObject<List<Model.Modeldb.reservacion>>(miArreglo);
             foreach (var item in JSON_cliente)
             {
-                //&& item.estado == 1
                 if (item.idcliente == Constantes.idusuario)
                 {
                     Constantes.idreservacion = item.id;
@@ -53,7 +57,6 @@ namespace ParaisoRealB.View
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 client = new HttpClient();
                 var result = await client.PostAsync(Constantes.Base +"/api/reservacions/Postreservacion", content);
-
                 if (result.StatusCode == HttpStatusCode.Created)
                 {
                     await Application.Current.MainPage.DisplayAlert("Respuesta", " Inicio de reservacion exitosa", "Ok");

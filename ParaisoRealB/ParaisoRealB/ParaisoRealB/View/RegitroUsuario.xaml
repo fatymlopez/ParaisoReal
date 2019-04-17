@@ -11,32 +11,29 @@
         <vm:RegistroUVM></vm:RegistroUVM>
     </ContentPage.BindingContext>
 
-  
     <ScrollView>
         <Frame OutlineColor="#8BC34A" CornerRadius="40" Margin="20">
         <StackLayout  BackgroundColor="White">
 
                 <Label Text="Registrate Aqui" 
-                   HorizontalOptions="Center" 
-                   TextColor="Black" 
-                   FontAttributes="Bold" 
-                   FontSize="Medium">
+                       HorizontalOptions="Center" 
+                       TextColor="Black" 
+                       FontAttributes="Bold" 
+                       FontSize="Medium">
                 </Label>
-
                 <Label Text="Ingrese su nombre completo" 
-                   Margin="0,20,0,0">
+                       Margin="0,20,0,0">
                 </Label>
                 <locai:CtrlImage Image="users" 
-                             ImageHeigth="13" 
-                             ImageWidth="13" 
-                             Text="{Binding nombreclcommand}">
+                                 ImageHeigth="13" 
+                                 ImageWidth="13" 
+                                 Text="{Binding nombreclcommand}">
                 </locai:CtrlImage>
-
-            <Label Text="Ingrese su numero de celular"></Label>
+                <Label Text="Ingrese su numero de celular"></Label>
                 <locai:CtrlImage Image="users" 
-                             ImageHeigth="13" 
-                             ImageWidth="13" 
-                             Text="{Binding cellclcommand}">
+                                 ImageHeigth="13" 
+                                 ImageWidth="13" 
+                                 Text="{Binding cellclcommand}">
                     <!--<locai:CtrlImage.Behaviors>
                         <behavior:MaskedBehavior Mask="0000-0000"></behavior:MaskedBehavior>
                     </locai:CtrlImage.Behaviors>-->
@@ -65,13 +62,13 @@
                                      Grid.Column="0">
                     </locai:CtrlImage>
                     <Image Source="Password.png" 
-                       HorizontalOptions="End" 
-                       VerticalOptions="Center" 
-                       Grid.Column="1" 
-                       HeightRequest="30">
+                           HorizontalOptions="End" 
+                           VerticalOptions="Center" 
+                           Grid.Column="1" 
+                           HeightRequest="30">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped1" 
-                                              NumberOfTapsRequired="1">
+                                                  NumberOfTapsRequired="1">
                             </TapGestureRecognizer>
                         </Image.GestureRecognizers>
                     </Image>

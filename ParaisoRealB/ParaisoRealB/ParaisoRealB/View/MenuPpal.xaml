@@ -8,40 +8,33 @@
         <vm:MenuPpalVM></vm:MenuPpalVM>
     </ContentPage.BindingContext>
 
-
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="White">
                 <!-- Place new controls here -->
-
                 <StackLayout Margin="20,20,10,10">
-                    <Label
-                        x:Name="msje"
-                       
-                   FontAttributes="Bold"
-                   FontSize="Large">
+                    <Label x:Name="msje"
+                           FontAttributes="Bold"
+                           FontSize="Large">
                     </Label>
                     <Label Text="¿Que de deseas ordenar?"
-                   FontAttributes="Bold"
-                   FontSize="Large">
+                           FontAttributes="Bold"
+                           FontSize="Large">
                     </Label>
                 </StackLayout>
                 <StackLayout Padding="20">
                     <!--DESAYUNO-->
-                    <Frame 
-                BackgroundColor="#FF5722" 
-                CornerRadius="20">
-                        
+                    <Frame BackgroundColor="#FF5722" 
+                           CornerRadius="20">
                         <StackLayout>
                             <Image Source="desatipico.png"
                                    HeightRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"
                                    WidthRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"></Image>
-                            <Label 
-                        Text="Desayunos" 
-                        TextColor="White"
-                        FontAttributes="Bold"
-                        FontSize="38"
-                        HorizontalOptions="CenterAndExpand">
+                            <Label Text="Desayunos" 
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   FontSize="38"
+                                   HorizontalOptions="CenterAndExpand">
                             </Label>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer
@@ -52,20 +45,18 @@
                         </StackLayout>
                     </Frame>
                     <!--ALMUERZO-->
-                    <Frame 
-                BackgroundColor="#F44336" 
-                CornerRadius="20">
+                    <Frame BackgroundColor="#F44336" 
+                           CornerRadius="20">
                         <StackLayout>
-                            <Image Source="Almuerzo.png"
-                                   
+                            <Image Source="Almuerzo.png"        
                                    HeightRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"
                                    WidthRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"></Image>
-                            <Label 
-                        Text="Almuerzos" 
-                        TextColor="White"
-                        FontAttributes="Bold"
-                        FontSize="38"
-                        HorizontalOptions="CenterAndExpand"></Label>
+                            <Label Text="Almuerzos" 
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   FontSize="38"
+                                   HorizontalOptions="CenterAndExpand">
+                            </Label>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer
                                     Command="{Binding Tapcommand2}"
@@ -74,19 +65,17 @@
                         </StackLayout>
                     </Frame>
                     <!--ANTOJITOS-->
-                    <Frame 
-                BackgroundColor="#FFC107" 
-                CornerRadius="20">
+                    <Frame BackgroundColor="#FFC107" 
+                           CornerRadius="20">
                         <StackLayout>
                             <Image Source="Antojos.png"
                                     HeightRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"
                                     WidthRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"></Image>
-                            <Label 
-                        Text="Antojitos" 
-                        TextColor="White"
-                        FontAttributes="Bold"
-                        FontSize="38"
-                        HorizontalOptions="CenterAndExpand"></Label>
+                            <Label Text="Antojitos" 
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   FontSize="38"
+                                   HorizontalOptions="CenterAndExpand"></Label>
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer
                                     Command="{Binding Tapcommand3}"
@@ -95,13 +84,8 @@
                             </StackLayout.GestureRecognizers>
                         </StackLayout>
                     </Frame>
-
                 </StackLayout>
-
-
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
-
-
 </ContentPage>

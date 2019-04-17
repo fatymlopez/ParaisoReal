@@ -20,7 +20,6 @@ namespace ParaisoRealB.View
         public MenuAlmuerzos()
         {
             InitializeComponent();
-         
 
         }
 
