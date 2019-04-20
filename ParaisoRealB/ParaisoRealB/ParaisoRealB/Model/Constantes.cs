@@ -11,7 +11,8 @@ namespace ParaisoRealB
         public static string contraseña { get; set; }
         public static string nombre { get; set; }
         public static int idreservacion { get; set; }
-
+        public static int estados { get; set; }
+  
         //URL 
         public static string Base = "http://gnstecnology-001-site3.etempurl.com";
 

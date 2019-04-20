@@ -12,40 +12,35 @@
                        HorizontalOptions="FillAndExpand"></Image>
             </StackLayout>
             <StackLayout Margin="20">
-               
 
                 <Label Text="{Binding id}"
                        x:Name="idd"
-                       TextColor="White"></Label>
-
-
+                       TextColor="White">
+                </Label>
                 <Label Text="{Binding nomproducto}"
                        FontSize="20"
                        TextColor="#FF5722"
-                           x:Name="nomproduct"
-                       FontAttributes="Bold"></Label>
-
-
+                       x:Name="nomproduct"
+                       FontAttributes="Bold">
+                </Label>
 
                 <Label Text="{Binding precio}"
                        FontAttributes="Bold"
                        FontSize="20"
                        TextColor="Gray"
-                       x:Name="price"></Label>
-
-
+                       x:Name="price">
+                </Label>
 
                 <Label Text="{Binding descripcion}"
                        FontSize="20"
                        TextColor="Gray"
-                       FontAttributes="Bold"></Label>
-
-
+                       FontAttributes="Bold">
+                </Label>
                 <Entry
                     x:Name="cantidad"
                     AnchorY="50" Keyboard="Numeric"
-                    Placeholder="Ingrese la cantidad que desea ordenar"></Entry>
-
+                    Placeholder="Ingrese la cantidad que desea ordenar">
+                </Entry>
                 <Label
                     Text="Total"
                     FontSize="20"
@@ -62,39 +57,28 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Button
-                    x:Name="btnordenar"
-                    BackgroundColor="#FF5722" 
-                    TextColor="White"
-                    
-                    BorderColor="Transparent"
-                    Clicked="BtnOrdenar_Clicked"
-                    Text="Ordernar"
-                            BorderRadius="23" 
-                            Grid.Column="0"
-                            Grid.Row="0">
-
-                            <!--BorderRadius="20"-->
-
+                        <Button x:Name="btnordenar"
+                                BackgroundColor="#FF5722" 
+                                TextColor="White"
+                                BorderColor="Transparent"
+                                Clicked="BtnOrdenar_Clicked"
+                                Text="Reservar Orden"
+                                BorderRadius="23" 
+                                Grid.Column="0"
+                                Grid.Row="0">
                         </Button>
-
-                        <Button
-                    x:Name="btnverOrden"
-                    BackgroundColor="#FF5722" 
-                    TextColor="White"
-                    
-                    
-                    BorderColor="Transparent"
-                    Clicked="BtnverOrden_Clicked"
-                    Text="ver Orden"
-                            BorderRadius="23" 
-                            Grid.Column="1"
-                            Grid.Row="0">
+                        <Button x:Name="btnverOrden"
+                                BackgroundColor="#FF5722" 
+                                TextColor="White"
+                                BorderColor="Transparent"
+                                Clicked="BtnverOrden_Clicked"
+                                Text="ver Orden"
+                                BorderRadius="23" 
+                                Grid.Column="1"
+                                Grid.Row="0">
                         </Button>
                     </Grid>
                 </StackLayout>
-               
-               
             </StackLayout>
         </StackLayout>
     </ScrollView>

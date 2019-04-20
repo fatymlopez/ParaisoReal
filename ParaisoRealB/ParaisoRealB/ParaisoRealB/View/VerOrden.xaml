@@ -5,122 +5,89 @@
              xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
              BackgroundColor="White">
 
-    <ContentPage.BindingContext>
-        <vm:VerOrdenVM></vm:VerOrdenVM>
-    </ContentPage.BindingContext>
-
-    <ScrollView>
+    <StackLayout BackgroundColor="White">
         <StackLayout>
-            <StackLayout>
-                <Image Source="collageor.png"></Image>
-            </StackLayout>
-
-            <!--<ListView x:Name="ListDetalle">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                </Grid>
-                                <StackLayout>
-                                    <Label Text="{Binding productos.nomproducto}"
-                                           Grid.Row="0"
-                                           Grid.Column="0">
-                                    </Label>
-                                    <Label Text="{Binding cantidad}"
-                                           Grid.Row="0"
-                                           Grid.Column="1">
-                                    </Label>
-
-                                    <Label 
-                                           x:Name="subtotal"
-                                           Grid.Column="2"
-                                           Grid.Row="0"></Label>
-                                </StackLayout>
+            <Image Source="collageor.png"></Image>
+        </StackLayout>
+        <ListView x:Name="ListDetalle"
+                  HasUnevenRows="True"
+                      SeparatorVisibility="None"
+                      BackgroundColor="White"
+                      ItemSelected="ListDetalle_ItemSelected">
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Text="Producto" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center"></Label>
+                        <Label Text="Precio" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center"></Label>
+                        <Label Text="Cantidad" Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="Center"></Label>
+                        <Label Text="SubTotal" Grid.Column="3" Grid.Row="0" HorizontalTextAlignment="Center"></Label>
+                    </Grid>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="20" BackgroundColor="White" HorizontalOptions="FillAndExpand">
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding productos.nomproducto}" Grid.Column="0"  HorizontalTextAlignment="Center"></Label>
+                                <Label Text="{Binding precio}" Grid.Column="1"  HorizontalTextAlignment="Center"></Label>
+                                <Label Text="{Binding cantidad}" Grid.Column="2"  HorizontalTextAlignment="Center"></Label>
+                                <Label Text="{Binding subtotal}" Grid.Column="3" HorizontalTextAlignment="Center"></Label>
+                            </Grid>
+                            <StackLayout HorizontalOptions="EndAndExpand">
+                                <Label Text="{Binding reservacion.total}" HorizontalOptions="EndAndExpand" x:Name="totalreserva"></Label>
+                                
                             </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="20">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Label Text="Producto" Grid.Column="0" Grid.Row="0"></Label>
-                    <Label Text="Precio" Grid.Column="1" Grid.Row="0"></Label>
-                    <Label Text="Cantidad" Grid.Column="2" Grid.Row="0"></Label>
-                    <Label Text="SubTotal" Grid.Column="3" Grid.Row="0"></Label>
-                    <Label Text="Pollo Asado" Grid.Column="0" Grid.Row="1"></Label>
-                    <Label Text="$2.50" Grid.Column="1" Grid.Row="1"></Label>
-                    <Label Text="2" Grid.Column="2" Grid.Row="1"></Label>
-                    <Label Text="$5.00" Grid.Column="3" Grid.Row="1"></Label>
-                    <Label Text="Lasaña" Grid.Column="0" Grid.Row="2"></Label>
-                    <Label Text="$1.50" Grid.Column="1" Grid.Row="2"></Label>
-                    <Label Text="1" Grid.Column="2" Grid.Row="2"></Label>
-                    <Label Text="$1.50" Grid.Column="3" Grid.Row="2"></Label>
-                    <Label Text="Soda Pepsi" Grid.Column="0" Grid.Row="3"></Label>
-                    <Label Text="$0.50" Grid.Column="1" Grid.Row="3"></Label>
-                    <Label Text="3" Grid.Column="2" Grid.Row="3"></Label>
-                    <Label Text="$1.50" Grid.Column="3" Grid.Row="3"></Label>
-                    <Label Text="Total a pagar" Grid.Column="2" Grid.Row="4"></Label>
-                    <Label Text="$8.00" Grid.Column="3" Grid.Row="4"></Label>
-                </Grid>
-            </StackLayout>
-
-            <StackLayout Margin="20">
-                <Label x:Name="totalg"></Label>
-            </StackLayout>
-            <StackLayout>
-                <Label Text="Seleccione su Ubicacion"></Label>
-                <Picker x:Name="category" Title="Seleccione una Ubicacion"
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <StackLayout>
+            <Label Text="Seleccione su Ubicacion"></Label>
+            <Picker x:Name="category" Title="Seleccione una Ubicacion"
                         FontAttributes="Bold"
                         ItemDisplayBinding="{Binding nomubicacion}"
                         SelectedItem="{Binding selectcategory}"
-                        ItemsSource="{Binding Itemcategory}"></Picker>
+                        ItemsSource="{Binding Itemcategory}">
+            </Picker>
+            <StackLayout Orientation="Horizontal">
 
-                <Button Text="Cancelar Orden"        
-                     HeightRequest="46"
-                     BorderRadius="23"                
-                     BackgroundColor="Transparent"                   
-                     TextColor="Black"                   
-                     Margin="10,0"
-                    Grid.Column="1"
-                     x:Name="cancelar"
-                     Clicked="Cancelar_Clicked">
+                <Button Text="Ordenar" 
+                            
+                            BorderRadius="23"                
+                            BackgroundColor="#FF5722"                   
+                            TextColor="White"                   
+                            x:Name="Ordenar"
+                            Clicked="Ordenar_Clicked">
                 </Button>
 
-                <Button Text="Reservar Orden" 
-                    FontSize="Small"   
-                    HeightRequest="46"
-                    BorderRadius="23"                
-                    BackgroundColor="#FF5722"                   
-                    TextColor="White"                   
-                    Margin="10,0"
-                    HorizontalOptions="CenterAndExpand"
-                    x:Name="Ordenar"
-                    Clicked="Ordenar_Clicked">
-                    <!--Command="{Binding DecisionCommand}"-->
+                <Button Text="Cancelar Orden"        
+                            HeightRequest="46"
+                            BorderRadius="23"                
+                            BackgroundColor="Transparent"                   
+                            TextColor="Black"                   
+                            x:Name="cancelar"
+                            Clicked="Cancelar_Clicked">
                 </Button>
             </StackLayout>
         </StackLayout>
-    </ScrollView>
+    </StackLayout>
 </ContentPage>

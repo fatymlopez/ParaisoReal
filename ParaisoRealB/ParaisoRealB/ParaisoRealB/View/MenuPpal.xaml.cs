@@ -18,16 +18,13 @@ namespace ParaisoRealB.View
         public MenuPpal()
         {
             InitializeComponent();
-            //Proceso_Generico();
+            
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-
-           // private async void Proceso_Generico()
-        //{
             var client = new HttpClient();
             string URL = string.Format(Constantes.Base +"/api/reservacions/Getreservacion");
             var miArreglo = await client.GetStringAsync(URL);
@@ -38,6 +35,7 @@ namespace ParaisoRealB.View
                 {
                     Constantes.idreservacion = item.id;
                 }
+
             }
             if (Constantes.idreservacion != 0)
             {
@@ -50,7 +48,9 @@ namespace ParaisoRealB.View
                     id = 0,
                     idcliente = Constantes.idusuario,
                     total = 0,
-                    estado = 1
+                    estado = 1,
+                    idubicacion = 1
+ 
                 };
 
                 var json = JsonConvert.SerializeObject(nuevareservacion);

@@ -42,14 +42,10 @@ namespace ParaisoRealB.View
             HttpClient client = new HttpClient();
             var result = await client.PostAsync(Constantes.Base + "/api/detallereservacions/Postdetallereservacion", content);
 
-            //procesos.operaciones instanceprocesos = new procesos.operaciones(Constantes.idusuario, Constantes.idreservacion);
-
             if (result.StatusCode == HttpStatusCode.Created)
             {
-                await Application.Current.MainPage.DisplayAlert("Mensaje", "SubTotal" + TotalGlobal, "Ok");
-                //await Application.Current.MainPage.DisplayAlert("Mensaje", $"Realizado, total actual: {instanceprocesos.totalglobal}", "Ok");
-                //await Application.Current.MainPage.Navigation.PopAsync();
-
+                await Application.Current.MainPage.DisplayAlert("Mensaje", "SubTotal" + newreservacion.subtotal, "Ok");
+              
             }
 
             HttpClient client2 = new HttpClient();
@@ -70,26 +66,51 @@ namespace ParaisoRealB.View
 
             }
             //aqui ya no se toca
-            await DisplayAlert("mensaje","total fuera de for "+totalglobal,"ok");
+
+           await DisplayAlert("mensaje","total fuera de for "+totalglobal,"ok");
             //put
 
-            var actualizarreservacion = new Model.Modeldb.reservacion
+             /*var actualizarreservacion = new Model.Modeldb.reservacion
+             {
+                 id = Constantes.idreservacion,
+                 idcliente = Constantes.idusuario,
+                 total = totalglobal,
+                 estado = 1
+             };
+             */
+            var actualizar = new reservacionpr
             {
-                id = Constantes.idreservacion,
-                idcliente = Constantes.idusuario,
-                total = totalglobal,
-                estado = 1
+                id=Constantes.idreservacion,
+                idcliente=Constantes.idusuario,
+                total=totalglobal,
+                estado =1,
+                idubicacion =1
             };
 
-            await DisplayAlert("mensaje", "dato" + actualizarreservacion, "ok");
-            var jsona = JsonConvert.SerializeObject(actualizarreservacion);
-            var contenta = new StringContent(json, Encoding.UTF8, "application/json");
+            await DisplayAlert("mensaje", "sacando el total" + actualizar.total, "ok");
+            await DisplayAlert("mensaje", "sacando el id" + actualizar.id, "ok");
+            await DisplayAlert("mensaje", "sacando el idcliente" + actualizar.idcliente, "ok");
+            await DisplayAlert("mensaje", "sacando el estado" + actualizar.estado, "ok");
+
+            var url = string.Format(Constantes.Base + "/api/reservacions/Putreservacion/" + Constantes.idreservacion);
+
+            await DisplayAlert("mensaje", "url: " + url, "ok");
+            var jsona = JsonConvert.SerializeObject(actualizar);
+            var contenta = new StringContent(jsona, Encoding.UTF8, "application/json");
+            await DisplayAlert("mensaje", "array" +contenta, "ok");
+            
             HttpClient client3 = new HttpClient();
-            var resulta = await client3.PutAsync(string.Format(Constantes.Base + "/api/reservacions/Putreservacion/" + Constantes.idreservacion), content);
-            if (result.IsSuccessStatusCode)
+            HttpResponseMessage resulta = null;
+           resulta = await client3.PutAsync(url, contenta);
+           
+            if (resulta.IsSuccessStatusCode)
             {
+                await DisplayAlert("mensaje", "entra al if"+resulta, "ok");
 
-
+            }
+            else
+            {
+                await DisplayAlert("Mensaje", "entra al else"+resulta, "ok");
             }
 
         }

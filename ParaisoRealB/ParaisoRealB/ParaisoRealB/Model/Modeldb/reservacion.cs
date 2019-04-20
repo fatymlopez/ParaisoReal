@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace ParaisoRealB.Model.Modeldb
@@ -10,7 +11,8 @@ namespace ParaisoRealB.Model.Modeldb
         public int? idcliente { get; set; }
         public decimal? total { get; set; }
         public int? estado { get; set; }
-
-        public List<detallereservacion> detallereservacions { get; set; }
+        public int? idubicacion { get; set; }
+        public ObservableCollection<detallereservacion> detallereservacion { get; set; }
+       
     }
 }
