@@ -51,7 +51,6 @@
                             </Grid>
                             <StackLayout HorizontalOptions="EndAndExpand">
                                 <Label Text="{Binding reservacion.total}" HorizontalOptions="EndAndExpand" x:Name="totalreserva"></Label>
-                                
                             </StackLayout>
 
                         </StackLayout>

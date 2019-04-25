@@ -31,7 +31,7 @@ namespace ParaisoRealB.View
 
         }
 
-
+    
         public async void getorder()
         {
             var client1 = new HttpClient();
@@ -64,7 +64,7 @@ namespace ParaisoRealB.View
             {
                 id = Constantes.idreservacion,
                 idcliente = Constantes.idusuario,
-                //total = ,
+                //total =,
                 estado = 0,
                 idubicacion = this.idss
             };
@@ -114,9 +114,16 @@ namespace ParaisoRealB.View
             set { _idss = value; OnPropertyChanged(); }
         }
 
-
+        private decimal _totalfinal;
+        public decimal totalfinal
+        {
+            get { return _totalfinal; }
+            set { _totalfinal = value;
+                OnPropertyChanged(); }
+        }
 
         private ubicacion _selectcategory;
+      
 
         public ubicacion selectcategory
         {
@@ -129,8 +136,6 @@ namespace ParaisoRealB.View
                 App.Current.MainPage.DisplayAlert("Ubicacion Seleccionada", name, "Ok");
             }
         }
-
-
 
         #endregion
 

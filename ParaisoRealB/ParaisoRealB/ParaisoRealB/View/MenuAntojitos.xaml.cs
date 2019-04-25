@@ -28,7 +28,7 @@ namespace ParaisoRealB.View
             string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
             var miArreglo = await client.GetStringAsync(URL);
             var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 4 && a.estado > 0);
+            var nuevalista = verproductos.Where(a => a.idcategoria == 4 && a.idestado > 0);
             ListAntojitos.ItemsSource = nuevalista;
         }
 
@@ -38,7 +38,7 @@ namespace ParaisoRealB.View
             string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
             var miArreglo = await client.GetStringAsync(URL);
             var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 5 && a.estado > 0);
+            var nuevalista = verproductos.Where(a => a.idcategoria == 5 && a.idestado > 0);
             ListAntojitos.ItemsSource = nuevalista;
         }
 
@@ -48,7 +48,7 @@ namespace ParaisoRealB.View
             string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
             var miArreglo = await client.GetStringAsync(URL);
             var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 6 && a.estado > 0);
+            var nuevalista = verproductos.Where(a => a.idcategoria == 6 && a.idestado > 0);
             ListAntojitos.ItemsSource = nuevalista;
         }
 

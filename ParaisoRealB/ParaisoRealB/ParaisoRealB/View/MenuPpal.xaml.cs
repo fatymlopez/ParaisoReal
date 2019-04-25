@@ -9,6 +9,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
 using System.Net;
+using ParaisoRealB.Model.Modeldb;
 
 namespace ParaisoRealB.View
 {
@@ -35,12 +36,13 @@ namespace ParaisoRealB.View
                 {
                     Constantes.idreservacion = item.id;
                 }
-
+               
             }
             if (Constantes.idreservacion != 0)
             {
                 msje.Text = "Hola " + Constantes.nombre + " - " + Constantes.idreservacion;
             }
+
             else
             {
                 var nuevareservacion = new Model.Modeldb.reservacion()
@@ -49,14 +51,14 @@ namespace ParaisoRealB.View
                     idcliente = Constantes.idusuario,
                     total = 0,
                     estado = 1,
-                    idubicacion = 1
- 
+                    idubicacion = 0
+
                 };
 
                 var json = JsonConvert.SerializeObject(nuevareservacion);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 client = new HttpClient();
-                var result = await client.PostAsync(Constantes.Base +"/api/reservacions/Postreservacion", content);
+                var result = await client.PostAsync(Constantes.Base + "/api/reservacions/Postreservacion", content);
                 if (result.StatusCode == HttpStatusCode.Created)
                 {
                     await Application.Current.MainPage.DisplayAlert("Respuesta", " Inicio de reservacion exitosa", "Ok");

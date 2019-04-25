@@ -21,29 +21,32 @@
                        FontAttributes="Bold" 
                        FontSize="Medium">
                 </Label>
-                <Label Text="Ingrese su nombre completo" 
-                       Margin="0,20,0,0">
+                <Label Text="Ingrese su nombre" 
+                       Margin="0,20,0,0"
+                       FontAttributes="Bold">
                 </Label>
                 <locai:CtrlImage Image="users" 
                                  ImageHeigth="13" 
                                  ImageWidth="13" 
-                                 Text="{Binding nombreclcommand}">
+                                 Text="{Binding nombreclcommand}"
+                                 FontAttributes="Bold"
+                                 Keyboard="Text">
                 </locai:CtrlImage>
                 <Label Text="Ingrese su numero de celular"></Label>
                 <locai:CtrlImage Image="users" 
                                  ImageHeigth="13" 
                                  ImageWidth="13" 
-                                 Text="{Binding cellclcommand}">
-                    <!--<locai:CtrlImage.Behaviors>
-                        <behavior:MaskedBehavior Mask="0000-0000"></behavior:MaskedBehavior>
-                    </locai:CtrlImage.Behaviors>-->
+                                 Text="{Binding cellclcommand}"
+                                 FontAttributes="Bold"
+                                 Keyboard="Telephone">
                 </locai:CtrlImage>
-
                 <Label Text="Ingrese su correo electronico"></Label>
                 <locai:CtrlImage Image="correo" 
                              ImageHeigth="13" 
                              ImageWidth="13" 
-                             Text="{Binding emailclcommand}">
+                             Text="{Binding emailclcommand}"
+                             FontAttributes="Bold"
+                             Keyboard="Email">
                 </locai:CtrlImage>
                 <Label Text="Ingrese una contraseña"></Label>
                 <Grid>
@@ -59,7 +62,8 @@
                                      Text="{Binding passclcommand}"   
                                      x:Name="Password"
                                      Grid.ColumnSpan="2"
-                                     Grid.Column="0">
+                                     Grid.Column="0"
+                                     FontAttributes="Bold">
                     </locai:CtrlImage>
                     <Image Source="Password.png" 
                            HorizontalOptions="End" 

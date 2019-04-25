@@ -45,6 +45,9 @@ namespace ParaisoRealB.View
             if (result.StatusCode == HttpStatusCode.Created)
             {
                 await Application.Current.MainPage.DisplayAlert("Mensaje", "SubTotal" + newreservacion.subtotal, "Ok");
+                cantidad.Text = string.Empty;
+                TotalGlobal.Text = string.Empty;
+
               
             }
 
