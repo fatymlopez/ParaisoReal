@@ -18,6 +18,7 @@ namespace ParaisoRealB.ViewModel
         public async void Mantojitos(object obj)
         {
             await App.Current.MainPage.Navigation.PushAsync(new MenuAntojitos());
+            
         }
 
         public async void Malmuerzos(object obj)

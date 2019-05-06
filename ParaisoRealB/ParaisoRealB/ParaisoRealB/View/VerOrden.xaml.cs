@@ -25,13 +25,33 @@ namespace ParaisoRealB.View
             InitializeComponent();
 
             BindingContext = this;
-
             getpicker();
             getorder();
-
+            gettotal();
+          
         }
 
-    
+        public async void gettotal()
+        {
+            HttpClient clientotal = new HttpClient();
+            string URL = string.Format(Constantes.Base + "/api/detallereservacions/Getdetallereservacion");
+            var miArreglo = await clientotal.GetStringAsync(URL);
+            var JSON_DRESERVACION = JsonConvert.DeserializeObject<List<Model.Modeldb.detallereservacion>>(miArreglo);
+            totalfinal = 0;
+           
+            foreach (var item in JSON_DRESERVACION)
+            {
+                if (item.idreservacion == Constantes.idreservacion)
+                {
+
+                    totalfinal += Convert.ToDecimal(item.subtotal);
+
+                    tttal.Text = "Total a Pagar"+" "+"$"+totalfinal;
+                }
+
+            }
+        }
+
         public async void getorder()
         {
             var client1 = new HttpClient();
@@ -60,11 +80,17 @@ namespace ParaisoRealB.View
 
         public async void Ordenar_Clicked(object sender, EventArgs e)
         {
+
+
+
+
+
+
             var guardarreserva = new reservacionpr
             {
                 id = Constantes.idreservacion,
                 idcliente = Constantes.idusuario,
-                //total =,
+                total = totalfinal,
                 estado = 0,
                 idubicacion = this.idss
             };

@@ -14,51 +14,103 @@
                       SeparatorVisibility="None"
                       BackgroundColor="White"
                       ItemSelected="ListDetalle_ItemSelected">
-            <ListView.Header>
-                <StackLayout Orientation="Horizontal" Margin="20" HorizontalOptions="Center">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Label Text="Producto" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center"></Label>
-                        <Label Text="Precio" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center"></Label>
-                        <Label Text="Cantidad" Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="Center"></Label>
-                        <Label Text="SubTotal" Grid.Column="3" Grid.Row="0" HorizontalTextAlignment="Center"></Label>
-                    </Grid>
-                </StackLayout>
-            </ListView.Header>
+
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Margin="20" BackgroundColor="White" HorizontalOptions="FillAndExpand">
-                            <Grid >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Label Text="{Binding productos.nomproducto}" Grid.Column="0"  HorizontalTextAlignment="Center"></Label>
-                                <Label Text="{Binding precio}" Grid.Column="1"  HorizontalTextAlignment="Center"></Label>
-                                <Label Text="{Binding cantidad}" Grid.Column="2"  HorizontalTextAlignment="Center"></Label>
-                                <Label Text="{Binding subtotal}" Grid.Column="3" HorizontalTextAlignment="Center"></Label>
-                            </Grid>
-                            <StackLayout HorizontalOptions="EndAndExpand">
-                                <Label Text="{Binding reservacion.total}" HorizontalOptions="EndAndExpand" x:Name="totalreserva"></Label>
-                            </StackLayout>
-
+                        <StackLayout Margin="10">
+                            <Frame CornerRadius="20" Padding="5" OutlineColor="Gray">
+                                <StackLayout Orientation="Horizontal">
+                                    <BoxView BackgroundColor="#8BC34A" WidthRequest="4"></BoxView>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="Producto:"
+                                               FontAttributes="Bold"
+                                               FontSize="20"
+                                               Grid.Column="0"
+                                               Grid.Row="0">
+                                        </Label>
+                                        <Label Text="{Binding productos.nomproducto}"
+                                               FontAttributes="Bold"
+                                               FontSize="20"
+                                               TextColor="Black"
+                                               Grid.Column="1"
+                                               Grid.Row="0">
+                                        </Label>
+                                        <Label Text="Precio:"
+                                               FontAttributes="Bold"
+                                               FontSize="20"
+                                               Grid.Column="0"
+                                               Grid.Row="1">
+                                        </Label>
+                                        <Label Text="{Binding precio}"
+                                               FontAttributes="Bold"
+                                               FontSize="20"
+                                               TextColor="Black"
+                                               Grid.Column="1"
+                                               Grid.ColumnSpan="2"
+                                               Grid.Row="1">
+                                        </Label>
+                                        <Label Text="Cantidad:"
+                                               FontAttributes="Bold"
+                                               FontSize="20"
+                                               Grid.Column="0"
+                                               Grid.ColumnSpan="2"
+                                               Grid.Row="2">
+                                        </Label>
+                                        <Label Text="{Binding cantidad}"
+                                               FontAttributes="Bold"
+                                               FontSize="20"
+                                               TextColor="Black"
+                                               Grid.Column="1"
+                                               Grid.ColumnSpan="2"
+                                               Grid.Row="2">
+                                        </Label>
+                                        <Label Text="SubTotal:"
+                                               FontAttributes="Bold"
+                                               FontSize="20"
+                                               Grid.Column="0"
+                                               Grid.Row="3">
+                                        </Label>
+                                        <Label Text="{Binding subtotal}"
+                                               FontAttributes="Bold"
+                                               FontSize="20"
+                                               TextColor="Black"
+                                               Grid.Column="1"
+                                               Grid.Row="3">
+                                        </Label>
+                                    </Grid>
+                                    <Image Source="groupuser.png"
+                                           HorizontalOptions="EndAndExpand">
+                                    </Image>
+                                </StackLayout>
+                            </Frame>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+        <StackLayout Margin="20">
+            <Label Text="{Binding reservacion.total}"
+                   x:Name="tttal"
+                   HorizontalOptions="EndAndExpand"
+                   TextColor="Black"
+                   FontSize="18">
+            </Label>
+        </StackLayout>
+           
+      
+
         <StackLayout>
             <Label Text="Seleccione su Ubicacion"></Label>
             <Picker x:Name="category" Title="Seleccione una Ubicacion"

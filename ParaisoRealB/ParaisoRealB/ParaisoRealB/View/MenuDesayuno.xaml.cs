@@ -19,7 +19,26 @@ namespace ParaisoRealB.View
         public MenuDesayuno()
         {
             InitializeComponent();
+
+
+            horasss();
+          
+
            
+        }
+
+
+        public async void horasss()
+        {
+            DateTime hora = DateTime.Now;
+            DateTime horamax = new DateTime(2019, 05, 01, 11, 30, 00);
+
+            if (hora.TimeOfDay >= horamax.TimeOfDay)
+            {
+                await App.Current.MainPage.DisplayAlert("Mensaje", "Desayunos disponibles hasta las 11:30", "Ok");
+                await App.Current.MainPage.Navigation.PopAsync();
+            }
+
         }
 
         public async void BtnarmaD_Clicked(object sender, EventArgs e)

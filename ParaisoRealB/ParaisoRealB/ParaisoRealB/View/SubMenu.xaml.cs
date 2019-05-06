@@ -29,7 +29,15 @@ namespace ParaisoRealB.View
             {
                 ViewModel.SubPageVM pageData = args.SelectedItem as ViewModel.SubPageVM;
                 Page page = (Page)Activator.CreateInstance(pageData.Type);
+                //Constantes.idreservacion = 0;
+                //Constantes.idusuario = 0;
+                //Constantes.estados = 0;
+                //Constantes.usuario = "";
+                //Constantes.contraseña = "";
+                //Constantes.nombre = "";
                 await Navigation.PushAsync(page);
+
+             
 
                 
             }
