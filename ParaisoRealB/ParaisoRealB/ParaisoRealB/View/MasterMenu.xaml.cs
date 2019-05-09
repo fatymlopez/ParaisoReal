@@ -17,9 +17,11 @@ namespace ParaisoRealB.View
         public MasterMenu()
         {
             InitializeComponent();
-
+         
 
         }
+
+       
         protected override void OnAppearing()
          {
              base.OnAppearing();

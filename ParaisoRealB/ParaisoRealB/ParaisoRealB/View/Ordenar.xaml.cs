@@ -47,6 +47,7 @@ namespace ParaisoRealB.View
                 await Application.Current.MainPage.DisplayAlert("Mensaje", "SubTotal" + newreservacion.subtotal, "Ok");
                 cantidad.Text = string.Empty;
                 TotalGlobal.Text = string.Empty;
+                nomproduct.Text = string.Empty;
 
               
             }

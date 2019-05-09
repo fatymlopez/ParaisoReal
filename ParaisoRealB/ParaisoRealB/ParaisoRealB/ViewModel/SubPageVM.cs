@@ -22,18 +22,15 @@ namespace ParaisoRealB.ViewModel
             {               
                 new SubPageVM(typeof(View.InfEmpresa), "Quienes Somos", "quien"),
                 new SubPageVM(typeof(View.InfServicios), "Nuestros Servicios", "ser"),
-
-                
-
+                new SubPageVM(typeof(View.VerOrden), "Ver Orden", "ser"),
                 new SubPageVM(typeof(View.Inicio), "Cerrar Sesion", "salir" )
-
-
-                
             };
         }
 
         #region propiedades
         public static IList<SubPageVM> All { private set; get; }
+
+
         #endregion
     }
 

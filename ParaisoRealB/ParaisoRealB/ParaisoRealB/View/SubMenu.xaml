@@ -7,23 +7,23 @@
              BackgroundColor="White">
 
     <ScrollView>
-         <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical">
             <StackLayout>
                 <Image Source="Logo.png"></Image>
             </StackLayout>
+
             <ListView
                 ItemsSource="{x:Static local:SubPageVM.All}"
                 ItemSelected="OnListViewItemSelected"
-                 SeparatorVisibility="None"
+                SeparatorVisibility="None"
                 BackgroundColor="White">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout VerticalOptions="FillAndExpand"
                                          Orientation="Horizontal"
-                                         Padding="10,10,0,10"
-                                         Spacing="20"
-                                         BackgroundColor="White">
+                                         BackgroundColor="White"
+                                         Margin="10">
 
                                 <Image  Source="{Binding Icono}"
                                         WidthRequest="{OnIdiom Default=75, Phone=75, Tablet=128}"
@@ -32,9 +32,10 @@
                                 </Image>
 
                                 <Label Text="{Binding Titulo}"
-                                       FontSize="Medium"
+                                       FontSize="18"
                                        VerticalOptions="Center"
-                                       TextColor="Black"
+                                       TextColor="Gray"
+                                       FontAttributes="Bold"
                                        BackgroundColor="White">
                                 </Label>
                             </StackLayout>

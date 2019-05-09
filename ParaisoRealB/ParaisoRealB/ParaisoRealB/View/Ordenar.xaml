@@ -5,17 +5,18 @@
              x:Class="ParaisoRealB.View.Ordenar">
 
 
-    <ScrollView>
+    
         <StackLayout>
             <StackLayout>
-                <Image Source="collage.png"
-                       HorizontalOptions="FillAndExpand"></Image>
+            <Image Source="collagl.jpg"
+                       HorizontalOptions="FillAndExpand">
+            </Image>
             </StackLayout>
             <StackLayout Margin="20">
 
                 <Label Text="{Binding id}"
                        x:Name="idd"
-                       TextColor="White">
+                       IsVisible="False">
                 </Label>
                 <Label Text="{Binding nomproducto}"
                        FontSize="20"
@@ -81,5 +82,5 @@
                 </StackLayout>
             </StackLayout>
         </StackLayout>
-    </ScrollView>
+    
 </ContentPage>

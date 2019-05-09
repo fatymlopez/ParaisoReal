@@ -2,44 +2,40 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"       
              x:Class="ParaisoRealB.View.MenuDesayuno"
-             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
              BackgroundColor="White">
 
-    <!--<ContentPage.BindingContext>
-        <vm:MenuDVM></vm:MenuDVM>
-    </ContentPage.BindingContext>-->
 
     <StackLayout>
         <StackLayout>
-            <Image Source="bannerDesayuno" Aspect="AspectFill"></Image>
-        </StackLayout>
-        <StackLayout>
-            <Label Text="Ordena tu Desayuno Aqui"
-                   TextColor="Black"
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Image Source="bannerDesayuno.jpg" Aspect="AspectFill" Grid.Row="0"></Image>
+
+                <StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+                    <Label Text="Ordena tu Desayuno Aqui"
+                   TextColor="White"
                    FontAttributes="Bold"
                    FontSize="24"
                    HorizontalOptions="Center"
-                   x:Name="idcat">
-            </Label>
+                   VerticalOptions="CenterAndExpand">
+                    </Label>
+                </StackLayout>
+            </Grid>
         </StackLayout>
-        <ActivityIndicator></ActivityIndicator>
-        <!--ItemsSource="{Binding ListDesayunos}"
-            SelectedItem="{Binding Seleccion}"-->
-        <ListView x:Name="ListDesayuno"
-                  ItemSelected="ListDesayuno_ItemSelected"
-                  HasUnevenRows="True"
-                  SeparatorVisibility="None"
-                  BackgroundColor="White">
-            <ListView.Header>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Button Text="Arma tu Desayuno"
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Text="Arma tu Desayuno"
                             x:Name="btnarmaD"
                             Clicked="BtnarmaD_Clicked"
                             BackgroundColor="#FF5722" 
@@ -49,8 +45,8 @@
                             Grid.Column="0"
                             Grid.Row="0"
                             HorizontalOptions="CenterAndExpand">
-                    </Button>
-                    <Button Text="Bebidas Calientes"
+                </Button>
+                <Button Text="Bebidas Calientes"
                             BackgroundColor="#FF5722" 
                             TextColor="White"
                             x:Name="btnbebidasc"
@@ -60,9 +56,16 @@
                             Grid.Column="1"
                             Grid.Row="0"
                             HorizontalOptions="CenterAndExpand">
-                    </Button>
-                </Grid>
-            </ListView.Header>
+                </Button>
+            </Grid>
+        </StackLayout>
+
+        <ListView x:Name="ListDesayuno"
+                  ItemSelected="ListDesayuno_ItemSelected"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  BackgroundColor="White"
+                  IsPullToRefreshEnabled="true">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell >
@@ -72,13 +75,13 @@
                                     <BoxView BackgroundColor="#FF5722" WidthRequest="4"></BoxView>
                                     <Grid VerticalOptions="CenterAndExpand">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
-                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="*"></RowDefinition>
-                                            <RowDefinition Height="*"></RowDefinition>
-                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
                                         </Grid.RowDefinitions>
                                         <StackLayout Grid.Row="0"  Grid.ColumnSpan="1" Orientation="Horizontal">
                                             <Label Text="{Binding nomproducto}"

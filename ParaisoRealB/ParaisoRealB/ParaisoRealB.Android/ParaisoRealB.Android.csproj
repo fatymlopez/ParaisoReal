@@ -174,12 +174,6 @@
     <AndroidResource Include="Resources\drawable\Desayunos.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Aorder.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\servicios.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\bannerDesayuno.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -318,9 +312,6 @@
     <AndroidResource Include="Resources\drawable-mdpi\Password.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Logor.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\Antojos.png" />
   </ItemGroup>
   <ItemGroup>
@@ -330,22 +321,19 @@
     <AndroidResource Include="Resources\drawable\desatipico.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\desayunop.jpg" />
+    <AndroidResource Include="Resources\drawable\collagp.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\collage.png" />
+    <AndroidResource Include="Resources\drawable\collagl.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\collageor.png" />
+    <AndroidResource Include="Resources\drawable\collag.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\antojiorde.jpg" />
+    <AndroidResource Include="Resources\drawable\collagpr.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\banquete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\almu.png" />
+    <AndroidResource Include="Resources\drawable\almu.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

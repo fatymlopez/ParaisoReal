@@ -76,15 +76,11 @@ namespace ParaisoRealB.View
         public void Cancelar_Clicked(object sender, EventArgs e)
         {
 
+
         }
 
         public async void Ordenar_Clicked(object sender, EventArgs e)
         {
-
-
-
-
-
 
             var guardarreserva = new reservacionpr
             {

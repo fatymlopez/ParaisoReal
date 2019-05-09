@@ -9,5 +9,6 @@ namespace ParaisoRealB.Model
         public Type Type { get; set; }
         public string Titulo { get; set; }
         public string Icono { get; set; }
+        public int identificador { get; set; }
     }
 }

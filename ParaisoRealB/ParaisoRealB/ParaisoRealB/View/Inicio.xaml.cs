@@ -14,7 +14,7 @@ namespace ParaisoRealB.View
 	{
 		public Inicio ()
 		{
-			InitializeComponent ();
+			    InitializeComponent ();
 		}
 
         public  void TapGestureRecognizer_Tapped(object sender, EventArgs e)

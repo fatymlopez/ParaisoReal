@@ -22,30 +22,45 @@ namespace ParaisoRealB.View
         }
      
         private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
+            {
             (sender as ListView).SelectedItem = null;
 
             if (args.SelectedItem != null)
             {
                 ViewModel.SubPageVM pageData = args.SelectedItem as ViewModel.SubPageVM;
                 Page page = (Page)Activator.CreateInstance(pageData.Type);
-                //Constantes.idreservacion = 0;
-                //Constantes.idusuario = 0;
-                //Constantes.estados = 0;
-                //Constantes.usuario = "";
-                //Constantes.contraseña = "";
-                //Constantes.nombre = "";
+               
                 await Navigation.PushAsync(page);
 
+                
+                
+                    if (typeof(Inicio) != null)
+                    {
+                        Constantes.idreservacion = 0;
+                        Constantes.idusuario = 0;
+                        Constantes.estados = 0;
+                        Constantes.usuario = "";
+                        Constantes.contraseña = "";
+                        Constantes.nombre = "";
+                       // await Navigation.PopAsync();
+                    }
+
+                
              
 
                 
             }
         }
 
-       
-
-
-        
+        //public async  void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        //{
+        //Constantes.idreservacion = 0;
+        //Constantes.idusuario = 0;
+        //Constantes.estados = 0;
+        //Constantes.usuario = "";
+        //Constantes.contraseña = "";
+        //Constantes.nombre = "";
+        //await Application.Current.MainPage.Navigation.PopAsync();
+        //}
     }
 }
