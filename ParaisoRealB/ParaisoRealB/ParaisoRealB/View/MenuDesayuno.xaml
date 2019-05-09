@@ -5,37 +5,55 @@
              BackgroundColor="White">
 
 
-    <StackLayout>
         <StackLayout>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                </Grid.RowDefinitions>
-
+           
                 <Image Source="bannerDesayuno.jpg" Aspect="AspectFill" Grid.Row="0"></Image>
 
-                <StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
-                    <Label Text="Ordena tu Desayuno Aqui"
-                   TextColor="White"
+            <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Text="Ordena tu Desayuno Aqui"
+                   TextColor="Black"
                    FontAttributes="Bold"
                    FontSize="24"
                    HorizontalOptions="Center"
-                   VerticalOptions="CenterAndExpand">
-                    </Label>
-                </StackLayout>
+                   VerticalOptions="CenterAndExpand"
+                   Grid.Row="0">
+                </Label>
+                <ActivityIndicator x:Name="indicatord"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Start"
+                                     Grid.Row="0"
+                                     Color="Gray">
+                </ActivityIndicator>
             </Grid>
+               
         </StackLayout>
-        <StackLayout>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Button Text="Arma tu Desayuno"
+
+       
+       
+
+        <ListView x:Name="ListDesayuno"
+                  ItemSelected="ListDesayuno_ItemSelected"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  BackgroundColor="White"
+                  IsPullToRefreshEnabled="true">
+            <ListView.Header>
+                <FlexLayout Grid.Row="1"
+                            Direction="Column"
+                            Wrap="Wrap">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button Text="Arma tu Desayuno"
                             x:Name="btnarmaD"
                             Clicked="BtnarmaD_Clicked"
                             BackgroundColor="#FF5722" 
@@ -45,8 +63,8 @@
                             Grid.Column="0"
                             Grid.Row="0"
                             HorizontalOptions="CenterAndExpand">
-                </Button>
-                <Button Text="Bebidas Calientes"
+                        </Button>
+                        <Button Text="Bebidas Calientes"
                             BackgroundColor="#FF5722" 
                             TextColor="White"
                             x:Name="btnbebidasc"
@@ -56,17 +74,12 @@
                             Grid.Column="1"
                             Grid.Row="0"
                             HorizontalOptions="CenterAndExpand">
-                </Button>
-            </Grid>
-        </StackLayout>
-
-        <ListView x:Name="ListDesayuno"
-                  ItemSelected="ListDesayuno_ItemSelected"
-                  HasUnevenRows="True"
-                  SeparatorVisibility="None"
-                  BackgroundColor="White"
-                  IsPullToRefreshEnabled="true">
+                        </Button>
+                    </Grid>
+                </FlexLayout>
+            </ListView.Header>
             <ListView.ItemTemplate>
+                
                 <DataTemplate>
                     <ViewCell >
                         <StackLayout Padding="20" BackgroundColor="White">
@@ -113,7 +126,7 @@
                                                    FontSize="20">
                                             </Label>
                                         </StackLayout>
-                                        <StackLayout Grid.Row="1" Grid.ColumnSpan="3">
+                                        <StackLayout Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0">
                                             <Label Text="{Binding descripcion}"
                                                    TextColor="Gray"
                                                    FontSize="20">

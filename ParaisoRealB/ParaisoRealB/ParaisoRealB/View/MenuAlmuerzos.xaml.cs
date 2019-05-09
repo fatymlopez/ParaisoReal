@@ -20,14 +20,14 @@ namespace ParaisoRealB.View
         public MenuAlmuerzos()
         {
             InitializeComponent();
-           // horaAlmuerzo();
+            //horaAlmuerzo();
 
         }
 
         //public async void horaAlmuerzo()
         //{
         //    DateTime hora = DateTime.Now;
-        //    DateTime horamax = new DateTime(2019, 05, 01, 13, 00, 00);
+        //    DateTime horamax = new DateTime(2019, 05, 01, 1, 00, 00);
 
         //    if (hora.TimeOfDay >= horamax.TimeOfDay)
         //    {
@@ -37,49 +37,49 @@ namespace ParaisoRealB.View
 
         //}
 
-        ////public async void Btnarmarcombo_Clicked(object sender, EventArgs e)
-        ////{
-        ////    var client = new HttpClient();
-        ////    string URL = string.Format(Constantes.Base +"/api/productoss/Getproductos");
-        ////    var miArreglo = await client.GetStringAsync(URL);
-        ////    var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-        ////    var nuevalista = verproductos.Where(a => a.idcategoria == 2 && a.idestado > 0);
-        ////    ListAlmuerzo.ItemsSource = nuevalista;
+        public async void Btnarmarcombo_Clicked(object sender, EventArgs e)
+        {
+            var client = new HttpClient();
+            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+            var miArreglo = await client.GetStringAsync(URL);
+            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+            var nuevalista = verproductos.Where(a => a.idcategoria == 2 && a.idestado > 0);
+            ListAlmuerzo.ItemsSource = nuevalista;
 
-        ////}
+        }
 
-        ////public async void BtnCombos_Clicked(object sender, EventArgs e)
-        ////{
-        ////    var client = new HttpClient();
-        ////    string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
-        ////    var miArreglo = await client.GetStringAsync(URL);
-        ////    var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-        ////    var nuevalista = verproductos.Where(a => a.idcategoria == 3 && a.idestado > 0);
-        ////    ListAlmuerzo.ItemsSource = nuevalista;
+        public async void BtnCombos_Clicked(object sender, EventArgs e)
+        {
+            var client = new HttpClient();
+            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+            var miArreglo = await client.GetStringAsync(URL);
+            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+            var nuevalista = verproductos.Where(a => a.idcategoria == 3 && a.idestado > 0);
+            ListAlmuerzo.ItemsSource = nuevalista;
 
-        ////}
+        }
 
-        ////public async void Btnbebidaf_Clicked(object sender, EventArgs e)
-        ////{
-        ////    var client = new HttpClient();
-        ////    string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
-        ////    var miArreglo = await client.GetStringAsync(URL);
-        ////    var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-        ////    var nuevalista = verproductos.Where(a => a.idcategoria == 5 && a.idestado > 0);
-        ////    ListAlmuerzo.ItemsSource = nuevalista;
-        ////}
+        public async void Btnbebidaf_Clicked(object sender, EventArgs e)
+        {
+            var client = new HttpClient();
+            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+            var miArreglo = await client.GetStringAsync(URL);
+            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+            var nuevalista = verproductos.Where(a => a.idcategoria == 5 && a.idestado > 0);
+            ListAlmuerzo.ItemsSource = nuevalista;
+        }
 
-        ////public async void ListAlmuerzo_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        ////{
-        ////    (sender as ListView).SelectedItem = null;
-        ////    if (e.SelectedItem != null)
-        ////    {
-        ////        await App.Current.MainPage.Navigation.PushAsync(new Ordenar { BindingContext = e.SelectedItem });
-        ////    }
+        public async void ListAlmuerzo_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            (sender as ListView).SelectedItem = null;
+            if (e.SelectedItem != null)
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new Ordenar { BindingContext = e.SelectedItem });
+            }
 
 
-        ////}
+        }
 
-       
+
     }
 }

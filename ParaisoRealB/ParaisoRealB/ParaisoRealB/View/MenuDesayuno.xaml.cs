@@ -20,41 +20,76 @@ namespace ParaisoRealB.View
         {
             InitializeComponent();
 
-            horasss();
+            //horasss();
            
         }
 
-        public async void horasss()
-        {
-            DateTime hora = DateTime.Now;
-            DateTime horamax = new DateTime(2019, 05, 01, 10, 00, 00);
+        //public async void horasss()
+        //{
+        //    DateTime hora = DateTime.Now;
+        //    DateTime horamax = new DateTime(2019, 05, 01, 10, 00, 00);
 
-            if (hora.TimeOfDay >= horamax.TimeOfDay)
-            {
-                await App.Current.MainPage.DisplayAlert("Mensaje", "Desayunos disponibles hasta las 10:00 AM", "Ok");
-                await App.Current.MainPage.Navigation.PopAsync();
-            }
+        //    if (hora.TimeOfDay >= horamax.TimeOfDay)
+        //    {
+        //        await App.Current.MainPage.DisplayAlert("Mensaje", "Desayunos disponibles hasta las 10:00 AM", "Ok");
+        //        await App.Current.MainPage.Navigation.PopAsync();
+        //    }
 
-        }
+        //}
 
         public async void BtnarmaD_Clicked(object sender, EventArgs e)
         {
-            var client = new HttpClient();
-            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
-            var miArreglo = await client.GetStringAsync(URL);
-            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 1 && a.idestado > 0);
-            ListDesayuno.ItemsSource = nuevalista;
+            indicatord.IsRunning = true;
+            try
+            {
+                var client = new HttpClient();
+                string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+                var miArreglo = await client.GetStringAsync(URL);
+                var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+                var nuevalista = verproductos.Where(a => a.idcategoria == 1 && a.idestado > 0);
+                ListDesayuno.ItemsSource = nuevalista;
+
+                btnarmaD.IsEnabled = true;
+            }
+
+
+
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                btnarmaD.IsEnabled = true;
+                indicatord.IsRunning = false;
+                return;
+            }
+
+            indicatord.IsRunning = false;
         }
 
         public async void Btnbebidasc_Clicked(object sender, EventArgs e)
         {
-            var client = new HttpClient();
+            indicatord.IsRunning = true;
+            try
+            {
+                var client = new HttpClient();
             string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
             var miArreglo = await client.GetStringAsync(URL);
             var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
             var nuevalista = verproductos.Where(a => a.idcategoria == 6 && a.idestado > 0);
             ListDesayuno.ItemsSource = nuevalista;
+                btnarmaD.IsEnabled = true;
+            }
+
+
+
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mensaje", "No hay conexion a internet", "Ok");
+                btnarmaD.IsEnabled = true;
+                indicatord.IsRunning = false;
+                return;
+            }
+
+            indicatord.IsRunning = false;
         }
 
         public async void ListDesayuno_ItemSelected(object sender, SelectedItemChangedEventArgs e)

@@ -4,18 +4,31 @@
              x:Class="ParaisoRealB.View.MenuAlmuerzos"
              BackgroundColor="White">
 
+  <StackLayout>
     <StackLayout>
-        <StackLayout>
-            <Image Source="Aorder.jpg" 
+            <Image Source="almu.jpg" 
                    Aspect="AspectFill"></Image>
         </StackLayout>
-        <StackLayout>
-            <Label Text="Ordena tu Almuerzo Aqui"
-                   TextColor="Black"
+    <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Text="Ordena tu Almuerzo Aqui"
+                   TextColor="White"
                    FontAttributes="Bold"
                    FontSize="24"
-                   HorizontalOptions="CenterAndExpand">
-            </Label>
+                   HorizontalOptions="Center"
+                   Grid.Row="0"
+                   BackgroundColor="#80000000">
+                </Label>
+                <ActivityIndicator x:Name="indicatora"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Start"
+                                     Grid.Row="0"
+                                     Color="Orange">
+                </ActivityIndicator>
+            </Grid>
         </StackLayout>
         <ListView x:Name="ListAlmuerzo"
                   ItemSelected="ListAlmuerzo_ItemSelected"
@@ -23,14 +36,15 @@
                   SeparatorVisibility="None"
                   BackgroundColor="White">
             <ListView.Header>
+                <StackLayout HorizontalOptions="Center">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Button Text="Ver Combos"
                             x:Name="btnCombos"
@@ -40,7 +54,8 @@
                             BorderColor="Transparent"
                             BorderRadius="23" 
                             Grid.Column="0"
-                            Grid.Row="0">
+                            Grid.Row="0"
+                            FontSize="{OnIdiom  Default=10, Phone=10, Tablet=20}">
                     </Button>
                     <Button Text="Arma tu Combo"
                             BackgroundColor="#FF5722" 
@@ -50,7 +65,8 @@
                             BorderRadius="23" 
                             BorderColor="Transparent"
                             Grid.Column="1"
-                            Grid.Row="0">
+                            Grid.Row="0"
+                            FontSize="{OnIdiom  Default=10, Phone=10, Tablet=20}">
                     </Button>
                     <Button Text="Bebidas Frias"
                             BackgroundColor="#FF5722" 
@@ -60,16 +76,18 @@
                             BorderRadius="23" 
                             BorderColor="Transparent"
                             Grid.Column="2"
-                            Grid.Row="0">
+                            Grid.Row="0"
+                            FontSize="{OnIdiom  Default=10, Phone=10, Tablet=20}">
                     </Button>
                 </Grid>
+                </StackLayout>
             </ListView.Header>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell >
-                        <StackLayout Padding="20" BackgroundColor="White">
+                      <StackLayout Padding="20" BackgroundColor="White">
                             <Frame CornerRadius="20" Padding="5">
-                                <StackLayout Orientation="Horizontal">
+                              <StackLayout Orientation="Horizontal">
                                     <BoxView BackgroundColor="#FF5722" WidthRequest="4"></BoxView>
                                     <Grid VerticalOptions="CenterAndExpand">
                                         <Grid.ColumnDefinitions>
@@ -82,14 +100,14 @@
                                             <RowDefinition Height="*"></RowDefinition>
                                             <RowDefinition Height="*"></RowDefinition>
                                         </Grid.RowDefinitions>
-                                        <StackLayout Grid.Row="0"  Grid.ColumnSpan="2" Orientation="Horizontal">
+                                      <StackLayout Grid.Row="0"  Grid.ColumnSpan="2" Orientation="Horizontal">
                                             <Label Text="{Binding nomproducto}"
                                                    TextColor="#FF5722"
                                                    FontAttributes="Bold"
                                                    FontSize="20">
                                             </Label>
                                         </StackLayout>
-                                        <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                                      <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
                                             <Label Text="Precio"
                                                            HorizontalOptions="End"
                                                            HorizontalTextAlignment="End"
@@ -112,7 +130,7 @@
                                                    FontSize="20">
                                             </Label>
                                         </StackLayout>
-                                        <StackLayout Grid.Row="1" Grid.ColumnSpan="3">
+                              <StackLayout Grid.Row="1" Grid.ColumnSpan="3">
                                             <Label Text="{Binding descripcion}"
                                                    TextColor="Gray"
                                                    FontAttributes="Bold"
