@@ -12,17 +12,32 @@
 
     <ScrollView>
         <StackLayout>
-            <Label Text="Login" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30" TextColor="Black" Margin="20"></Label>
-            <Image Source="login.png" HeightRequest="125" HorizontalOptions="Center" ></Image>
-            <StackLayout BackgroundColor="White" Margin="20">
-                <StackLayout Margin="20">
-                   
+            <Label Text="Login" 
+                   HorizontalTextAlignment="Center" 
+                   FontAttributes="Bold" 
+                   FontSize="30" 
+                   TextColor="Black" 
+                   Margin="20">
+            </Label>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Source="login.png" 
+                           HeightRequest="125" 
+                           HorizontalOptions="Center" 
+                           Grid.Row="0">
+                    </Image>
                     <ActivityIndicator
                         x:Name="indicator"
                         HorizontalOptions="Center"
-                        VerticalOptions="Center">
-                        
+                        VerticalOptions="Center"
+                        Grid.Row="0"
+                        Color="#c3c3c3">
                     </ActivityIndicator>
+                </Grid>
+                <StackLayout Margin="20">
                     <local:CtrlImage  
                                Placeholder="Correo electronico"
                                Text="{Binding emailcl}"           
@@ -31,17 +46,17 @@
                                ImageWidth="15"
                                ImageHeigth="15"
                                x:Name="correousu">
-                    </local:CtrlImage>
-                </StackLayout>
-                <StackLayout Grid.Row="2" Grid.Column="1" Margin="20,10,20,10">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
+                        </local:CtrlImage>
+                    </StackLayout>
+                    <StackLayout Grid.Row="2" Grid.Column="1" Margin="20,10,20,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
 
-                       
-                        <local:CtrlImage
+
+                            <local:CtrlImage
                                Placeholder="Contraseña"
                                Text="{Binding passcl}"
                                IsPassword="True"
@@ -51,23 +66,23 @@
                                Image="key"
                                ImageHeigth="15"
                                ImageWidth="15">
-                            
-                        </local:CtrlImage>
-                        <Image Source="Password.png" 
+
+                            </local:CtrlImage>
+                            <Image Source="Password.png" 
                                HorizontalOptions="End" 
                                VerticalOptions="Center" 
                                Grid.Column="1" 
                                HeightRequest="30">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" 
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" 
                                                       NumberOfTapsRequired="1">
-                                </TapGestureRecognizer>
-                            </Image.GestureRecognizers>
-                        </Image>
-                    </Grid>
-                </StackLayout>
-                <StackLayout>
-                    <Button 
+                                    </TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout>
+                        <Button 
                      HeightRequest="46"
                      BorderRadius="23"
                      BackgroundColor="#8BC34A"
@@ -76,11 +91,11 @@
                      Margin="10,20"
                      x:Name="IniciarS"
                      Clicked="IniciarS_Clicked"/>
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
-          
-            <Label Text="No tienes una cuenta" HorizontalOptions="Center" TextColor="Black"></Label>
-            <Button 
+
+                <Label Text="No tienes una cuenta" HorizontalOptions="Center" TextColor="Black"></Label>
+                <Button 
                      HeightRequest="46"
                      BorderRadius="23"
                      BackgroundColor="Transparent"
@@ -88,7 +103,8 @@
                      TextColor="Black"      
                      Margin="10,0"              
                      Command="{Binding RegistroCommand}"/>
-        </StackLayout>
+            </StackLayout>
+     
     </ScrollView>
 
 </ContentPage>

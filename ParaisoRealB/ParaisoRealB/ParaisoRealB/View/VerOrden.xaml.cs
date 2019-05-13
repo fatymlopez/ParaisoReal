@@ -54,12 +54,28 @@ namespace ParaisoRealB.View
 
         public async void getorder()
         {
-            var client1 = new HttpClient();
-            string URL = string.Format(Constantes.Base + "/api/detallereservacions/Getdetallereservacion");
-            var miArreglo1 = await client1.GetStringAsync(URL);
-            var JSON_ORDER = JsonConvert.DeserializeObject<List<Model.Modeldb.detallereservacion>>(miArreglo1);
-            var NewOrderList = JSON_ORDER.Where(i => i.idreservacion == Constantes.idreservacion && i.reservacion.estado == 1);
-            ListDetalle.ItemsSource = NewOrderList;
+            indicatordo.IsRunning = true;
+            try
+            {
+                var client1 = new HttpClient();
+                string URL = string.Format(Constantes.Base + "/api/detallereservacions/Getdetallereservacion");
+                var miArreglo1 = await client1.GetStringAsync(URL);
+                var JSON_ORDER = JsonConvert.DeserializeObject<List<Model.Modeldb.detallereservacion>>(miArreglo1);
+                var NewOrderList = JSON_ORDER.Where(i => i.idreservacion == Constantes.idreservacion && i.reservacion.estado == 1);
+                ListDetalle.ItemsSource = NewOrderList;
+
+                ListDetalle.IsEnabled = true;
+            }
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                ListDetalle.IsEnabled = true;
+                indicatordo.IsRunning = false;
+                
+                return;
+            }
+
+            indicatordo.IsRunning = false;
 
         }
 
@@ -72,10 +88,30 @@ namespace ParaisoRealB.View
             Debug.WriteLine(Itemcategory);
         }
 
-
-        public void Cancelar_Clicked(object sender, EventArgs e)
+        
+        public async void Cancelar_Clicked(object sender, EventArgs e)
         {
+            //agregue estas lineas de codigo
+            var answer = await DisplayAlert("Mensaje", "Desea Eliminar su orden", "Si", "No");
+            if (answer == true)
+            {
+                HttpClient borrarorder = new HttpClient();
+                var resultb = await borrarorder.DeleteAsync(string.Concat(Constantes.Base + "/api/reservacions/Deletereservacion/", Constantes.idreservacion));
+                if (resultb.IsSuccessStatusCode)
+                {
+                    await DisplayAlert("Mensaje", "Proceso realizado con Exito", "OK");
+                    await App.Current.MainPage.Navigation.PopAsync();
+                    
 
+                }
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Mensaje", "Operacion Cancelada", "Ok");
+                await App.Current.MainPage.Navigation.PopAsync();
+            }
+
+            //aqui termina lo que agregue
 
         }
 
@@ -91,17 +127,19 @@ namespace ParaisoRealB.View
                 idubicacion = this.idss
             };
 
-            await DisplayAlert("mensaje", "sacando el total" + guardarreserva.total, "ok");
-            await DisplayAlert("mensaje", "sacando el id" + guardarreserva.id, "ok");
-            await DisplayAlert("mensaje", "sacando el idcliente" + guardarreserva.idcliente, "ok");
-            await DisplayAlert("mensaje", "sacando el estado" + guardarreserva.estado, "ok");
+            //borrar inicio
+           // await DisplayAlert("mensaje", "sacando el total" + guardarreserva.total, "ok");
+            //await DisplayAlert("mensaje", "sacando el id" + guardarreserva.id, "ok");
+            //await DisplayAlert("mensaje", "sacando el idcliente" + guardarreserva.idcliente, "ok");
+            //await DisplayAlert("mensaje", "sacando el estado" + guardarreserva.estado, "ok");
+            //borrar final
 
             var url = string.Format(Constantes.Base + "/api/reservacions/Putreservacion/" + Constantes.idreservacion);
-
-            await DisplayAlert("mensaje", "url: " + url, "ok");
+            //borrar
+            //await DisplayAlert("mensaje", "url: " + url, "ok");
             var jsona = JsonConvert.SerializeObject(guardarreserva);
             var contenta = new StringContent(jsona, Encoding.UTF8, "application/json");
-            await DisplayAlert("mensaje", "array" + contenta, "ok");
+            //await DisplayAlert("mensaje", "array" + contenta, "ok");
 
             HttpClient client3 = new HttpClient();
             HttpResponseMessage resulta = null;
@@ -109,7 +147,9 @@ namespace ParaisoRealB.View
 
             if (resulta.IsSuccessStatusCode)
             {
-                await DisplayAlert("mensaje", "entra al if" + resulta, "ok");
+                await DisplayAlert("Mensaje", "Orden Realizada con exito", "Ok");
+                await App.Current.MainPage.Navigation.PopAsync();
+                tttal.Text = string.Empty;
 
             }
             else

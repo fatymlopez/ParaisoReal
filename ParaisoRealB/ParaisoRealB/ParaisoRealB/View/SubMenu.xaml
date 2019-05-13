@@ -26,8 +26,8 @@
                                          Margin="10">
 
                                 <Image  Source="{Binding Icono}"
-                                        WidthRequest="{OnIdiom Default=75, Phone=75, Tablet=128}"
-                                        HeightRequest="{OnIdiom Default=75, Phone=75, Tablet=128}"
+                                        WidthRequest="{OnIdiom Default=60, Phone=70, Tablet=120}"
+                                        HeightRequest="{OnIdiom Default=60, Phone=70, Tablet=120}"
                                         VerticalOptions="Center">
                                 </Image>
 

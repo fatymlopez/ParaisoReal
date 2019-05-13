@@ -2351,26 +2351,26 @@ namespace ParaisoRealB.Droid
 			// aapt resource value: 0x7f020056
 			public const int avd_hide_password = 2130837590;
 			
-			// aapt resource value: 0x7f020147
-			public const int avd_hide_password_1 = 2130837831;
-			
 			// aapt resource value: 0x7f020148
-			public const int avd_hide_password_2 = 2130837832;
+			public const int avd_hide_password_1 = 2130837832;
 			
 			// aapt resource value: 0x7f020149
-			public const int avd_hide_password_3 = 2130837833;
+			public const int avd_hide_password_2 = 2130837833;
+			
+			// aapt resource value: 0x7f02014a
+			public const int avd_hide_password_3 = 2130837834;
 			
 			// aapt resource value: 0x7f020057
 			public const int avd_show_password = 2130837591;
 			
-			// aapt resource value: 0x7f02014a
-			public const int avd_show_password_1 = 2130837834;
-			
 			// aapt resource value: 0x7f02014b
-			public const int avd_show_password_2 = 2130837835;
+			public const int avd_show_password_1 = 2130837835;
 			
 			// aapt resource value: 0x7f02014c
-			public const int avd_show_password_3 = 2130837836;
+			public const int avd_show_password_2 = 2130837836;
+			
+			// aapt resource value: 0x7f02014d
+			public const int avd_show_password_3 = 2130837837;
 			
 			// aapt resource value: 0x7f020058
 			public const int bannerDesayuno = 2130837592;
@@ -3053,11 +3053,11 @@ namespace ParaisoRealB.Droid
 			// aapt resource value: 0x7f02013a
 			public const int notification_icon_background = 2130837818;
 			
-			// aapt resource value: 0x7f020145
-			public const int notification_template_icon_bg = 2130837829;
-			
 			// aapt resource value: 0x7f020146
-			public const int notification_template_icon_low_bg = 2130837830;
+			public const int notification_template_icon_bg = 2130837830;
+			
+			// aapt resource value: 0x7f020147
+			public const int notification_template_icon_low_bg = 2130837831;
 			
 			// aapt resource value: 0x7f02013b
 			public const int notification_tile_bg = 2130837819;
@@ -3088,6 +3088,9 @@ namespace ParaisoRealB.Droid
 			
 			// aapt resource value: 0x7f020144
 			public const int users = 2130837828;
+			
+			// aapt resource value: 0x7f020145
+			public const int ver = 2130837829;
 			
 			static Drawable()
 			{

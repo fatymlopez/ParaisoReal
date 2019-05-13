@@ -13,6 +13,12 @@ namespace ParaisoRealB.ViewModel
             Tapcommand = new Command(Mdesayuno);
             Tapcommand2 = new Command(Malmuerzos);
             Tapcommand3 = new Command(Mantojitos);
+            seeorder = new Command(VerDetalleReserva);
+        }
+
+        public async void VerDetalleReserva(object obj)
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new VerOrden());
         }
 
         public async void Mantojitos(object obj)
@@ -41,6 +47,7 @@ namespace ParaisoRealB.ViewModel
         public Command Tapcommand { get; set; }
         public Command Tapcommand2 { get; set; }
         public Command Tapcommand3 { get; set; }
+        public Command seeorder { get; set; }
         #endregion
     }
 }

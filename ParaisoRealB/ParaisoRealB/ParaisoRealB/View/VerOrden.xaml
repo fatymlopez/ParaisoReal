@@ -10,19 +10,39 @@
             <Image Source="collagp.jpg"
                    HorizontalOptions="FillAndExpand"></Image>
         </StackLayout>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Text="Detalle Orden"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       FontSize="{OnIdiom  Default=15, Phone=20, Tablet=24}"
+                       Grid.Row="0">
+                </Label>
+                <ActivityIndicator x:Name="indicatordo"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start"
+                                   Grid.Row="0"
+                                   Color="Gray">
+                </ActivityIndicator>
+            </Grid>
+        </StackLayout>
         <ListView x:Name="ListDetalle"
                   HasUnevenRows="True"
-                      SeparatorVisibility="None"
-                      BackgroundColor="White"
-                      ItemSelected="ListDetalle_ItemSelected">
-
+                  SeparatorVisibility="None"
+                  BackgroundColor="White"
+                  ItemSelected="ListDetalle_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Margin="10">
                             <Frame CornerRadius="20" Padding="5" OutlineColor="Gray">
                                 <StackLayout Orientation="Horizontal">
-                                    <BoxView BackgroundColor="#8BC34A" WidthRequest="4"></BoxView>
+                                    <BoxView BackgroundColor="#FF5722" WidthRequest="4"></BoxView>
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -37,26 +57,26 @@
                                         </Grid.RowDefinitions>
                                         <Label Text="Producto:"
                                                FontAttributes="Bold"
-                                               FontSize="20"
+                                               FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
                                                Grid.Column="0"
                                                Grid.Row="0">
                                         </Label>
                                         <Label Text="{Binding productos.nomproducto}"
                                                FontAttributes="Bold"
-                                               FontSize="20"
+                                               FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
                                                TextColor="Black"
                                                Grid.Column="1"
                                                Grid.Row="0">
                                         </Label>
                                         <Label Text="Precio:"
                                                FontAttributes="Bold"
-                                               FontSize="20"
+                                               FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
                                                Grid.Column="0"
                                                Grid.Row="1">
                                         </Label>
                                         <Label Text="{Binding precio}"
                                                FontAttributes="Bold"
-                                               FontSize="20"
+                                               FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
                                                TextColor="Black"
                                                Grid.Column="1"
                                                Grid.ColumnSpan="2"
@@ -64,14 +84,14 @@
                                         </Label>
                                         <Label Text="Cantidad:"
                                                FontAttributes="Bold"
-                                               FontSize="20"
+                                               FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
                                                Grid.Column="0"
                                                Grid.ColumnSpan="2"
                                                Grid.Row="2">
                                         </Label>
                                         <Label Text="{Binding cantidad}"
                                                FontAttributes="Bold"
-                                               FontSize="20"
+                                               FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
                                                TextColor="Black"
                                                Grid.Column="1"
                                                Grid.ColumnSpan="2"
@@ -79,21 +99,18 @@
                                         </Label>
                                         <Label Text="SubTotal:"
                                                FontAttributes="Bold"
-                                               FontSize="20"
+                                               FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
                                                Grid.Column="0"
                                                Grid.Row="3">
                                         </Label>
                                         <Label Text="{Binding subtotal}"
                                                FontAttributes="Bold"
-                                               FontSize="20"
+                                               FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
                                                TextColor="Black"
                                                Grid.Column="1"
                                                Grid.Row="3">
                                         </Label>
                                     </Grid>
-                                    <Image Source="groupuser.png"
-                                           HorizontalOptions="EndAndExpand">
-                                    </Image>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
@@ -101,43 +118,49 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackLayout Margin="20">
+        <StackLayout Margin="10">
             <Label Text="{Binding reservacion.total}"
                    x:Name="tttal"
-                   HorizontalOptions="EndAndExpand"
+                   HorizontalOptions="StartAndExpand"
                    TextColor="Black"
-                   FontSize="18">
+                   FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
+                   FontAttributes="Bold">
             </Label>
         </StackLayout>
-           
-      
-
-        <StackLayout>
-            <Label Text="Seleccione su Ubicacion"></Label>
+        <StackLayout Margin="10">
+            <Label Text="Seleccione su Ubicacion"
+                   FontAttributes="Bold"
+                   FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}">
+            </Label>
             <Picker x:Name="category" Title="Seleccione una Ubicacion"
-                        FontAttributes="Bold"
-                        ItemDisplayBinding="{Binding nomubicacion}"
-                        SelectedItem="{Binding selectcategory}"
-                        ItemsSource="{Binding Itemcategory}">
+                    FontAttributes="Bold"
+                    ItemDisplayBinding="{Binding nomubicacion}"
+                    SelectedItem="{Binding selectcategory}"
+                    ItemsSource="{Binding Itemcategory}">
             </Picker>
-            <StackLayout Orientation="Horizontal">
-
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Margin="8">
                 <Button Text="Ordenar" 
-                            
-                            BorderRadius="23"                
-                            BackgroundColor="#FF5722"                   
-                            TextColor="White"                   
-                            x:Name="Ordenar"
-                            Clicked="Ordenar_Clicked">
-                </Button>
-
+                        BorderRadius="23"                
+                        BackgroundColor="#FF5722"                   
+                        TextColor="White"                   
+                        x:Name="Ordenar"
+                        Clicked="Ordenar_Clicked"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        FontAttributes="Bold"
+                        FontSize="{OnIdiom  Default=10, Phone=12, Tablet=15}">
+                    </Button>
                 <Button Text="Cancelar Orden"        
-                            HeightRequest="46"
-                            BorderRadius="23"                
-                            BackgroundColor="Transparent"                   
-                            TextColor="Black"                   
-                            x:Name="cancelar"
-                            Clicked="Cancelar_Clicked">
+                        HeightRequest="46"
+                        BorderRadius="23"                
+                        BackgroundColor="Transparent"                  
+                        TextColor="Black"                   
+                        x:Name="cancelar"
+                        Clicked="Cancelar_Clicked"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        FontAttributes="Bold"
+                        FontSize="{OnIdiom  Default=10, Phone=12, Tablet=15}">
                 </Button>
             </StackLayout>
         </StackLayout>

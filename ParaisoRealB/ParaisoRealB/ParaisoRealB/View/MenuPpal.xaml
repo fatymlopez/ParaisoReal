@@ -8,7 +8,20 @@
         <vm:MenuPpalVM></vm:MenuPpalVM>
     </ContentPage.BindingContext>
 
-    <ContentPage.Content>
+  
+        <ContentPage.ToolbarItems>
+        <ToolbarItem Name="verorder" 
+                     Order="Primary"
+                     Text="Ver Orden"
+                     Priority="0">
+        </ToolbarItem>
+        <ToolbarItem Name="verorder1" 
+                     Order="Primary"
+                     Priority="1"
+                     Icon="ver.png"
+                     Command="{Binding seeorder}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
         <ScrollView>
             <StackLayout BackgroundColor="White">
                 <!-- Place new controls here -->
@@ -88,5 +101,5 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
-    </ContentPage.Content>
+
 </ContentPage>

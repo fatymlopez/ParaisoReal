@@ -25,39 +25,54 @@ namespace ParaisoRealB.View
 
         public async void BtnOrdenar_Clicked(object sender, EventArgs e)
         {
-
-            var newreservacion = new detallereservacion
+            indicatorser.IsRunning = true;
+            try
             {
-                idreservacion = Constantes.idreservacion,
-                idproducto = Convert.ToInt32(idd.Text),
-                precio = Convert.ToDecimal(price.Text),
-                cantidad = Convert.ToInt32(cantidad.Text),
-                subtotal = Convert.ToDecimal(price.Text) * Convert.ToDecimal(cantidad.Text)
-            };
+                var newreservacion = new detallereservacion
+                {
+                    idreservacion = Constantes.idreservacion,
+                    idproducto = Convert.ToInt32(idd.Text),
+                    precio = Convert.ToDecimal(price.Text),
+                    cantidad = Convert.ToInt32(cantidad.Text),
+                    subtotal = Convert.ToDecimal(price.Text) * Convert.ToDecimal(cantidad.Text)
+                };
 
-            TotalGlobal.Text = (newreservacion.subtotal).ToString();
+                TotalGlobal.Text = (newreservacion.subtotal).ToString();
 
-            var json = JsonConvert.SerializeObject(newreservacion);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpClient client = new HttpClient();
-            var result = await client.PostAsync(Constantes.Base + "/api/detallereservacions/Postdetallereservacion", content);
+                var json = JsonConvert.SerializeObject(newreservacion);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpClient client = new HttpClient();
+                var result = await client.PostAsync(Constantes.Base + "/api/detallereservacions/Postdetallereservacion", content);
 
-            if (result.StatusCode == HttpStatusCode.Created)
-            {
-                await Application.Current.MainPage.DisplayAlert("Mensaje", "SubTotal" + newreservacion.subtotal, "Ok");
-                cantidad.Text = string.Empty;
-                TotalGlobal.Text = string.Empty;
-                nomproduct.Text = string.Empty;
+                if (result.StatusCode == HttpStatusCode.Created)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Mensaje", "SubTotal" + newreservacion.subtotal, "Ok");
+                    cantidad.Text = string.Empty;
+                    TotalGlobal.Text = string.Empty;
+                    nomproduct.Text = string.Empty;
+                    descrip.Text = string.Empty;
+                    price.Text = string.Empty;
+                    await App.Current.MainPage.Navigation.PopAsync();
 
-              
+
+                }
+                btnordenar.IsEnabled = true;
             }
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mensaje", "No hay conexion a internet", "Ok");
+                btnordenar.IsEnabled = true;
+                indicatorser.IsRunning = false;
+                return;
+            }
+            indicatorser.IsRunning = false;
 
             HttpClient client2 = new HttpClient();
             string URL = string.Format(Constantes.Base + "/api/detallereservacions/Getdetallereservacion");
             var miArreglo = await client2.GetStringAsync(URL);
             var JSON_DRESERVACION = JsonConvert.DeserializeObject<List<Model.Modeldb.detallereservacion>>(miArreglo);
             decimal totalglobal = 0;
-            await DisplayAlert("mensaje", "total" + totalglobal, "ok");
+           // await DisplayAlert("mensaje", "total" + totalglobal, "ok");
             foreach (var item in JSON_DRESERVACION)
             {
                 if (item.idreservacion == Constantes.idreservacion)
@@ -65,13 +80,13 @@ namespace ParaisoRealB.View
                     
                     totalglobal += Convert.ToDecimal(item.subtotal);
 
-                    await DisplayAlert("mensaje", "total" + totalglobal, "ok");
+                    //await DisplayAlert("mensaje", "total" + totalglobal, "ok");
                 }
 
             }
             //aqui ya no se toca
 
-           await DisplayAlert("mensaje","total fuera de for "+totalglobal,"ok");
+          // await DisplayAlert("mensaje","total fuera de for "+totalglobal,"ok");
             //put
 
              /*var actualizarreservacion = new Model.Modeldb.reservacion
@@ -91,17 +106,17 @@ namespace ParaisoRealB.View
                 idubicacion =1
             };
 
-            await DisplayAlert("mensaje", "sacando el total" + actualizar.total, "ok");
-            await DisplayAlert("mensaje", "sacando el id" + actualizar.id, "ok");
-            await DisplayAlert("mensaje", "sacando el idcliente" + actualizar.idcliente, "ok");
-            await DisplayAlert("mensaje", "sacando el estado" + actualizar.estado, "ok");
+            //await DisplayAlert("mensaje", "sacando el total" + actualizar.total, "ok");
+            //await DisplayAlert("mensaje", "sacando el id" + actualizar.id, "ok");
+           // await DisplayAlert("mensaje", "sacando el idcliente" + actualizar.idcliente, "ok");
+           // await DisplayAlert("mensaje", "sacando el estado" + actualizar.estado, "ok");
 
             var url = string.Format(Constantes.Base + "/api/reservacions/Putreservacion/" + Constantes.idreservacion);
 
-            await DisplayAlert("mensaje", "url: " + url, "ok");
+           // await DisplayAlert("mensaje", "url: " + url, "ok");
             var jsona = JsonConvert.SerializeObject(actualizar);
             var contenta = new StringContent(jsona, Encoding.UTF8, "application/json");
-            await DisplayAlert("mensaje", "array" +contenta, "ok");
+            //await DisplayAlert("mensaje", "array" +contenta, "ok");
             
             HttpClient client3 = new HttpClient();
             HttpResponseMessage resulta = null;
@@ -109,7 +124,12 @@ namespace ParaisoRealB.View
            
             if (resulta.IsSuccessStatusCode)
             {
-                await DisplayAlert("mensaje", "entra al if"+resulta, "ok");
+                await DisplayAlert("mensaje", "Total"+" "+totalglobal, "ok");
+                //cantidad.Text = string.Empty;
+                //TotalGlobal.Text = string.Empty;
+                //nomproduct.Text = string.Empty;
+                //descrip.Text = string.Empty;
+                //price.Text = string.Empty;
 
             }
             else
@@ -119,10 +139,6 @@ namespace ParaisoRealB.View
 
         }
 
-        public async void BtnverOrden_Clicked(object sender, EventArgs e)
-        {
-            await App.Current.MainPage.Navigation.PushAsync(new VerOrden());
-        }
     }
 
 

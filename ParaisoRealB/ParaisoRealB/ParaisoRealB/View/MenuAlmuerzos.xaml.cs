@@ -39,34 +39,85 @@ namespace ParaisoRealB.View
 
         public async void Btnarmarcombo_Clicked(object sender, EventArgs e)
         {
-            var client = new HttpClient();
-            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
-            var miArreglo = await client.GetStringAsync(URL);
-            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 2 && a.idestado > 0);
-            ListAlmuerzo.ItemsSource = nuevalista;
+            indicatora.IsRunning = true;
+            try
+            {
+                var client = new HttpClient();
+                string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+                var miArreglo = await client.GetStringAsync(URL);
+                var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+                var nuevalista = verproductos.Where(a => a.idcategoria == 2 && a.idestado > 0);
+                ListAlmuerzo.ItemsSource = nuevalista;
+
+                btnarmarcombo.IsEnabled = true;
+            }
+
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                btnarmarcombo.IsEnabled = true;
+                indicatora.IsRunning = false;
+                return;
+            }
+
+            indicatora.IsRunning = false;
 
         }
 
         public async void BtnCombos_Clicked(object sender, EventArgs e)
         {
-            var client = new HttpClient();
-            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
-            var miArreglo = await client.GetStringAsync(URL);
-            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 3 && a.idestado > 0);
-            ListAlmuerzo.ItemsSource = nuevalista;
+            indicatora.IsRunning = true;
+            try
+            {
+                var client = new HttpClient();
+                string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+                var miArreglo = await client.GetStringAsync(URL);
+                var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+                var nuevalista = verproductos.Where(a => a.idcategoria == 3 && a.idestado > 0);
+                ListAlmuerzo.ItemsSource = nuevalista;
 
+                btnCombos.IsEnabled = true;
+
+            }
+
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                btnCombos.IsEnabled = true;
+                indicatora.IsRunning = false;
+                return;
+            }
+
+            indicatora.IsRunning = false;
         }
-
         public async void Btnbebidaf_Clicked(object sender, EventArgs e)
         {
-            var client = new HttpClient();
-            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
-            var miArreglo = await client.GetStringAsync(URL);
-            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 5 && a.idestado > 0);
-            ListAlmuerzo.ItemsSource = nuevalista;
+            indicatora.IsRunning = true;
+            try
+            {
+
+                var client = new HttpClient();
+                string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+                var miArreglo = await client.GetStringAsync(URL);
+                var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+                var nuevalista = verproductos.Where(a => a.idcategoria == 5 && a.idestado > 0);
+                ListAlmuerzo.ItemsSource = nuevalista;
+
+                btnbebidaf.IsEnabled = true;
+            }
+
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                btnbebidaf.IsEnabled = true;
+                indicatora.IsRunning = false;
+                return;
+            }
+
+            indicatora.IsRunning = false;
+
+
+
         }
 
         public async void ListAlmuerzo_ItemSelected(object sender, SelectedItemChangedEventArgs e)

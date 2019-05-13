@@ -21,7 +21,7 @@ namespace ParaisoRealB.View
             InitializeComponent();
 
             //horasss();
-           
+
         }
 
         //public async void horasss()
@@ -71,12 +71,12 @@ namespace ParaisoRealB.View
             try
             {
                 var client = new HttpClient();
-            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
-            var miArreglo = await client.GetStringAsync(URL);
-            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 6 && a.idestado > 0);
-            ListDesayuno.ItemsSource = nuevalista;
-                btnarmaD.IsEnabled = true;
+                string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+                var miArreglo = await client.GetStringAsync(URL);
+                var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+                var nuevalista = verproductos.Where(a => a.idcategoria == 6 && a.idestado > 0);
+                ListDesayuno.ItemsSource = nuevalista;
+                btnbebidasc.IsEnabled = true;
             }
 
 
@@ -84,7 +84,7 @@ namespace ParaisoRealB.View
             catch (Exception)
             {
                 await App.Current.MainPage.DisplayAlert("Mensaje", "No hay conexion a internet", "Ok");
-                btnarmaD.IsEnabled = true;
+                btnbebidasc.IsEnabled = true;
                 indicatord.IsRunning = false;
                 return;
             }

@@ -27,7 +27,7 @@ namespace ParaisoRealB.View
         {
             Device.BeginInvokeOnMainThread(async () => 
             {
-                //var result = await DisplayAlert("Mensaje", "Desea salir de la Aplicacion", "SI", "NO");
+                var result = await DisplayAlert("Mensaje", "Desea salir de la Aplicacion", "SI", "NO");
                 
                 if (true)
                 {
@@ -69,7 +69,8 @@ namespace ParaisoRealB.View
             }
             if (Constantes.idreservacion != 0 && Constantes.estados == 1)
             {
-                msje.Text = "Hola " + Constantes.nombre + " - " + Constantes.idreservacion;
+                // msje.Text = "Hola " + Constantes.nombre + " - " + Constantes.idreservacion;
+                msje.Text = "Hola " + Constantes.nombre;
                 //que se mantenga el id
             }
 
@@ -93,7 +94,7 @@ namespace ParaisoRealB.View
                 var result = await client.PostAsync(Constantes.Base + "/api/reservacions/Postreservacion", content);
                 if (result.StatusCode == HttpStatusCode.Created)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Mensaje", " Inicio de reservacion exitosa", "Ok");
+                     await Application.Current.MainPage.DisplayAlert("Mensaje", " Inicio de reservacion exitosa", "Ok");
                     //msje.Text = "Hola " + Constantes.nombre + " - " + Constantes.idreservacion;
                 }
             }

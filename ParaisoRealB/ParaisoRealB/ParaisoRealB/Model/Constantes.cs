@@ -12,13 +12,15 @@ namespace ParaisoRealB
         public static string nombre { get; set; }
         public static int idreservacion { get; set; }
         public static int estados { get; set; }
-  
+
 
         //URL 
         //public static string Base = "http://gnstecnology-001-site3.etempurl.com";
 
-        public static string Base = "http://paraisoreal19.somee.com";
+        //public static string Base = "http://paraisoreal19.somee.com";
+        //public static string Base = "http://www.preal2019.somee.com";
 
+        public static string Base = "http://webapi.somee.com";
 
 
 

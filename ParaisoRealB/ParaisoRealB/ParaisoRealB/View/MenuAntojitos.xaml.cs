@@ -19,50 +19,97 @@ namespace ParaisoRealB.View
         public MenuAntojitos()
         {
             InitializeComponent();
-            HoraAntojito();
+            //HoraAntojito();
         }
 
-        public async void HoraAntojito()
-        {
-            DateTime hora = DateTime.Now;
-            DateTime horamax = new DateTime(2019, 05, 01, 15, 00, 00);
+        //public async void HoraAntojito()
+        //{
+        //    DateTime hora = DateTime.Now;
+        //    DateTime horamax = new DateTime(2019, 05, 01, 15, 00, 00);
 
-            if (hora.TimeOfDay >= horamax.TimeOfDay)
-            {
-                await App.Current.MainPage.DisplayAlert("Mensaje", "Desayunos disponibles hasta las 3:30 PM", "Ok");
-                await App.Current.MainPage.Navigation.PopAsync();
-            }
+        //    if (hora.TimeOfDay >= horamax.TimeOfDay)
+        //    {
+        //        await App.Current.MainPage.DisplayAlert("Mensaje", "Desayunos disponibles hasta las 3:30 PM", "Ok");
+        //        await App.Current.MainPage.Navigation.PopAsync();
+        //    }
 
-        }
+        //}
 
         public async void BtnAntojitos_Clicked(object sender, EventArgs e)
         {
-            var client = new HttpClient();
-            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
-            var miArreglo = await client.GetStringAsync(URL);
-            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 4 && a.idestado > 0);
-            ListAntojitos.ItemsSource = nuevalista;
+            indicatoran.IsRunning = true;
+            try
+            {
+                var client = new HttpClient();
+                string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+                var miArreglo = await client.GetStringAsync(URL);
+                var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+                var nuevalista = verproductos.Where(a => a.idcategoria == 4 && a.idestado > 0);
+                ListAntojitos.ItemsSource = nuevalista;
+
+                btnAntojitos.IsEnabled = true;
+            }
+
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                btnAntojitos.IsEnabled = true;
+                indicatoran.IsRunning = false;
+                return;
+            }
+
+            indicatoran.IsRunning = false;
+
         }
 
         public async void Btnbebidasf_Clicked(object sender, EventArgs e)
         {
-            var client = new HttpClient();
-            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
-            var miArreglo = await client.GetStringAsync(URL);
-            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 5 && a.idestado > 0);
-            ListAntojitos.ItemsSource = nuevalista;
+            indicatoran.IsRunning = true;
+            try
+            {
+                var client = new HttpClient();
+                string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+                var miArreglo = await client.GetStringAsync(URL);
+                var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+                var nuevalista = verproductos.Where(a => a.idcategoria == 5 && a.idestado > 0);
+                ListAntojitos.ItemsSource = nuevalista;
+
+                btnbebidasf.IsEnabled = true;
+            }
+
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                btnbebidasf.IsEnabled = true;
+                indicatoran.IsRunning = false;
+                return;
+            }
+
         }
 
         public async void Btnbebidac_Clicked(object sender, EventArgs e)
         {
-            var client = new HttpClient();
-            string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
-            var miArreglo = await client.GetStringAsync(URL);
-            var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
-            var nuevalista = verproductos.Where(a => a.idcategoria == 6 && a.idestado > 0);
-            ListAntojitos.ItemsSource = nuevalista;
+            indicatoran.IsRunning = true;
+            try
+            {
+                var client = new HttpClient();
+                string URL = string.Format(Constantes.Base + "/api/productoss/Getproductos");
+                var miArreglo = await client.GetStringAsync(URL);
+                var verproductos = JsonConvert.DeserializeObject<List<productos>>(miArreglo);
+                var nuevalista = verproductos.Where(a => a.idcategoria == 6 && a.idestado > 0);
+                ListAntojitos.ItemsSource = nuevalista;
+
+                btnbebidac.IsEnabled = true;
+            }
+
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                btnbebidac.IsEnabled = true;
+                indicatoran.IsRunning = false;
+                return;
+            }
+
         }
 
 

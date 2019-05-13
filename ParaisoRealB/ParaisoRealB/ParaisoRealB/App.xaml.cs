@@ -16,7 +16,7 @@ namespace ParaisoRealB
 
            var navigationPage = new NavigationPage(new SplashScreenR());
 
-            //var navigationPage = new NavigationPage(new MenuAntojitos());
+            //var navigationPage = new NavigationPage(new Ordenar());
 
 
             // navigationPage.BarBackgroundColor = Color.FromHex("#00BCD4");

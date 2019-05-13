@@ -1,16 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ParaisoRealB.View.InfEmpresa">
-    <ContentPage.Content>
-        <StackLayout Margin="20">
-            <Image Source="Logo.png"
-                   WidthRequest="100"
-                   HeightRequest="100"></Image>
-            <Label Text="Es una micro empresa naciente comprometida con la salud alimentaria de nuestros clientes ofreciendo nuestros servicios de cafetería y banquetes, abriendo puertas de oportunidades de empleo a mujeres y generando desarrollo local enfocados en consolidarnos como una empresa líder, en la ciudad de San Miguel, departamento de San Miguel."
-                   HorizontalOptions="Center"
-                   FontAttributes="Bold">
+             x:Class="ParaisoRealB.View.InfEmpresa"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Nuestra Empresa"
+                   FontAttributes="Bold"
+                   FontSize="{OnIdiom  Default=15, Phone=20, Tablet=24}"
+                   TextColor="Black"
+                   HorizontalOptions="Center">
             </Label>
+            <Image Source="Logo.png"
+                   Aspect="AspectFill">
+            </Image>
+            <Frame OutlineColor="#CFB346" CornerRadius="40" Margin="10">
+                <Label Text="Es una micro empresa naciente comprometida con la salud alimentaria de nuestros clientes ofreciendo nuestros servicios de cafetería y banquetes, abriendo puertas de oportunidades de empleo a mujeres y generando desarrollo local enfocados en consolidarnos como una empresa líder, en la ciudad de San Miguel, departamento de San Miguel."
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
+                   TextColor="Gray">
+                </Label>
+            </Frame>
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>
