@@ -16,11 +16,9 @@ namespace ParaisoRealB
 
         //URL 
         //public static string Base = "http://gnstecnology-001-site3.etempurl.com";
+        public static string Base = "http://userll11022-001-site1.atempurl.com";
 
-        //public static string Base = "http://paraisoreal19.somee.com";
-        //public static string Base = "http://www.preal2019.somee.com";
-
-        public static string Base = "http://webapi.somee.com";
+      
 
 
 

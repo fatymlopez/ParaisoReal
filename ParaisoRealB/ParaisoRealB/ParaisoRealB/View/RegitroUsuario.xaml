@@ -14,13 +14,27 @@
     <ScrollView>
         <Frame OutlineColor="#8BC34A" CornerRadius="40" Margin="20">
         <StackLayout  BackgroundColor="White" Margin="5">
-
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
                 <Label Text="Registrate Aqui" 
                        HorizontalOptions="Center" 
                        TextColor="Black" 
                        FontAttributes="Bold" 
                        FontSize="Medium">
                 </Label>
+                        <ActivityIndicator x:Name="indicatorrr"
+                                           IsRunning="{Binding IsBusy}" 
+                                           IsVisible="{Binding IsBusy}"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Start"
+                                           Grid.Row="0"
+                                           Color="Gray">
+                        </ActivityIndicator>
+                    </Grid>
+                </StackLayout>
                 <Label Text="Ingrese su nombre" 
                        Margin="0,20,0,0"
                        FontAttributes="Bold">
@@ -38,7 +52,11 @@
                                  ImageWidth="13" 
                                  Text="{Binding cellclcommand}"
                                  FontAttributes="Bold"
-                                 Keyboard="Telephone">
+                                 Keyboard="Telephone"
+                                 Placeholder="0000-0000">
+                    <locai:CtrlImage.Behaviors>
+                        <behavior:FormatEntry Mask="XXXX-XXXX"></behavior:FormatEntry>
+                    </locai:CtrlImage.Behaviors>
                 </locai:CtrlImage>
                 <Label Text="Ingrese su correo electronico"></Label>
                 <locai:CtrlImage Image="correo" 

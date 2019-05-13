@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace ParaisoRealB.Controllers
 {
-    public class MaskedBehavior : Behavior<Entry>
+    public class FormatEntry : Behavior<Entry>
     {
         private string _mask = "";
         public string Mask

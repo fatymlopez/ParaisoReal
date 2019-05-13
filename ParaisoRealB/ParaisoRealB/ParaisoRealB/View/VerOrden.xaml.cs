@@ -91,8 +91,11 @@ namespace ParaisoRealB.View
         
         public async void Cancelar_Clicked(object sender, EventArgs e)
         {
-            //agregue estas lineas de codigo
-            var answer = await DisplayAlert("Mensaje", "Desea Eliminar su orden", "Si", "No");
+            indicatordo.IsRunning = true;
+            try
+            {
+                //agregue estas lineas de codigo
+                var answer = await DisplayAlert("Mensaje", "Desea Eliminar su orden", "Si", "No");
             if (answer == true)
             {
                 HttpClient borrarorder = new HttpClient();
@@ -110,6 +113,18 @@ namespace ParaisoRealB.View
                 await App.Current.MainPage.DisplayAlert("Mensaje", "Operacion Cancelada", "Ok");
                 await App.Current.MainPage.Navigation.PopAsync();
             }
+                cancelar.IsEnabled = true;
+            }
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                cancelar.IsEnabled = true;
+                indicatordo.IsRunning = false;
+
+                return;
+            }
+
+            indicatordo.IsRunning = false;
 
             //aqui termina lo que agregue
 
@@ -117,8 +132,10 @@ namespace ParaisoRealB.View
 
         public async void Ordenar_Clicked(object sender, EventArgs e)
         {
-
-            var guardarreserva = new reservacionpr
+            indicatordo.IsRunning = true;
+            try
+            {
+                var guardarreserva = new reservacionpr
             {
                 id = Constantes.idreservacion,
                 idcliente = Constantes.idusuario,
@@ -157,7 +174,18 @@ namespace ParaisoRealB.View
                 await DisplayAlert("Mensaje", "entra al else" + resulta, "ok");
             }
 
+                cancelar.IsEnabled = true;
+            }
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                cancelar.IsEnabled = true;
+                indicatordo.IsRunning = false;
 
+                return;
+            }
+
+            indicatordo.IsRunning = false;
         }
 
         #region propiedades
