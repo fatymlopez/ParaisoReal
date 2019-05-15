@@ -132,62 +132,69 @@ namespace ParaisoRealB.View
 
         public async void Ordenar_Clicked(object sender, EventArgs e)
         {
-            indicatordo.IsRunning = true;
-            try
+            if (idss == 0)
             {
-                var guardarreserva = new reservacionpr
-            {
-                id = Constantes.idreservacion,
-                idcliente = Constantes.idusuario,
-                total = totalfinal,
-                estado = 0,
-                idubicacion = this.idss
-            };
-
-            //borrar inicio
-           // await DisplayAlert("mensaje", "sacando el total" + guardarreserva.total, "ok");
-            //await DisplayAlert("mensaje", "sacando el id" + guardarreserva.id, "ok");
-            //await DisplayAlert("mensaje", "sacando el idcliente" + guardarreserva.idcliente, "ok");
-            //await DisplayAlert("mensaje", "sacando el estado" + guardarreserva.estado, "ok");
-            //borrar final
-
-            var url = string.Format(Constantes.Base + "/api/reservacions/Putreservacion/" + Constantes.idreservacion);
-            //borrar
-            //await DisplayAlert("mensaje", "url: " + url, "ok");
-            var jsona = JsonConvert.SerializeObject(guardarreserva);
-            var contenta = new StringContent(jsona, Encoding.UTF8, "application/json");
-            //await DisplayAlert("mensaje", "array" + contenta, "ok");
-
-            HttpClient client3 = new HttpClient();
-            HttpResponseMessage resulta = null;
-            resulta = await client3.PutAsync(url, contenta);
-
-            if (resulta.IsSuccessStatusCode)
-            {
-                await DisplayAlert("Mensaje", "Orden Realizada con exito", "Ok");
-                await App.Current.MainPage.Navigation.PopAsync();
-                tttal.Text = string.Empty;
-
+                await App.Current.MainPage.DisplayAlert("Mensaje", "Debes ingresar una Ubucacion", "Ok");
             }
             else
             {
-                await DisplayAlert("Mensaje", "entra al else" + resulta, "ok");
-            }
+                indicatordo.IsRunning = true;
 
-                cancelar.IsEnabled = true;
-            }
-            catch (Exception)
-            {
-                await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
-                cancelar.IsEnabled = true;
+                try
+                {
+                    var guardarreserva = new reservacionpr
+                    {
+                        id = Constantes.idreservacion,
+                        idcliente = Constantes.idusuario,
+                        total = totalfinal,
+                        estado = 0,
+                        idubicacion = this.idss
+                    };
+
+                    //borrar inicio
+                    // await DisplayAlert("mensaje", "sacando el total" + guardarreserva.total, "ok");
+                    //await DisplayAlert("mensaje", "sacando el id" + guardarreserva.id, "ok");
+                    //await DisplayAlert("mensaje", "sacando el idcliente" + guardarreserva.idcliente, "ok");
+                    //await DisplayAlert("mensaje", "sacando el estado" + guardarreserva.estado, "ok");
+                    //borrar final
+
+                    var url = string.Format(Constantes.Base + "/api/reservacions/Putreservacion/" + Constantes.idreservacion);
+                    //borrar
+                    //await DisplayAlert("mensaje", "url: " + url, "ok");
+                    var jsona = JsonConvert.SerializeObject(guardarreserva);
+                    var contenta = new StringContent(jsona, Encoding.UTF8, "application/json");
+                    //await DisplayAlert("mensaje", "array" + contenta, "ok");
+
+                    HttpClient client3 = new HttpClient();
+                    HttpResponseMessage resulta = null;
+                    resulta = await client3.PutAsync(url, contenta);
+
+                    if (resulta.IsSuccessStatusCode)
+                    {
+                        await DisplayAlert("Mensaje", "Orden Realizada con exito", "Ok");
+                        await App.Current.MainPage.Navigation.PopAsync();
+                        tttal.Text = string.Empty;
+
+                    }
+                    else
+                    {
+                        await DisplayAlert("Mensaje", "entra al else" + resulta, "ok");
+                    }
+
+                    cancelar.IsEnabled = true;
+                }
+                catch (Exception)
+                {
+                    await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
+                    cancelar.IsEnabled = true;
+                    indicatordo.IsRunning = false;
+
+                    return;
+                }
+
                 indicatordo.IsRunning = false;
-
-                return;
             }
-
-            indicatordo.IsRunning = false;
         }
-
         #region propiedades
         private List<ubicacion> _itemcategory;
 

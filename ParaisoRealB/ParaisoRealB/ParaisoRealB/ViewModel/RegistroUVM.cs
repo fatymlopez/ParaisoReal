@@ -9,47 +9,62 @@ using System.Net.Http;
 using System.Net;
 using System.ComponentModel;
 
-namespace ParaisoRealB.ViewModel 
+namespace ParaisoRealB.ViewModel
 {
-   public class RegistroUVM : ViewModelBase, INotifyPropertyChanged
+    public class RegistroUVM : ViewModelBase, INotifyPropertyChanged
     {
         public RegistroUVM()
         {
             RegistroCommand = new Command(RegistroUsu);
         }
 
-        public  async void RegistroUsu()
+        public async void RegistroUsu()
         {
-            if (this.nombreclcommand== null || this.cellclcommand == null || this.emailclcommand == null || this.passclcommand == null)
+            if (this.nombreclcommand == null || this.cellclcommand == null || this.emailclcommand == null || this.passclcommand == null)
             {
                 await App.Current.MainPage.DisplayAlert("Mensaje", "Debe ingresar todos los datos", "Ok");
             }
             else
             {
-                var newcliente = new cliente()
+                try
                 {
-                    nombrecl = this.nombreclcommand,
-                    cellcl = this.cellclcommand,
-                    emailcl = this.emailclcommand,
-                    passcl = this.passclcommand
+                    IsBusy = true;
+                    var newcliente = new cliente()
+                    {
+                        nombrecl = this.nombreclcommand,
+                        cellcl = this.cellclcommand,
+                        emailcl = this.emailclcommand,
+                        passcl = this.passclcommand
 
-                };
+                    };
 
-                var json = JsonConvert.SerializeObject(newcliente);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                HttpClient client = new HttpClient();
-                var result = await client.PostAsync(Constantes.Base + "/api/clientes/Postcliente", content);
+                    var json = JsonConvert.SerializeObject(newcliente);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    HttpClient client = new HttpClient();
+                    var result = await client.PostAsync(Constantes.Base + "/api/clientes/Postcliente", content);
 
-                if (result.StatusCode == HttpStatusCode.Created)
-                {
-                    await App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
-                    await App.Current.MainPage.Navigation.PopAsync();
+                    if (result.StatusCode == HttpStatusCode.Created)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Genial!", " Tu registro se ha realizado con exito", "Ok");
+                        await App.Current.MainPage.Navigation.PopAsync();
+
+                    }
 
                 }
+                catch (Exception)
+                {
+                    await App.Current.MainPage.DisplayAlert("Mensaje", "No hay conexion a internet", "Ok");
 
+                    return;
+                }
+                finally
+                {
+                    IsBusy = false;
+                }
             }
-            
-                 
+
+
+
         }
 
         #region propiedades
@@ -64,14 +79,14 @@ namespace ParaisoRealB.ViewModel
         public string cellclcommand
         {
             get { return _cellclcommand; }
-            set { _cellclcommand = value;  RaisePropertyChanged(); }
+            set { _cellclcommand = value; RaisePropertyChanged(); }
         }
 
         private string _emailclcommand;
         public string emailclcommand
         {
             get { return _emailclcommand; }
-            set { _emailclcommand = value;  RaisePropertyChanged(); }
+            set { _emailclcommand = value; RaisePropertyChanged(); }
         }
 
         private string _passclcommand;
@@ -79,6 +94,17 @@ namespace ParaisoRealB.ViewModel
         {
             get { return _passclcommand; }
             set { _passclcommand = value; RaisePropertyChanged(); }
+        }
+
+        bool isBusy;
+        public bool IsBusy
+        {
+            get => isBusy;
+            set
+            {
+                isBusy = value;
+                RaisePropertyChanged();
+            }
         }
         #endregion
 

@@ -4,38 +4,68 @@
              x:Class="ParaisoRealB.View.InfServicios"
              BackgroundColor="White">
     <ScrollView>
-        <StackLayout Margin="20">
-            <Image Source="Logo.png"
-                   HorizontalOptions="Center"
-                   WidthRequest="100"
-                   HeightRequest="100"></Image>
-
+        <StackLayout>
             <StackLayout>
-                <Label Text="Servicio de Banquetes para todo tipo de eventos"
-                       HorizontalTextAlignment="Center"
-                       FontSize="18">
-                </Label>
-                <Image Resources="almu.png"
-                       HorizontalOptions="Center"></Image>
-                
-                <Label Text="Antojitos, Deliciosas Pupusas Enchiladas y Tacos"
-                       HorizontalTextAlignment="Center"
-                       FontSize="18">
-                </Label>
-                <Image Resources="Desayunos.png"
+                <Image Source="Logomini.jpg"
+                   HorizontalOptions="Center"
+                   Aspect="AspectFill"
+                   HeightRequest="{OnIdiom Default=100, Phone=256, Tablet=256}"
+                   WidthRequest="{OnIdiom Default=100, Phone=256, Tablet=256}">
+                </Image>
+                <Label Text="Paraiso Real le Ofrece:"
                        HorizontalOptions="Center"
-                       HeightRequest="80"
-                       WidthRequest="80"></Image>
-
-                <Label Text="Coffe Break para seminarios"
-                       HorizontalTextAlignment="Center"
-                       FontSize="18">
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="{OnIdiom  Default=10, Phone=16, Tablet=18}">
                 </Label>
-                <Image Resources="banquete.png"
-                       HorizontalOptions="Center"></Image>
+            </StackLayout>
+            <StackLayout Padding="20">
+                <Frame BackgroundColor="#F44336" 
+                       CornerRadius="20">
+                    <StackLayout>
+                        <Image Source="seralmu.png"
+                           HeightRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"
+                           WidthRequest="{OnIdiom Default=100, Phone=100, Tablet=128}">
+                        </Image>
+                        <Label Text="Servicio de Banquetes para todo tipo de eventos" 
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="{OnIdiom  Default=10, Phone=16, Tablet=18}"
+                           HorizontalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Center">
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="#8BC34A"
+                       CornerRadius="20">
+                    <StackLayout>
+                        <Image Source="antopu.png"        
+                           HeightRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"
+                           WidthRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"></Image>
+                        <Label Text="Antojitos, Deliciosas Pupusas Enchiladas y Tacos" 
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="{OnIdiom  Default=10, Phone=16, Tablet=18}"
+                           HorizontalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Center">
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="#FFC107" 
+                       CornerRadius="20">
+                    <StackLayout>
+                        <Image Source="serbanq.png"
+                           HeightRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"
+                           WidthRequest="{OnIdiom Default=100, Phone=100, Tablet=128}"></Image>
+                        <Label Text="Coffe Break para seminarios" 
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="{OnIdiom  Default=10, Phone=16, Tablet=18}"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="CenterAndExpand"></Label>
+                    </StackLayout>
+                </Frame>
             </StackLayout>
         </StackLayout>
     </ScrollView>
- 
-
 </ContentPage>

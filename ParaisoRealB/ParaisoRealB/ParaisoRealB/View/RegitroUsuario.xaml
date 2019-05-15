@@ -23,7 +23,8 @@
                        HorizontalOptions="Center" 
                        TextColor="Black" 
                        FontAttributes="Bold" 
-                       FontSize="Medium">
+                       FontSize="Medium"
+                       Grid.Row="0">
                 </Label>
                         <ActivityIndicator x:Name="indicatorrr"
                                            IsRunning="{Binding IsBusy}" 
@@ -31,7 +32,7 @@
                                            HorizontalOptions="Center"
                                            VerticalOptions="Start"
                                            Grid.Row="0"
-                                           Color="Gray">
+                                           Color="#c3c3c3">
                         </ActivityIndicator>
                     </Grid>
                 </StackLayout>
@@ -66,7 +67,8 @@
                              FontAttributes="Bold"
                              Keyboard="Email">
                 </locai:CtrlImage>
-                <Label Text="Ingrese una contraseña"></Label>
+                <Label Text="Ingrese una contraseña"
+                       FontAttributes="Bold"></Label>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>

@@ -19,21 +19,21 @@ namespace ParaisoRealB.View
         public MenuAntojitos()
         {
             InitializeComponent();
-            //HoraAntojito();
+            HoraAntojito();
         }
 
-        //public async void HoraAntojito()
-        //{
-        //    DateTime hora = DateTime.Now;
-        //    DateTime horamax = new DateTime(2019, 05, 01, 15, 00, 00);
+        public async void HoraAntojito()
+        {
+            DateTime hora = DateTime.Now;
+            DateTime horamax = new DateTime(2019, 05, 01, 15, 00, 00);
 
-        //    if (hora.TimeOfDay >= horamax.TimeOfDay)
-        //    {
-        //        await App.Current.MainPage.DisplayAlert("Mensaje", "Desayunos disponibles hasta las 3:30 PM", "Ok");
-        //        await App.Current.MainPage.Navigation.PopAsync();
-        //    }
+            if (hora.TimeOfDay >= horamax.TimeOfDay)
+            {
+                await App.Current.MainPage.DisplayAlert("Mensaje", "Antojitos disponibles hasta las 3:30 PM", "Ok");
+                await App.Current.MainPage.Navigation.PopAsync();
+            }
 
-        //}
+        }
 
         public async void BtnAntojitos_Clicked(object sender, EventArgs e)
         {
@@ -84,7 +84,7 @@ namespace ParaisoRealB.View
                 indicatoran.IsRunning = false;
                 return;
             }
-
+            indicatoran.IsRunning = false;
         }
 
         public async void Btnbebidac_Clicked(object sender, EventArgs e)
@@ -109,7 +109,7 @@ namespace ParaisoRealB.View
                 indicatoran.IsRunning = false;
                 return;
             }
-
+            indicatoran.IsRunning = false;
         }
 
 

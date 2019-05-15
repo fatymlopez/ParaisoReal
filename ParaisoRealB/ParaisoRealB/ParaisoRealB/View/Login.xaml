@@ -45,7 +45,8 @@
                                HorizontalOptions="FillAndExpand"
                                ImageWidth="15"
                                ImageHeigth="15"
-                               x:Name="correousu">
+                               x:Name="correousu"
+                               Keyboard="Email">
                         </local:CtrlImage>
                     </StackLayout>
                     <StackLayout Grid.Row="2" Grid.Column="1" Margin="20,10,20,10">
