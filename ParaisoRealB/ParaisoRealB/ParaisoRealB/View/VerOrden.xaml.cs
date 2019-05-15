@@ -111,7 +111,7 @@ namespace ParaisoRealB.View
             else
             {
                 await App.Current.MainPage.DisplayAlert("Mensaje", "Operacion Cancelada", "Ok");
-                await App.Current.MainPage.Navigation.PopAsync();
+                //await App.Current.MainPage.Navigation.PopAsync();
             }
                 cancelar.IsEnabled = true;
             }

@@ -20,22 +20,22 @@ namespace ParaisoRealB.View
         {
             InitializeComponent();
 
-            horasss();
+           // horasss();
 
         }
 
-        public async void horasss()
-        {
-            DateTime hora = DateTime.Now;
-            DateTime horamax = new DateTime(2019, 05, 01, 10, 00, 00);
+        //public async void horasss()
+        //{
+        //    DateTime hora = DateTime.Now;
+        //    DateTime horamax = new DateTime(2019, 05, 01, 10, 00, 00);
 
-            if (hora.TimeOfDay >= horamax.TimeOfDay)
-            {
-                await App.Current.MainPage.DisplayAlert("Mensaje", "Desayunos disponibles hasta las 10:00 AM", "Ok");
-                await App.Current.MainPage.Navigation.PopAsync();
-            }
+        //    if (hora.TimeOfDay >= horamax.TimeOfDay)
+        //    {
+        //        await App.Current.MainPage.DisplayAlert("Mensaje", "Desayunos disponibles hasta las 10:00 AM", "Ok");
+        //        await App.Current.MainPage.Navigation.PopAsync();
+        //    }
 
-        }
+        //}
 
         public async void BtnarmaD_Clicked(object sender, EventArgs e)
         {
