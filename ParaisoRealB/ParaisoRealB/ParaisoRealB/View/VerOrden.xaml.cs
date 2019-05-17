@@ -134,7 +134,7 @@ namespace ParaisoRealB.View
         {
             if (idss == 0)
             {
-                await App.Current.MainPage.DisplayAlert("Mensaje", "Debes ingresar una Ubucacion", "Ok");
+                await App.Current.MainPage.DisplayAlert("Mensaje", "Debes ingresar una sucursal", "Ok");
             }
             else
             {

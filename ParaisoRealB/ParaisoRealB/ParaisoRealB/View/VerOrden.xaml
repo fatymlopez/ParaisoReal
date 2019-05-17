@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ParaisoRealB.View.VerOrden"
-             xmlns:vm="clr-namespace:ParaisoRealB.ViewModel"
              BackgroundColor="White">
 
     <StackLayout BackgroundColor="White">
@@ -128,11 +127,11 @@
             </Label>
         </StackLayout>
         <StackLayout Margin="10">
-            <Label Text="Seleccione su Ubicacion"
+            <Label Text="Seleccione la sucursal en donde retirará su pedido"
                    FontAttributes="Bold"
                    FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}">
             </Label>
-            <Picker x:Name="category" Title="Seleccione una Ubicacion"
+            <Picker x:Name="category" Title="Seleccione una sucursal"
                     FontAttributes="Bold"
                     ItemDisplayBinding="{Binding nomubicacion}"
                     SelectedItem="{Binding selectcategory}"
