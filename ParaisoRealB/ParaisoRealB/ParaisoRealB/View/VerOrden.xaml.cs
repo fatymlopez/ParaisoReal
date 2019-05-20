@@ -230,7 +230,7 @@ namespace ParaisoRealB.View
                 _selectcategory = value;
                 var name = _selectcategory.nomubicacion;
                 idss = _selectcategory.id;
-                App.Current.MainPage.DisplayAlert("Ubicacion Seleccionada", name, "Ok");
+                App.Current.MainPage.DisplayAlert("Sucursal Seleccionada", name, "Ok");
             }
         }
 
