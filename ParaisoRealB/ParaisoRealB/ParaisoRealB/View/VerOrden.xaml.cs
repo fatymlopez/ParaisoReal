@@ -103,7 +103,14 @@ namespace ParaisoRealB.View
                 if (resultb.IsSuccessStatusCode)
                 {
                     await DisplayAlert("Mensaje", "Proceso realizado con Exito", "OK");
-                    await App.Current.MainPage.Navigation.PopAsync();
+                        Constantes.idreservacion = 0;
+                        Constantes.idusuario = 0;
+                        Constantes.estados = 0;
+                        Constantes.usuario = "";
+                        Constantes.contraseña = "";
+                        Constantes.nombre = "";
+                      await  App.Current.MainPage.Navigation.PushAsync(new Login());
+
                     
 
                 }
