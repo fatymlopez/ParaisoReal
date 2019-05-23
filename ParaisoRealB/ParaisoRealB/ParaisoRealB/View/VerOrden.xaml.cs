@@ -28,7 +28,7 @@ namespace ParaisoRealB.View
             getpicker();
             getorder();
             gettotal();
-          
+
         }
 
         public async void gettotal()
@@ -38,7 +38,7 @@ namespace ParaisoRealB.View
             var miArreglo = await clientotal.GetStringAsync(URL);
             var JSON_DRESERVACION = JsonConvert.DeserializeObject<List<Model.Modeldb.detallereservacion>>(miArreglo);
             totalfinal = 0;
-           
+
             foreach (var item in JSON_DRESERVACION)
             {
                 if (item.idreservacion == Constantes.idreservacion)
@@ -46,7 +46,7 @@ namespace ParaisoRealB.View
 
                     totalfinal += Convert.ToDecimal(item.subtotal);
 
-                    tttal.Text = "Total a Pagar"+" "+"$"+totalfinal;
+                    tttal.Text = "Total a Pagar" + " " + "$" + totalfinal;
                 }
 
             }
@@ -71,7 +71,7 @@ namespace ParaisoRealB.View
                 await App.Current.MainPage.DisplayAlert("Mesanje", "No hay conexion a internet", "Ok");
                 ListDetalle.IsEnabled = true;
                 indicatordo.IsRunning = false;
-                
+
                 return;
             }
 
@@ -88,7 +88,7 @@ namespace ParaisoRealB.View
             Debug.WriteLine(Itemcategory);
         }
 
-        
+
         public async void Cancelar_Clicked(object sender, EventArgs e)
         {
             indicatordo.IsRunning = true;
@@ -96,30 +96,32 @@ namespace ParaisoRealB.View
             {
                 //agregue estas lineas de codigo
                 var answer = await DisplayAlert("Mensaje", "Desea Eliminar su orden", "Si", "No");
-            if (answer == true)
-            {
-                HttpClient borrarorder = new HttpClient();
-                var resultb = await borrarorder.DeleteAsync(string.Concat(Constantes.Base + "/api/reservacions/Deletereservacion/", Constantes.idreservacion));
-                if (resultb.IsSuccessStatusCode)
+                if (answer == true)
                 {
-                    await DisplayAlert("Mensaje", "Proceso realizado con Exito", "OK");
+                    HttpClient borrarorder = new HttpClient();
+                    var resultb = await borrarorder.DeleteAsync(string.Concat(Constantes.Base + "/api/reservacions/Deletereservacion/", Constantes.idreservacion));
+                    if (resultb.IsSuccessStatusCode)
+                    {
+                        await DisplayAlert("Mensaje", "Proceso realizado con Exito", "OK");
+                        await App.Current.MainPage.Navigation.PopAsync();
+                        await App.Current.MainPage.DisplayAlert("Mensaje", "Debe Salir de la App", "Ok");
                         Constantes.idreservacion = 0;
                         Constantes.idusuario = 0;
                         Constantes.estados = 0;
                         Constantes.usuario = "";
                         Constantes.contraseña = "";
                         Constantes.nombre = "";
-                      await  App.Current.MainPage.Navigation.PushAsync(new Login());
+                        await App.Current.MainPage.Navigation.PopAsync();
 
-                    
 
+
+                    }
                 }
-            }
-            else
-            {
-                await App.Current.MainPage.DisplayAlert("Mensaje", "Operacion Cancelada", "Ok");
-                //await App.Current.MainPage.Navigation.PopAsync();
-            }
+                else
+                {
+                    await App.Current.MainPage.DisplayAlert("Mensaje", "Operacion Cancelada", "Ok");
+                    //await App.Current.MainPage.Navigation.PopAsync();
+                }
                 cancelar.IsEnabled = true;
             }
             catch (Exception)
@@ -222,12 +224,15 @@ namespace ParaisoRealB.View
         public decimal totalfinal
         {
             get { return _totalfinal; }
-            set { _totalfinal = value;
-                OnPropertyChanged(); }
+            set
+            {
+                _totalfinal = value;
+                OnPropertyChanged();
+            }
         }
 
         private ubicacion _selectcategory;
-      
+
 
         public ubicacion selectcategory
         {

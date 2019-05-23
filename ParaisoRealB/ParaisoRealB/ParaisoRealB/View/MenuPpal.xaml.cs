@@ -96,6 +96,7 @@ namespace ParaisoRealB.View
                 {
                      await Application.Current.MainPage.DisplayAlert("Mensaje", " Inicio de reservacion exitosa", "Ok");
                     //msje.Text = "Hola " + Constantes.nombre + " - " + Constantes.idreservacion;
+                     //msje.Text = "Hola " + Constantes.nombre;
                 }
             }
             

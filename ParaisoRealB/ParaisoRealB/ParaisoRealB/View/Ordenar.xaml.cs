@@ -140,7 +140,9 @@ namespace ParaisoRealB.View
                 }
                 else
                 {
-                    await DisplayAlert("Mensaje", "entra al else" + resulta, "ok");
+                    //await DisplayAlert("Mensaje", "entra al else" + resulta, "ok");
+                    await DisplayAlert("Mensaje", "Intente de Nuevo Porfavor", "ok");
+                    await App.Current.MainPage.Navigation.PopAsync();
                 }
 
             }
