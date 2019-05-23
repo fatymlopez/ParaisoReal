@@ -94,49 +94,53 @@
                             <Frame CornerRadius="20" Padding="5">
                                 <StackLayout Orientation="Horizontal">
                                     <BoxView BackgroundColor="#FF5722" WidthRequest="4"></BoxView>
-                                    <Grid VerticalOptions="CenterAndExpand">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition></RowDefinition>
-                                            <RowDefinition></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <StackLayout Grid.Row="0"
-                                                     Orientation="Horizontal">
-                                            <Label Text="{Binding nomproducto}"
-                                                   TextColor="#FF5722"
-                                                   FontAttributes="Bold"
-                                                   FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}">
-                                            </Label>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                               
+
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Label Text="{Binding nomproducto}"
+                                                       TextColor="#FF5722"
+                                                       FontAttributes="Bold"
+                                                       FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}"
+                                                       Grid.Row="0"
+                                                       Grid.Column="0"
+                                                       Grid.ColumnSpan="3">
+                                                </Label>
+                                                <StackLayout  Grid.Row="0"
+                                                              Grid.Column="4"
+                                                              HorizontalOptions="EndAndExpand"
+                                                              Orientation="Horizontal">
+                                                    <Label Text="$"
+                                                           TextColor="#FF5722"
+                                                           FontAttributes="Bold"
+                                                           FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}">
+                                                    </Label>
+                                                    <Label Text="{Binding precio}"
+                                                           TextColor="#FF5722"
+                                                           FontAttributes="Bold"
+                                                           FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}">
+                                                    </Label>
+                                                </StackLayout>
+                                            </Grid>
                                         </StackLayout>
-                                        
-                                        <StackLayout Grid.Row="1"
-                                                     HorizontalOptions="StartAndExpand">
+                                        <StackLayout Grid.Row="1">
                                             <Label Text="{Binding descripcion}"
                                                    TextColor="Gray"
                                                    FontAttributes="Bold"
                                                    FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}">
                                             </Label>
                                         </StackLayout>
-                                    </Grid>
-                                    <StackLayout Orientation="Horizontal"
-                                                 HorizontalOptions="EndAndExpand">
-                                        <!--<Label Text="Precio"
-                                                   TextColor="#FF5722"
-                                                   FontAttributes="Bold"
-                                                   FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}">
-                                        </Label>-->
-                                        <Label Text="$"
-                                               TextColor="#FF5722"
-                                               FontAttributes="Bold"
-                                               FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}">
-                                        </Label>
-                                        <Label Text="{Binding precio}"
-                                               TextColor="#FF5722"
-                                               FontAttributes="Bold"
-                                               FontSize="{OnIdiom  Default=15, Phone=16, Tablet=20}">
-                                        </Label>
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>
